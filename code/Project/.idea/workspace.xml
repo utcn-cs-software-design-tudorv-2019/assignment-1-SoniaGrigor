@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d576adf5-a0b5-42e5-b445-d0510673a00d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/model/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Group.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/builder/CourseBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/builder/GroupBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/builder/StudentBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/course/CourseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/course/CourseRepositoryMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/out/production/student/META-INF/student.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/out/production/student/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/out/production/student/controller/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/out/production/student/view/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/src/controller/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/src/view/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student/student.iml" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Successful</find>
+      <find>password</find>
+      <find>adapter</find>
+      <find>singlet</find>
+      <find>factory</find>
+      <find>setint</find>
+      <find>long</find>
+      <find>Long</find>
+      <find>student</find>
+      <find>TEACHER</find>
+      <find>Syste</find>
+      <find>gra</find>
+      <find>.bui</find>
+      <find>GROUP</find>
+      <find>group</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>getInt</replace>
+      <replace>setInt</replace>
+      <replace>Int</replace>
+      <replace>int</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/Launcher.java" />
+        <option value="$PROJECT_DIR$/src/view/UserView.java" />
+        <option value="$PROJECT_DIR$/src/repository/user/AuthenticationException.java" />
+        <option value="$PROJECT_DIR$/src/test/AuthentificationServiceMySQLTest.java" />
+        <option value="$PROJECT_DIR$/src/ComponentFactory.java" />
+        <option value="$PROJECT_DIR$/src/model/validation/Notification.java" />
+        <option value="$PROJECT_DIR$/src/test/UserRepositoryMySQLTest.java" />
+        <option value="$PROJECT_DIR$/src/model/Teacher.java" />
+        <option value="$PROJECT_DIR$/src/model/builder/GroupBuilder.java" />
+        <option value="$PROJECT_DIR$/src/model/Right.java" />
+        <option value="$PROJECT_DIR$/src/model/Role.java" />
+        <option value="$PROJECT_DIR$/src/model/User.java" />
+        <option value="$PROJECT_DIR$/src/model/Course.java" />
+        <option value="$PROJECT_DIR$/src/model/Book.java" />
+        <option value="$PROJECT_DIR$/src/model/builder/BookBuilder.java" />
+        <option value="$PROJECT_DIR$/src/test/BookServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/repository/security/RightsRolesRepository.java" />
+        <option value="$PROJECT_DIR$/src/repository/security/RightsRolesRepositoryMySQL.java" />
+        <option value="$PROJECT_DIR$/src/database/DBConnectionFactory.java" />
+        <option value="$PROJECT_DIR$/src/model/Group.java" />
+        <option value="$PROJECT_DIR$/src/repository/user/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/repository/EntityNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/model/builder/UserBuilder.java" />
+        <option value="$PROJECT_DIR$/src/repository/course/CourseRepository.java" />
+        <option value="$PROJECT_DIR$/src/model/builder/CourseBuilder.java" />
+        <option value="$PROJECT_DIR$/src/repository/course/CourseRepositoryMySQL.java" />
+        <option value="$PROJECT_DIR$/src/utility/JDBConnectionWrapper.java" />
+        <option value="$PROJECT_DIR$/src/service/user/AuthenticationServiceMySQL.java" />
+        <option value="$PROJECT_DIR$/src/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/view/LoginView.java" />
+        <option value="$PROJECT_DIR$/src/model/validation/UserValidator.java" />
+        <option value="$PROJECT_DIR$/src/model/Student.java" />
+        <option value="$PROJECT_DIR$/src/model/builder/StudentBuilder.java" />
+        <option value="$PROJECT_DIR$/src/repository/user/UserRepositoryMySQL.java" />
+        <option value="$PROJECT_DIR$/src/service/user/AuthenticationService.java" />
+        <option value="$PROJECT_DIR$/src/database/SQLTableCreationFactory.java" />
+        <option value="$PROJECT_DIR$/src/database/Bootsrap.java" />
+        <option value="$PROJECT_DIR$/src/database/Constants.java" />
+        <option value="$PROJECT_DIR$/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47/src/com/mysql/fabric/jdbc/FabricMySQLDriver.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="builder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="JUnit4" type="70bed36:NamedLibraryElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Project" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553361705862" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\AN3\IS\Laborator\Project\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Bootsrap">
+    <configuration name="Bootsrap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="database.Bootsrap" />
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Launcher" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.BookServiceImplTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryMySQLTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.UserRepositoryMySQLTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Bootsrap" />
+        <item itemvalue="Application.Launcher" />
+        <item itemvalue="JUnit.UserRepositoryMySQLTest" />
+        <item itemvalue="JUnit.BookServiceImplTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d576adf5-a0b5-42e5-b445-d0510673a00d" name="Default Changelist" comment="" />
+      <created>1542875835231</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542875835231</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="UserRepositoryMySQLTest - 2018.11.29 at 00h 45m 47s.xml">
+      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryMySQLTest - 2018.11.29 at 00h 48m 04s.xml">
+      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryMySQLTest - 2018.11.29 at 00h 48m 31s.xml">
+      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryMySQLTest - 2018.11.29 at 00h 49m 47s.xml">
+      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryMySQLTest - 2018.11.29 at 00h 49m 54s.xml">
+      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryMySQLTest - 2018.11.29 at 00h 50m 13s.xml">
+      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookServiceImplTest - 2018.11.29 at 08h 53m 39s.xml">
+      <configuration name="BookServiceImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryMySQLTest - 2018.11.29 at 08h 53m 52s.xml">
+      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryMySQLTest - 2018.11.29 at 08h 54m 22s.xml">
+      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryMySQLTest - 2018.11.29 at 09h 30m 13s.xml">
+      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12153518" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34236187" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32827735" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32827735" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="PlantUML" order="8" weight="0.47702408" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25746268" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34236187" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32827735" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32827735" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="PlantUML" order="8" weight="0.47702408" />
+    </layout-to-restore>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/repository/book/BookRepositoryCacheDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47/src/com/mysql/jdbc/ReplicationMySQLConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/book/BookRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="21" selection-start-line="7" selection-start-column="4" selection-end-line="13" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/book/BookRepositoryDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/book/BookRepositoryMock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/book/BookRepositoryMySQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47/src/com/mysql/fabric/RangeShardMapping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47/src/com/mysql/jdbc/CacheAdapterFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/builder/GroupBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/builder/BookBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Right.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/BookServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/EntityNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+          <folding>
+            <element signature="method#EntityNotFoundException#0;class#EntityNotFoundException#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/Cache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="method#load#0;class#Cache#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/book/BookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/UserView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="48" column="78" selection-start-line="48" selection-start-column="78" selection-end-line="48" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/validation/ResultFetchException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/validation/Notification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/security/RightsRolesRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/user/AuthenticationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/course/CourseRepositoryMySQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="60" column="77" selection-start-line="60" selection-start-column="77" selection-end-line="60" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#565#573#0" expanded="true" />
+            <element signature="e#2707#2834#0" />
+            <element signature="method#removeAll#0;class#CourseRepositoryMySQL#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/course/CourseRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/builder/CourseBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!block;n#CourseBuilder#0;n#CourseBuilder#0" />
+            <element signature="method#setName#0;class#CourseBuilder#0" />
+            <element signature="method#setCredit#0;class#CourseBuilder#0" />
+            <element signature="method#setExam#0;class#CourseBuilder#0" />
+            <element signature="method#setRoom#0;class#CourseBuilder#0" />
+            <element signature="n#!!block;n#buil#0;n#CourseBuilder#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/user/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ComponentFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getInstance#0;class#ComponentFactory#0" />
+            <element signature="method#ComponentFactory#0;class#ComponentFactory#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/JDBConnectionWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47/src/com/mysql/jdbc/CallableStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1115">
+          <caret line="738" column="62" selection-start-line="738" selection-start-column="62" selection-end-line="738" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/UserRepositoryMySQLTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/user/AuthenticationServiceMySQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="26" column="114" lean-forward="true" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="114" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#AuthenticationServiceMySQL#0;class#AuthenticationServiceMySQL#0" />
+            <element signature="method#login#0;class#AuthenticationServiceMySQL#0" />
+            <element signature="method#encodePassword#0;class#AuthenticationServiceMySQL#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/builder/StudentBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/user/UserRepositoryMySQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="106" column="56" selection-start-line="106" selection-start-column="56" selection-end-line="106" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#UserRepositoryMySQL#0;class#UserRepositoryMySQL#0" />
+            <element signature="method#findAll#0;class#UserRepositoryMySQL#0" />
+            <element signature="e#840#1912#0" />
+            <element signature="e#1106#1772#1" />
+            <element signature="e#1778#1902#1" />
+            <element signature="e#1936#2199#0" />
+            <element signature="e#1986#2054#0" />
+            <element signature="e#2100#2189#0" />
+            <element signature="method#findByUsernameAndPassword#0;class#UserRepositoryMySQL#0" />
+            <element signature="e#2466#3939#0" />
+            <element signature="e#2480#2533#0" />
+            <element signature="e#3076#3752#1" />
+            <element signature="e#3758#3929#1" />
+            <element signature="e#3963#4056#0" />
+            <element signature="e#4976#5103#0" />
+            <element signature="e#5368#5412#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/validation/UserValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="45" column="26" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="62" column="72" lean-forward="true" selection-start-line="62" selection-start-column="72" selection-end-line="62" selection-end-column="72" />
+          <folding>
+            <element signature="method#LoginController#0;class#LoginController#0" />
+            <element signature="class#LoginButtonListener#0;class#LoginController#0" />
+            <element signature="class#LogoutButtonListener#0;class#LoginController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/user/AuthenticationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="106" selection-start-line="8" selection-start-column="106" selection-end-line="8" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47/src/com/mysql/fabric/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/SQLTableCreationFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DBConnectionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Bootsrap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="74" column="41" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-175">
+          <caret line="31" column="101" selection-start-line="31" selection-start-column="101" selection-end-line="31" selection-end-column="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repository/security/RightsRolesRepositoryMySQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="method#addRole#0;class#RightsRolesRepositoryMySQL#0" />
+            <element signature="e#495#749#0" />
+            <element signature="e#773#817#0" />
+            <element signature="method#addRight#0;class#RightsRolesRepositoryMySQL#0" />
+            <element signature="e#892#1150#0" />
+            <element signature="e#1174#1218#0" />
+            <element signature="e#1792#1836#0" />
+            <element signature="method#findRoleById#0;class#RightsRolesRepositoryMySQL#0" />
+            <element signature="e#1964#2351#0" />
+            <element signature="e#2375#2419#0" />
+            <element signature="method#findRightByTitle#0;class#RightsRolesRepositoryMySQL#0" />
+            <element signature="e#2554#3003#0" />
+            <element signature="e#3027#3071#0" />
+            <element signature="method#addRolesToUser#0;class#RightsRolesRepositoryMySQL#0" />
+            <element signature="e#3188#3599#0" />
+            <element signature="e#3226#3589#1" />
+            <element signature="e#3623#3667#0" />
+            <element signature="method#findRolesForUser#0;class#RightsRolesRepositoryMySQL#0" />
+            <element signature="e#3754#4265#0" />
+            <element signature="e#4099#4229#1" />
+            <element signature="e#4289#4333#0" />
+            <element signature="method#addRoleRight#0;class#RightsRolesRepositoryMySQL#0" />
+            <element signature="e#4444#4754#0" />
+            <element signature="e#4778#4822#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47/src/com/mysql/fabric/jdbc/FabricMySQLDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="105" column="56" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/builder/UserBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="51" column="18" selection-start-line="51" selection-end-line="54" />
+          <folding>
+            <element signature="method#setName#0;class#UserBuilder#0" />
+            <element signature="method#setUsername#0;class#UserBuilder#0" />
+            <element signature="method#setPassword#0;class#UserBuilder#0" />
+            <element signature="method#setEmail#0;class#UserBuilder#0" />
+            <element signature="method#setCNP#0;class#UserBuilder#0" />
+            <element signature="method#setCourses#0;class#UserBuilder#0" />
+            <element signature="method#setRoles#0;class#UserBuilder#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Project</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
