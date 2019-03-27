@@ -47,7 +47,7 @@ public interface FabricMySQLConnection extends com.mysql.jdbc.MySQLConnection {
 
     /**
      * Set the table being accessed. Can be a table name or a
-     * "database.table" pair. The table must be known by Fabric
+     * "dal.database.table" pair. The table must be known by Fabric
      * as a sharded table.
      */
     void setShardTable(String shardTable) throws SQLException;

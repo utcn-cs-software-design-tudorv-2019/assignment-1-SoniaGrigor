@@ -45,7 +45,7 @@ import junit.framework.Test;
 import junit.framework.TestSuite;
 
 /**
- * Tests a PooledConnection implementation provided by a JDBC driver. Test case provided by Johnny Macchione from bug database record BUG#884. According to
+ * Tests a PooledConnection implementation provided by a JDBC driver. Test case provided by Johnny Macchione from bug dal.database record BUG#884. According to
  * the JDBC 2.0 specification:
  * 
  * <p>
@@ -57,7 +57,7 @@ import junit.framework.TestSuite;
  * </p>
  * 
  * <p>
- * "When the application calls Connection.close(), an event is triggered that tells the connection pool it can recycle the physical database connection. In
+ * "When the application calls Connection.close(), an event is triggered that tells the connection pool it can recycle the physical dal.database connection. In
  * other words, the event signals the connection pool that the PooledConnection object which originally produced the Connection object generating the event can
  * be put back in the connection pool."
  * </p>

@@ -787,7 +787,7 @@ public abstract class BaseTestCase extends TestCase {
     }
 
     /**
-     * Checks whether the database we're connected to meets the given version
+     * Checks whether the dal.database we're connected to meets the given version
      * minimum
      * 
      * @param major
@@ -805,7 +805,7 @@ public abstract class BaseTestCase extends TestCase {
     }
 
     /**
-     * Checks whether the database we're connected to meets the given version
+     * Checks whether the dal.database we're connected to meets the given version
      * minimum
      * 
      * @param major

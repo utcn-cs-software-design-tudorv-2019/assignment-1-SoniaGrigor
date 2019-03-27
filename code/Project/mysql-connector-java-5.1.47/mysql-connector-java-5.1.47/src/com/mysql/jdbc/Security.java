@@ -186,7 +186,7 @@ public class Security {
     }
 
     /**
-     * Creates password to be stored in user database from raw string.
+     * Creates password to be stored in user dal.database from raw string.
      * 
      * Handles Pre-MySQL 4.1 passwords.
      * 

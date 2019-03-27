@@ -97,7 +97,7 @@ public class DatabaseMetaDataUsingInfoSchema extends DatabaseMetaData {
      *            a column name pattern
      * @return ResultSet each row is a column privilege description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see #getSearchStringEscape
      */
     @Override
@@ -338,7 +338,7 @@ public class DatabaseMetaDataUsingInfoSchema extends DatabaseMetaData {
      *            a table name
      * @return ResultSet each row is a foreign key column description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     @Override
     public java.sql.ResultSet getCrossReference(String primaryCatalog, String primarySchema, String primaryTable, String foreignCatalog, String foreignSchema,
@@ -444,7 +444,7 @@ public class DatabaseMetaDataUsingInfoSchema extends DatabaseMetaData {
      *            a table name
      * @return ResultSet each row is a foreign key column description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see #getImportedKeys
      */
     @Override
@@ -563,7 +563,7 @@ public class DatabaseMetaDataUsingInfoSchema extends DatabaseMetaData {
      *            a table name
      * @return ResultSet each row is a primary key column description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see #getExportedKeys
      */
     @Override
@@ -804,7 +804,7 @@ public class DatabaseMetaDataUsingInfoSchema extends DatabaseMetaData {
      *            a procedure name pattern
      * @return ResultSet each row is a procedure description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see #getSearchStringEscape
      */
     @Override
@@ -909,27 +909,27 @@ public class DatabaseMetaDataUsingInfoSchema extends DatabaseMetaData {
      * </OL>
      * 
      * <P>
-     * <B>Note:</B> Some databases may not return the column descriptions for a procedure. Additional columns beyond REMARKS can be defined by the database.
+     * <B>Note:</B> Some databases may not return the column descriptions for a procedure. Additional columns beyond REMARKS can be defined by the dal.database.
      * 
      * @param catalog
      *            a catalog name; must match the catalog name as it
-     *            is stored in the database; "" retrieves those without a catalog; <code>null</code> means that the catalog name should not be used to narrow
+     *            is stored in the dal.database; "" retrieves those without a catalog; <code>null</code> means that the catalog name should not be used to narrow
      *            the search
      * @param schemaPattern
      *            a schema name pattern; must match the schema name
-     *            as it is stored in the database; "" retrieves those without a schema; <code>null</code> means that the schema name should not be used to
+     *            as it is stored in the dal.database; "" retrieves those without a schema; <code>null</code> means that the schema name should not be used to
      *            narrow
      *            the search
      * @param procedureNamePattern
      *            a procedure name pattern; must match the
-     *            procedure name as it is stored in the database
+     *            procedure name as it is stored in the dal.database
      * @param columnNamePattern
      *            a column name pattern; must match the column name
-     *            as it is stored in the database
+     *            as it is stored in the dal.database
      * @return <code>ResultSet</code> - each row describes a stored procedure parameter or
      *         column
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * @see #getSearchStringEscape
      */
     @Override
@@ -1321,24 +1321,24 @@ public class DatabaseMetaDataUsingInfoSchema extends DatabaseMetaData {
      * 
      * @param catalog
      *            a catalog name; must match the catalog name as it
-     *            is stored in the database; "" retrieves those without a catalog; <code>null</code> means that the catalog name should not be used to narrow
+     *            is stored in the dal.database; "" retrieves those without a catalog; <code>null</code> means that the catalog name should not be used to narrow
      *            the search
      * @param schemaPattern
      *            a schema name pattern; must match the schema name
-     *            as it is stored in the database; "" retrieves those without a schema; <code>null</code> means that the schema name should not be used to
+     *            as it is stored in the dal.database; "" retrieves those without a schema; <code>null</code> means that the schema name should not be used to
      *            narrow
      *            the search
      * @param functionNamePattern
      *            a procedure name pattern; must match the
-     *            function name as it is stored in the database
+     *            function name as it is stored in the dal.database
      * @param columnNamePattern
      *            a parameter name pattern; must match the
-     *            parameter or column name as it is stored in the database
+     *            parameter or column name as it is stored in the dal.database
      * @return <code>ResultSet</code> - each row describes a
      *         user function parameter, column or return type
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * @see #getSearchStringEscape
      * @since 1.6
      */
@@ -1488,19 +1488,19 @@ public class DatabaseMetaDataUsingInfoSchema extends DatabaseMetaData {
      * 
      * @param catalog
      *            a catalog name; must match the catalog name as it
-     *            is stored in the database; "" retrieves those without a catalog; <code>null</code> means that the catalog name should not be used to narrow
+     *            is stored in the dal.database; "" retrieves those without a catalog; <code>null</code> means that the catalog name should not be used to narrow
      *            the search
      * @param schemaPattern
      *            a schema name pattern; must match the schema name
-     *            as it is stored in the database; "" retrieves those without a schema; <code>null</code> means that the schema name should not be used to
+     *            as it is stored in the dal.database; "" retrieves those without a schema; <code>null</code> means that the schema name should not be used to
      *            narrow
      *            the search
      * @param functionNamePattern
      *            a function name pattern; must match the
-     *            function name as it is stored in the database
+     *            function name as it is stored in the dal.database
      * @return <code>ResultSet</code> - each row is a function description
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * @see #getSearchStringEscape
      * @since 1.6
      */

@@ -50,7 +50,7 @@ public class JDBC4PreparedStatementHelper {
      *            an object representing a NCLOB
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     static void setNClob(PreparedStatement pstmt, int parameterIndex, NClob value) throws SQLException {
         if (value == null) {
@@ -75,7 +75,7 @@ public class JDBC4PreparedStatementHelper {
      *            the number of characters in the stream
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     static void setNClob(PreparedStatement pstmt, int parameterIndex, Reader reader, long length) throws SQLException {
         if (reader == null) {

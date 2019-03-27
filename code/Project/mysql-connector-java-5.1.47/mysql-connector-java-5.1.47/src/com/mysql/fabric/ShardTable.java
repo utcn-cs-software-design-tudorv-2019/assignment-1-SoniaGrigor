@@ -38,7 +38,7 @@ public class ShardTable {
     }
 
     /**
-     * The database in which the sharded data is contained in.
+     * The dal.database in which the sharded data is contained in.
      */
     public String getDatabase() {
         return this.database;

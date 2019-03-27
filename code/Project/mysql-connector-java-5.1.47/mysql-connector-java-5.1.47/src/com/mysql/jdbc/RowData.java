@@ -43,7 +43,7 @@ public interface RowData {
      * @param row
      *            the row to add
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     void addRow(ResultSetRow row) throws SQLException;
 
@@ -51,7 +51,7 @@ public interface RowData {
      * Moves to after last.
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     void afterLast() throws SQLException;
 
@@ -59,7 +59,7 @@ public interface RowData {
      * Moves to before first.
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     void beforeFirst() throws SQLException;
 
@@ -67,7 +67,7 @@ public interface RowData {
      * Moves to before last so next el is the last el.
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     void beforeLast() throws SQLException;
 
@@ -75,7 +75,7 @@ public interface RowData {
      * We're done.
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     void close() throws SQLException;
 
@@ -86,7 +86,7 @@ public interface RowData {
      *            row number to get at
      * @return row data at index
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     ResultSetRow getAt(int index) throws SQLException;
 
@@ -95,7 +95,7 @@ public interface RowData {
      * 
      * @return the current row number
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     int getCurrentRowNumber() throws SQLException;
 
@@ -109,7 +109,7 @@ public interface RowData {
      * 
      * @return true if more rows
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     boolean hasNext() throws SQLException;
 
@@ -118,7 +118,7 @@ public interface RowData {
      * 
      * @return true if after last row
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     boolean isAfterLast() throws SQLException;
 
@@ -127,7 +127,7 @@ public interface RowData {
      * 
      * @return true if before first row
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     boolean isBeforeFirst() throws SQLException;
 
@@ -139,7 +139,7 @@ public interface RowData {
      * 
      * @return true if this result set is streaming from the server
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     boolean isDynamic() throws SQLException;
 
@@ -148,7 +148,7 @@ public interface RowData {
      * 
      * @return true if no records
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     boolean isEmpty() throws SQLException;
 
@@ -157,7 +157,7 @@ public interface RowData {
      * 
      * @return true if on first row
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     boolean isFirst() throws SQLException;
 
@@ -166,7 +166,7 @@ public interface RowData {
      * 
      * @return true if on last row
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     boolean isLast() throws SQLException;
 
@@ -176,7 +176,7 @@ public interface RowData {
      * @param rows
      *            the relative number of rows to move
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     void moveRowRelative(int rows) throws SQLException;
 
@@ -185,7 +185,7 @@ public interface RowData {
      * 
      * @return the next row value
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     ResultSetRow next() throws SQLException;
 
@@ -195,7 +195,7 @@ public interface RowData {
      * @param index
      *            the row to move to
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     void removeRow(int index) throws SQLException;
 
@@ -205,7 +205,7 @@ public interface RowData {
      * @param rowNumber
      *            row to move to
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     void setCurrentRow(int rowNumber) throws SQLException;
 
@@ -222,7 +222,7 @@ public interface RowData {
      * 
      * @return the size of this row data
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     int size() throws SQLException;
 

@@ -92,7 +92,7 @@ public class StringRegressionTest extends BaseTestCase {
 
     /**
      * Tests fix for BUG#4010 -- GBK encoding getting escaped doubly when
-     * database default character set is GBK. Requires version older than 4.1.0
+     * dal.database default character set is GBK. Requires version older than 4.1.0
      * and server set to default character set of 'gbk' to run.
      * 
      * @throws Exception
@@ -296,7 +296,7 @@ public class StringRegressionTest extends BaseTestCase {
                     char origChar = latin1String.charAt(i);
 
                     if ((rChar != '?') && (rChar != origChar)) {
-                        fail("characters differ at position " + i + "'" + rChar + "' retrieved from database, original char was '" + origChar + "'");
+                        fail("characters differ at position " + i + "'" + rChar + "' retrieved from dal.database, original char was '" + origChar + "'");
                     }
                 }
             }
@@ -383,7 +383,7 @@ public class StringRegressionTest extends BaseTestCase {
         System.out.println(bytesOut.toString());
 
         //
-        // Now, insert and retrieve the value from the database
+        // Now, insert and retrieve the value from the dal.database
         //
         Connection sjisConn = null;
         Statement sjisStmt = null;
@@ -426,7 +426,7 @@ public class StringRegressionTest extends BaseTestCase {
                     bytesOut.append(" ");
                 }
 
-                System.out.println("Value retrieved from database: " + bytesOut.toString());
+                System.out.println("Value retrieved from dal.database: " + bytesOut.toString());
 
                 String testValue = this.rs.getString(1);
 

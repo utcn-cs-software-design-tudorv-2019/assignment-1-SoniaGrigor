@@ -90,7 +90,7 @@ public class RowDataDynamic implements RowData {
      * @param row
      *            the row to add
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void addRow(ResultSetRow row) throws SQLException {
         notSupported();
@@ -100,7 +100,7 @@ public class RowDataDynamic implements RowData {
      * Moves to after last.
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void afterLast() throws SQLException {
         notSupported();
@@ -110,7 +110,7 @@ public class RowDataDynamic implements RowData {
      * Moves to before first.
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void beforeFirst() throws SQLException {
         notSupported();
@@ -120,7 +120,7 @@ public class RowDataDynamic implements RowData {
      * Moves to before last so next el is the last el.
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void beforeLast() throws SQLException {
         notSupported();
@@ -130,7 +130,7 @@ public class RowDataDynamic implements RowData {
      * We're done.
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void close() throws SQLException {
         // Belt and suspenders here - if we don't have a reference to the connection it's more than likely dead/gone and we won't be able to consume rows anyway
@@ -211,7 +211,7 @@ public class RowDataDynamic implements RowData {
      *            row number to get at
      * @return row data at index
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public ResultSetRow getAt(int ind) throws SQLException {
         notSupported();
@@ -224,7 +224,7 @@ public class RowDataDynamic implements RowData {
      * 
      * @return the current row number
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public int getCurrentRowNumber() throws SQLException {
         notSupported();
@@ -244,7 +244,7 @@ public class RowDataDynamic implements RowData {
      * 
      * @return true if more rows
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public boolean hasNext() throws SQLException {
         boolean hasNext = (this.nextRow != null);
@@ -262,7 +262,7 @@ public class RowDataDynamic implements RowData {
      * 
      * @return true if after last row
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public boolean isAfterLast() throws SQLException {
         return this.isAfterEnd;
@@ -273,7 +273,7 @@ public class RowDataDynamic implements RowData {
      * 
      * @return true if before first row
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public boolean isBeforeFirst() throws SQLException {
         return this.index < 0;
@@ -296,7 +296,7 @@ public class RowDataDynamic implements RowData {
      * 
      * @return true if no records
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public boolean isEmpty() throws SQLException {
         notSupported();
@@ -309,7 +309,7 @@ public class RowDataDynamic implements RowData {
      * 
      * @return true if on first row
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public boolean isFirst() throws SQLException {
         notSupported();
@@ -322,7 +322,7 @@ public class RowDataDynamic implements RowData {
      * 
      * @return true if on last row
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public boolean isLast() throws SQLException {
         notSupported();
@@ -336,7 +336,7 @@ public class RowDataDynamic implements RowData {
      * @param rows
      *            the relative number of rows to move
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void moveRowRelative(int rows) throws SQLException {
         notSupported();
@@ -347,7 +347,7 @@ public class RowDataDynamic implements RowData {
      * 
      * @return the next row value
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public ResultSetRow next() throws SQLException {
 
@@ -423,7 +423,7 @@ public class RowDataDynamic implements RowData {
      * @param index
      *            the row to move to
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void removeRow(int ind) throws SQLException {
         notSupported();
@@ -435,7 +435,7 @@ public class RowDataDynamic implements RowData {
      * @param rowNumber
      *            row to move to
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void setCurrentRow(int rowNumber) throws SQLException {
         notSupported();

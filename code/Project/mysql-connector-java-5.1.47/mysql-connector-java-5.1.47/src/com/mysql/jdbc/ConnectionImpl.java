@@ -70,10 +70,10 @@ import com.mysql.jdbc.profiler.ProfilerEventHandler;
 import com.mysql.jdbc.util.LRUCache;
 
 /**
- * A Connection represents a session with a specific database. Within the context of a Connection, SQL statements are executed and results are returned.
+ * A Connection represents a session with a specific dal.database. Within the context of a Connection, SQL statements are executed and results are returned.
  * 
  * <P>
- * A Connection's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this
+ * A Connection's dal.database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this
  * connection, etc. This information is obtained with the getMetaData method.
  * </p>
  */
@@ -445,10 +445,10 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
     /** ID used when profiling */
     private long connectionId;
 
-    /** The database we're currently using (called Catalog in JDBC terms). */
+    /** The dal.database we're currently using (called Catalog in JDBC terms). */
     private String database = null;
 
-    /** Internal DBMD to use for various database-version specific features */
+    /** Internal DBMD to use for various dal.database-version specific features */
     private DatabaseMetaData dbmd = null;
 
     private TimeZone defaultTimeZone;
@@ -665,19 +665,19 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * Creates a connection to a MySQL Server.
      * 
      * @param hostToConnectTo
-     *            the hostname of the database server
+     *            the hostname of the dal.database server
      * @param portToConnectTo
      *            the port number the server is listening on
      * @param info
      *            a Properties[] list holding the user and password
      * @param databaseToConnectTo
-     *            the database to connect to
+     *            the dal.database to connect to
      * @param url
      *            the URL of the connection
      * @param d
      *            the Driver instantation of the connection
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public ConnectionImpl(String hostToConnectTo, int portToConnectTo, Properties info, String databaseToConnectTo, String url) throws SQLException {
 
@@ -800,7 +800,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
                 mesg.append("Also make sure that the server has not been started with the --skip-networking ");
                 mesg.append("flag.\n\n");
             } else {
-                mesg.append("Unable to connect to database.");
+                mesg.append("Unable to connect to dal.database.");
             }
 
             SQLException sqlEx = SQLError.createSQLException(mesg.toString(), SQLError.SQL_STATE_COMMUNICATION_LINK_FAILURE, getExceptionInterceptor());
@@ -1355,7 +1355,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * for this connection.
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void clearWarnings() throws SQLException {
         // firstWarning = null;
@@ -1450,13 +1450,13 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
 
     /**
      * In some cases, it is desirable to immediately release a Connection's
-     * database and JDBC resources instead of waiting for them to be
+     * dal.database and JDBC resources instead of waiting for them to be
      * automatically released (cant think why off the top of my head) <B>Note:</B>
      * A Connection is automatically closed when it is garbage collected.
      * Certain fatal errors also result in a closed connection.
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void close() throws SQLException {
         synchronized (getConnectionMutex()) {
@@ -1508,7 +1508,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
 
     /**
      * The method commit() makes all changes made since the previous
-     * commit/rollback permanent and releases any database locks currently held
+     * commit/rollback permanent and releases any dal.database locks currently held
      * by the Connection. This method should only be used when auto-commit has
      * been disabled.
      * <p>
@@ -1516,7 +1516,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * </p>
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * @see setAutoCommit
      */
     public void commit() throws SQLException {
@@ -1797,7 +1797,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
                 }
 
                 //
-                // We know how to deal with any charset coming back from the database, so tell the server not to do conversion if the user hasn't 'forced' a
+                // We know how to deal with any charset coming back from the dal.database, so tell the server not to do conversion if the user hasn't 'forced' a
                 // result-set character set
                 //
 
@@ -2010,7 +2010,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      *            is this request for a re-connect
      * @return a new MysqlIO instance connected to a server
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @throws CommunicationsException
      */
     public void createNewIO(boolean isForReconnect) throws SQLException {
@@ -2376,7 +2376,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      *            a concurrency type, see ResultSet.CONCUR_XXX
      * @return a new Statement object
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public java.sql.Statement createStatement(int resultSetType, int resultSetConcurrency) throws SQLException {
         checkClosed();
@@ -2427,7 +2427,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * @param unpackFields
      * @return a ResultSet holding the results
      * @exception SQLException
-     *                if a database error occurs
+     *                if a dal.database error occurs
      */
 
     // ResultSet execSQL(Statement callingStatement, String sql,
@@ -2634,7 +2634,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * 
      * @return the current catalog name or null
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public String getCatalog() throws SQLException {
         synchronized (getConnectionMutex()) {
@@ -2883,14 +2883,14 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
     }
 
     /**
-     * A connection's database is able to provide information describing its
+     * A connection's dal.database is able to provide information describing its
      * tables, its supported SQL grammar, its stored procedures, the
      * capabilities of this connection, etc. This information is made available
      * through a DatabaseMetaData object.
      * 
      * @return a DatabaseMetaData object for this connection
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public java.sql.DatabaseMetaData getMetaData() throws SQLException {
         return getMetaData(true, true);
@@ -2994,7 +2994,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * 
      * @return the current TRANSACTION_ mode value
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public int getTransactionIsolation() throws SQLException {
 
@@ -3061,7 +3061,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * 
      * @return the type map
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public java.util.Map<String, Class<?>> getTypeMap() throws SQLException {
         synchronized (getConnectionMutex()) {
@@ -3092,7 +3092,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * 
      * @return the first java.sql.SQLWarning or null
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public SQLWarning getWarnings() throws SQLException {
         return null;
@@ -3513,12 +3513,12 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
 
     /**
      * Tests to see if the connection is in Read Only Mode. Note that prior to 5.6,
-     * we cannot really put the database in read only mode, but we pretend we can by
+     * we cannot really put the dal.database in read only mode, but we pretend we can by
      * returning the value of the readOnly flag
      * 
      * @return true if the connection is read only
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public boolean isReadOnly() throws SQLException {
         return isReadOnly(true);
@@ -3526,7 +3526,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
 
     /**
      * Tests to see if the connection is in Read Only Mode. Note that prior to 5.6,
-     * we cannot really put the database in read only mode, but we pretend we can by
+     * we cannot really put the dal.database in read only mode, but we pretend we can by
      * returning the value of the readOnly flag
      * 
      * @param useSessionStatus
@@ -3535,7 +3535,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * 
      * @return true if the connection is read only
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public boolean isReadOnly(boolean useSessionStatus) throws SQLException {
         if (useSessionStatus && !this.isClosed && versionMeetsMinimum(5, 6, 5) && !getUseLocalSessionState() && getReadOnlyPropagatesToServer()) {
@@ -3868,7 +3868,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      *            placeholders
      * @return the native form of this statement
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public String nativeSQL(String sql) throws SQLException {
         if (sql == null) {
@@ -3957,7 +3957,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * @return a new CallableStatement object containing the pre-compiled SQL
      *         statement
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public java.sql.CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency) throws SQLException {
         if (versionMeetsMinimum(5, 0, 0)) {
@@ -4017,7 +4017,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * efficiently execute this statement multiple times.
      * <p>
      * <B>Note:</B> This method is optimized for handling parametric SQL statements that benefit from precompilation if the driver supports precompilation. In
-     * this case, the statement is not sent to the database until the PreparedStatement is executed. This has no direct effect on users; however it does affect
+     * this case, the statement is not sent to the dal.database until the PreparedStatement is executed. This has no direct effect on users; however it does affect
      * which method throws certain java.sql.SQLExceptions
      * </p>
      * <p>
@@ -4030,7 +4030,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * @return a new PreparedStatement object containing the pre-compiled
      *         statement.
      * @exception SQLException
-     *                if a database access error occurs.
+     *                if a dal.database access error occurs.
      */
     public java.sql.PreparedStatement prepareStatement(String sql) throws SQLException {
         return prepareStatement(sql, DEFAULT_RESULT_SET_TYPE, DEFAULT_RESULT_SET_CONCURRENCY);
@@ -4060,7 +4060,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * @return a new PreparedStatement object containing the pre-compiled SQL
      *         statement
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public java.sql.PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency) throws SQLException {
         synchronized (getConnectionMutex()) {
@@ -4522,11 +4522,11 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
 
     /**
      * The method rollback() drops all changes made since the previous
-     * commit/rollback and releases any database locks currently held by the
+     * commit/rollback and releases any dal.database locks currently held by the
      * Connection.
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * @see commit
      */
     public void rollback() throws SQLException {
@@ -4759,7 +4759,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * @param autoCommitFlag
      *            true enables auto-commit; false disables it
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setAutoCommit(final boolean autoCommitFlag) throws SQLException {
         synchronized (getConnectionMutex()) {
@@ -4827,7 +4827,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
     }
 
     /**
-     * A sub-space of this Connection's database may be selected by setting a
+     * A sub-space of this Connection's dal.database may be selected by setting a
      * catalog name. If the driver does not support catalogs, it will silently
      * ignore this request
      * <p>
@@ -4835,9 +4835,9 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * </p>
      * 
      * @param catalog
-     *            the database for this connection to use
+     *            the dal.database for this connection to use
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public void setCatalog(final String catalog) throws SQLException {
         synchronized (getConnectionMutex()) {
@@ -4926,7 +4926,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
     }
 
     /**
-     * You can put a connection in read-only mode as a hint to enable database
+     * You can put a connection in read-only mode as a hint to enable dal.database
      * optimizations <B>Note:</B> setReadOnly cannot be called while in the
      * middle of a transaction
      * 
@@ -4934,7 +4934,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      *            -
      *            true enables read-only mode; false disables it
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setReadOnly(boolean readOnlyFlag) throws SQLException {
         checkClosed();
@@ -5110,7 +5110,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * @param map
      *            the type mapping
      * @throws SQLException
-     *             if a database error occurs.
+     *             if a dal.database error occurs.
      */
     public void setTypeMap(java.util.Map<String, Class<?>> map) throws SQLException {
         synchronized (getConnectionMutex()) {
@@ -5396,7 +5396,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * @param max
      *            the new max-rows value to set.
      * @throws SQLException
-     *             if a database error occurs issuing the statement that sets the limit.
+     *             if a dal.database error occurs issuing the statement that sets the limit.
      */
     public void setSessionMaxRows(int max) throws SQLException {
         synchronized (getConnectionMutex()) {
@@ -5429,7 +5429,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      * Terminates an open connection. Calling <code>abort</code> results in:
      * <ul>
      * <li>The connection marked as closed
-     * <li>Closes any physical connection to the database
+     * <li>Closes any physical connection to the dal.database
      * <li>Releases resources used by the connection
      * <li>Insures that any thread that is currently accessing the connection will either progress to completion or throw an <code>SQLException</code>.
      * </ul>
@@ -5447,7 +5447,7 @@ public class ConnectionImpl extends ConnectionPropertiesImpl implements MySQLCon
      *            The <code>Executor</code> implementation which will
      *            be used by <code>abort</code>.
      * @throws java.sql.SQLException
-     *             if a database access error occurs or
+     *             if a dal.database access error occurs or
      *             the {@code executor} is {@code null},
      * @throws java.lang.SecurityException
      *             if a security manager exists and its <code>checkPermission</code> method denies calling <code>abort</code>

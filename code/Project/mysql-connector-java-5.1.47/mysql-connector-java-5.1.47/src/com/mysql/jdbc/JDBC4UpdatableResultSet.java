@@ -188,8 +188,8 @@ public class JDBC4UpdatableResultSet extends UpdatableResultSet {
      * JDBC 4.0 Update a column with a character stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -199,7 +199,7 @@ public class JDBC4UpdatableResultSet extends UpdatableResultSet {
      *            the length of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateNCharacterStream(int columnIndex, java.io.Reader x, int length) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -231,8 +231,8 @@ public class JDBC4UpdatableResultSet extends UpdatableResultSet {
      * JDBC 4.0 Update a column with a character stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -242,7 +242,7 @@ public class JDBC4UpdatableResultSet extends UpdatableResultSet {
      *            of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateNCharacterStream(String columnName, java.io.Reader reader, int length) throws SQLException {
         updateNCharacterStream(findColumn(columnName), reader, length);
@@ -276,8 +276,8 @@ public class JDBC4UpdatableResultSet extends UpdatableResultSet {
     /**
      * JDBC 4.0 Update a column with NATIONAL CHARACTER. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -285,7 +285,7 @@ public class JDBC4UpdatableResultSet extends UpdatableResultSet {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateNString(int columnIndex, String x) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -317,8 +317,8 @@ public class JDBC4UpdatableResultSet extends UpdatableResultSet {
     /**
      * JDBC 4.0 Update a column with NATIONAL CHARACTER. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -326,7 +326,7 @@ public class JDBC4UpdatableResultSet extends UpdatableResultSet {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateNString(String columnName, String x) throws SQLException {
         updateNString(findColumn(columnName), x);
@@ -461,7 +461,7 @@ public class JDBC4UpdatableResultSet extends UpdatableResultSet {
      * @return the column value, null for SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public String getNString(int columnIndex) throws SQLException {
         String fieldEncoding = this.fields[columnIndex - 1].getEncoding();
@@ -485,7 +485,7 @@ public class JDBC4UpdatableResultSet extends UpdatableResultSet {
      * @return the column value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public String getNString(String columnName) throws SQLException {
         return getNString(findColumn(columnName));

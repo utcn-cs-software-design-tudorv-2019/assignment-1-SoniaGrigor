@@ -1285,12 +1285,12 @@ public class StatementRegressionTest extends BaseTestCase {
             long stmtDeltaTWithCal = (tsValueStmtNoCal.getTime() - ts.getTime());
             long deltaOrig = Math.abs(stmtDeltaTWithCal - pointInTimeOffset);
             assertTrue("Difference between original timestamp and timestamp retrieved using java.sql.Statement "
-                    + "set in database using UTC calendar is not ~= " + epsillon + " it is actually " + deltaOrig, (deltaOrig < epsillon));
+                    + "set in dal.database using UTC calendar is not ~= " + epsillon + " it is actually " + deltaOrig, (deltaOrig < epsillon));
 
             long pStmtDeltaTWithCal = (tsValuePstmtNoCal.getTime() - ts.getTime());
             deltaOrig = Math.abs(pStmtDeltaTWithCal - pointInTimeOffset);
             assertTrue("Difference between original timestamp and timestamp retrieved using java.sql.PreparedStatement "
-                    + "set in database using UTC calendar is not ~= " + epsillon + ", it is actually " + deltaOrig, (deltaOrig < epsillon));
+                    + "set in dal.database using UTC calendar is not ~= " + epsillon + ", it is actually " + deltaOrig, (deltaOrig < epsillon));
 
             System.out.println("Difference between original ts and ts with no calendar: " + (tsValuePstmtNoCal.getTime() - ts.getTime()) + ", offset should be "
                     + pointInTimeOffset);
@@ -8558,7 +8558,7 @@ public class StatementRegressionTest extends BaseTestCase {
     }
 
     /**
-     * Tests fix for Bug#87534 - UNION ALL query fails when useServerPrepStmts=true on database connection.
+     * Tests fix for Bug#87534 - UNION ALL query fails when useServerPrepStmts=true on dal.database connection.
      * Base Bug#27422376 - NEWDATE TYPE IS LEAKING OUT, fixed in MySQL 5.7.22.
      */
     public void testBug87534() throws Exception {

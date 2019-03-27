@@ -92,7 +92,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return catalog name, or "" if not applicable
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public String getCatalogName(int column) throws SQLException {
         Field f = getField(column);
@@ -180,7 +180,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return the number
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public int getColumnCount() throws SQLException {
         return this.fields.length;
@@ -195,7 +195,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return the maximum width
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public int getColumnDisplaySize(int column) throws SQLException {
         Field f = getField(column);
@@ -214,7 +214,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return the column label
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public String getColumnLabel(int column) throws SQLException {
         if (this.useOldAliasBehavior) {
@@ -258,7 +258,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return the java.sql.Type value
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * 
      * @see java.sql.Types
      */
@@ -275,7 +275,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return the type name
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public String getColumnTypeName(int column) throws java.sql.SQLException {
         Field field = getField(column);
@@ -407,7 +407,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return the precision
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public int getPrecision(int column) throws SQLException {
         Field f = getField(column);
@@ -446,7 +446,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return the scale
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public int getScale(int column) throws SQLException {
         Field f = getField(column);
@@ -469,7 +469,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return the Schema
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public String getSchemaName(int column) throws SQLException {
         return "";
@@ -484,7 +484,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return column name, or "" if not applicable
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public String getTableName(int column) throws SQLException {
         if (this.useOldAliasBehavior) {
@@ -503,7 +503,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return true if so
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public boolean isAutoIncrement(int column) throws SQLException {
         Field f = getField(column);
@@ -520,7 +520,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return true if so
      * 
      * @throws java.sql.SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public boolean isCaseSensitive(int column) throws java.sql.SQLException {
         Field field = getField(column);
@@ -567,7 +567,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return true if its a cash column
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public boolean isCurrency(int column) throws SQLException {
         return false;
@@ -582,7 +582,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return true if so
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public boolean isDefinitelyWritable(int column) throws SQLException {
         return isWritable(column);
@@ -597,7 +597,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return one of the columnNullable values
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public int isNullable(int column) throws SQLException {
         if (!getField(column).isNotNull()) {
@@ -616,7 +616,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return true if so
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public boolean isReadOnly(int column) throws SQLException {
         return getField(column).isReadOnly();
@@ -635,7 +635,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return true if they can be used in a WHERE clause
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public boolean isSearchable(int column) throws SQLException {
         return true;
@@ -650,7 +650,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return true if so
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public boolean isSigned(int column) throws SQLException {
         Field f = getField(column);
@@ -687,7 +687,7 @@ public class ResultSetMetaData implements java.sql.ResultSetMetaData {
      * @return true if so
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public boolean isWritable(int column) throws SQLException {
         return !isReadOnly(column);

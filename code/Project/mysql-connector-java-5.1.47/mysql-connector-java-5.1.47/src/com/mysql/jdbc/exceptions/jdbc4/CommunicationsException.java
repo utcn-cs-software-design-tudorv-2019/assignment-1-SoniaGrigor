@@ -32,9 +32,9 @@ import com.mysql.jdbc.SQLError;
 import com.mysql.jdbc.StreamingNotifiable;
 
 /**
- * An exception to represent communications errors with the database.
+ * An exception to represent communications errors with the dal.database.
  * 
- * Attempts to provide 'friendler' error messages to end-users, including last time a packet was sent to the database, what the client-timeout is set to, and
+ * Attempts to provide 'friendler' error messages to end-users, including last time a packet was sent to the dal.database, what the client-timeout is set to, and
  * whether the idle time has been exceeded.
  */
 public class CommunicationsException extends SQLRecoverableException implements StreamingNotifiable {

@@ -1,12 +1,15 @@
-import controller.LoginController;
 import javafx.application.Application;
-import view.LoginView;
+import javafx.stage.Stage;
+import presentation.controller.LoginController;
 
-import static javafx.application.Application.launch;
-
-public class Launcher {
+public class Launcher extends Application {
     public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
         ComponentFactory componentFactory = ComponentFactory.getInstance(false);
-        new LoginController(new LoginView(), componentFactory.getAuthenticationService());
+        new LoginController(componentFactory.getAuthenticationService(), componentFactory.getCourseService(), componentFactory.getStudentService());
     }
 }

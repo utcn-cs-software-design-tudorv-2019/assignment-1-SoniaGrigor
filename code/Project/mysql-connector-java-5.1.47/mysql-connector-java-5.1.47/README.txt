@@ -29,7 +29,7 @@ This distribution may include materials developed by third
 parties. For license and attribution notices for these
 materials, please refer to the documentation that accompanies
 this distribution (see the "Licenses for Third-Party Components"
-appendix) or view the online documentation at 
+appendix) or presentation.view the online documentation at
 <http://dev.mysql.com/doc/>
 A copy of the license/notices is also reproduced below.
 
@@ -97,7 +97,7 @@ strategy to use in any particular case, based on the explanations below.
  When we speak of free software, we are referring to freedom of use,
 not price.  Our General Public Licenses are designed to make sure that
 you have the freedom to distribute copies of free software (and charge
-for this service if you wish); that you receive source code or can get
+for this bll.service if you wish); that you receive source code or can get
 it if you want it; that you can change the software and use pieces of
 it in new free programs; and that you are informed that you can do
 these things.
@@ -642,7 +642,7 @@ you have the freedom to distribute copies of free software (and charge
 
 30      
 
-for this service if you wish); that you receive source code or can get
+for this bll.service if you wish); that you receive source code or can get
 
 31      
 

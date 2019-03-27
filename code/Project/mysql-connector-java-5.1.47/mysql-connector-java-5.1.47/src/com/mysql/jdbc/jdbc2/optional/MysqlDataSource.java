@@ -98,7 +98,7 @@ public class MysqlDataSource extends ConnectionPropertiesImpl implements DataSou
      * Creates a new connection using the already configured username and
      * password.
      * 
-     * @return a connection to the database
+     * @return a connection to the dal.database
      * 
      * @throws SQLException
      *             if an error occurs
@@ -115,7 +115,7 @@ public class MysqlDataSource extends ConnectionPropertiesImpl implements DataSou
      * @param password
      *            the password to connect with
      * 
-     * @return a connection to the database
+     * @return a connection to the dal.database
      * 
      * @throws SQLException
      *             if an error occurs
@@ -137,19 +137,19 @@ public class MysqlDataSource extends ConnectionPropertiesImpl implements DataSou
     }
 
     /**
-     * Sets the database name.
+     * Sets the dal.database name.
      * 
      * @param dbName
-     *            the name of the database
+     *            the name of the dal.database
      */
     public void setDatabaseName(String dbName) {
         this.databaseName = dbName;
     }
 
     /**
-     * Gets the name of the database
+     * Gets the name of the dal.database
      * 
-     * @return the name of the database for this data source
+     * @return the name of the dal.database for this data source
      */
     public String getDatabaseName() {
         return (this.databaseName != null) ? this.databaseName : "";
@@ -201,7 +201,7 @@ public class MysqlDataSource extends ConnectionPropertiesImpl implements DataSou
     }
 
     /**
-     * Sets the database port.
+     * Sets the dal.database port.
      * 
      * @param p
      *            the port
@@ -291,9 +291,9 @@ public class MysqlDataSource extends ConnectionPropertiesImpl implements DataSou
     }
 
     /**
-     * Returns the name of the database server
+     * Returns the name of the dal.database server
      * 
-     * @return the name of the database server
+     * @return the name of the dal.database server
      */
     public String getServerName() {
         return (this.hostName != null) ? this.hostName : "";
@@ -336,7 +336,7 @@ public class MysqlDataSource extends ConnectionPropertiesImpl implements DataSou
     }
 
     /**
-     * Returns the JDBC URL that will be used to create the database connection.
+     * Returns the JDBC URL that will be used to create the dal.database connection.
      * 
      * @return the URL for this connection
      */
@@ -376,7 +376,7 @@ public class MysqlDataSource extends ConnectionPropertiesImpl implements DataSou
      * @param props
      *            the properties to connect with
      * 
-     * @return a connection to the database
+     * @return a connection to the dal.database
      * 
      * @throws SQLException
      *             if an error occurs

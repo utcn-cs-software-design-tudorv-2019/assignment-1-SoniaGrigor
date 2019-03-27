@@ -33,7 +33,7 @@ import java.util.List;
 
 /**
  * The representation (mapping) in the JavaTM programming language of an SQL BLOB value. An SQL BLOB is a built-in type that stores a Binary Large Object
- * as a column value in a row of a database table. The driver implements Blob using an SQL locator(BLOB), which means that a Blob object contains a logical
+ * as a column value in a row of a dal.database table. The driver implements Blob using an SQL locator(BLOB), which means that a Blob object contains a logical
  * pointer to the SQL BLOB data rather than the data itself. A Blob object is valid for the duration of the transaction in which is was created. Methods in
  * the interfaces ResultSet, CallableStatement, and PreparedStatement, such as getBlob and setBlob allow a programmer to access an SQL BLOB value. The Blob
  * interface provides methods for getting the length of an SQL BLOB (Binary Large Object) value, for materializing a BLOB value on the client, and for
@@ -150,7 +150,7 @@ public class BlobFromLocator implements java.sql.Blob {
      * @return this BLOB represented as a binary stream of bytes.
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public java.io.InputStream getBinaryStream() throws SQLException {
         // TODO: Make fetch size configurable
@@ -241,7 +241,7 @@ public class BlobFromLocator implements java.sql.Blob {
      * @return the bytes stored in the blob starting at position <code>pos</code> and having a length of <code>length</code>.
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public byte[] getBytes(long pos, int length) throws SQLException {
         java.sql.PreparedStatement pStmt = null;
@@ -271,7 +271,7 @@ public class BlobFromLocator implements java.sql.Blob {
      * @return the length of this blob
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public long length() throws SQLException {
         java.sql.ResultSet blobRs = null;
@@ -343,7 +343,7 @@ public class BlobFromLocator implements java.sql.Blob {
      *         found
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public long position(java.sql.Blob pattern, long start) throws SQLException {
         return position(pattern.getBytes(0, (int) pattern.length()), start);

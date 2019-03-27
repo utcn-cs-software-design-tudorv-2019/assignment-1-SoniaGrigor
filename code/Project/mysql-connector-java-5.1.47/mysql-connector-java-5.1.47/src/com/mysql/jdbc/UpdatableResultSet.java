@@ -95,7 +95,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * Creates a new ResultSet object.
      * 
      * @param catalog
-     *            the database in use when we were created
+     *            the dal.database in use when we were created
      * @param fields
      *            an array of Field objects (basically, the ResultSet MetaData)
      * @param tuples
@@ -141,7 +141,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return true if on the result set, false if off.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or row is 0, or result
+     *                if a dal.database-access error occurs, or row is 0, or result
      *                set type is TYPE_FORWARD_ONLY.
      */
     @Override
@@ -157,7 +157,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * </p>
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or result set type is
+     *                if a dal.database-access error occurs, or result set type is
      *                TYPE_FORWARD_ONLY.
      */
     @Override
@@ -173,7 +173,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * </p>
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or result set type is
+     *                if a dal.database-access error occurs, or result set type is
      *                TYPE_FORWARD_ONLY
      */
     @Override
@@ -188,7 +188,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * already been called, then this method has no effect.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or if called when on
+     *                if a dal.database-access error occurs, or if called when on
      *                the insert row.
      */
     @Override
@@ -234,8 +234,8 @@ public class UpdatableResultSet extends ResultSetImpl {
 
             int primaryKeyCount = 0;
 
-            // We can only do this if we know that there is a currently selected database, or if we're talking to a > 4.1 version of MySQL server (as it returns
-            // database names in field info)
+            // We can only do this if we know that there is a currently selected dal.database, or if we're talking to a > 4.1 version of MySQL server (as it returns
+            // dal.database names in field info)
             if ((this.catalog == null) || (this.catalog.length() == 0)) {
                 this.catalog = this.fields[0].getDatabaseName();
 
@@ -291,7 +291,7 @@ public class UpdatableResultSet extends ResultSetImpl {
                         return;
                     }
 
-                    // Can't reference more than one database
+                    // Can't reference more than one dal.database
                     if ((catalogName == null) || !otherCatalogName.equals(catalogName)) {
                         this.isUpdatable = false;
                         this.notUpdatableReason = Messages.getString("NotUpdatableReason.1");
@@ -411,10 +411,10 @@ public class UpdatableResultSet extends ResultSetImpl {
 
     /**
      * JDBC 2.0 Delete the current row from the result set and the underlying
-     * database. Cannot be called when on the insert row.
+     * dal.database. Cannot be called when on the insert row.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or if called when on
+     *                if a dal.database-access error occurs, or if called when on
      *                the insert row.
      * @throws SQLException
      *             if the ResultSet is not updatable or some other error occurs
@@ -563,7 +563,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return true if on a valid row, false if no rows in the result set.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or result set type is
+     *                if a dal.database-access error occurs, or result set type is
      *                TYPE_FORWARD_ONLY.
      */
     @Override
@@ -798,7 +798,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return the concurrency type, CONCUR_READ_ONLY, etc.
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public int getConcurrency() throws SQLException {
@@ -824,10 +824,10 @@ public class UpdatableResultSet extends ResultSetImpl {
 
     /**
      * JDBC 2.0 Insert the contents of the insert row into the result set and
-     * the database. Must be on the insert row when this method is called.
+     * the dal.database. Must be on the insert row when this method is called.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, if called when not on
+     *                if a dal.database-access error occurs, if called when not on
      *                the insert row, or if all non-nullable columns in the
      *                insert row have not been given a value
      */
@@ -880,7 +880,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *         the result set contains no rows.
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     @Override
     public boolean isAfterLast() throws SQLException {
@@ -898,7 +898,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *         the result set contains no rows.
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     @Override
     public boolean isBeforeFirst() throws SQLException {
@@ -915,7 +915,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return true if on the first row, false otherwise.
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     @Override
     public boolean isFirst() throws SQLException {
@@ -933,7 +933,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return true if on the last row, false otherwise.
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     @Override
     public boolean isLast() throws SQLException {
@@ -954,7 +954,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return true if on a valid row, false if no rows in the result set.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or result set type is
+     *                if a dal.database-access error occurs, or result set type is
      *                TYPE_FORWARD_ONLY.
      */
     @Override
@@ -967,7 +967,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * current row. Has no effect unless the cursor is on the insert row.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or the result set is
+     *                if a dal.database-access error occurs, or the result set is
      *                not updatable
      * @throws SQLException
      *             if the ResultSet is not updatable or some other error occurs
@@ -998,7 +998,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * UpdateXXX()must be called before getXXX() on a column.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or the result set is
+     *                if a dal.database-access error occurs, or the result set is
      *                not updatable
      * @throws NotUpdatable
      */
@@ -1095,7 +1095,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return true if the new current is valid; false if there are no more rows
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     @Override
     public boolean next() throws SQLException {
@@ -1114,7 +1114,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return true if the new current is valid; false if there are no more rows
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     @Override
     public boolean prev() throws SQLException {
@@ -1135,7 +1135,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return true if on a valid row, false if off the result set.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or result set type is
+     *                if a dal.database-access error occurs, or result set type is
      *                TYPE_FORWAR_DONLY.
      */
     @Override
@@ -1219,11 +1219,11 @@ public class UpdatableResultSet extends ResultSetImpl {
 
     /**
      * JDBC 2.0 Refresh the value of the current row with its current value in
-     * the database. Cannot be called when on the insert row. The refreshRow()
+     * the dal.database. Cannot be called when on the insert row. The refreshRow()
      * method provides a way for an application to explicitly tell the JDBC
-     * driver to refetch a row(s) from the database. An application may want to
+     * driver to refetch a row(s) from the dal.database. An application may want to
      * call refreshRow() when caching or prefetching is being done by the JDBC
-     * driver to fetch the latest value of a row from the database. The JDBC
+     * driver to fetch the latest value of a row from the dal.database. The JDBC
      * driver may actually refresh multiple rows at once if the fetch size is
      * greater than one. All values are refetched subject to the transaction
      * isolation level and cursor sensitivity. If refreshRow() is called after
@@ -1232,7 +1232,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * performance.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or if called when on
+     *                if a dal.database-access error occurs, or if called when on
      *                the insert row.
      * @throws NotUpdatable
      */
@@ -1365,7 +1365,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return true if on a row, false otherwise.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or there is no current
+     *                if a dal.database-access error occurs, or there is no current
      *                row, or result set type is TYPE_FORWARD_ONLY.
      */
     @Override
@@ -1390,7 +1390,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return true if deleted and deletes are detected
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotImplemented
      * 
      * @see DatabaseMetaData#deletesAreDetected
@@ -1408,7 +1408,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      * @return true if inserted and inserts are detected
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotImplemented
      * 
      * @see DatabaseMetaData#insertsAreDetected
@@ -1426,7 +1426,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *         and updates are detected
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotImplemented
      * 
      * @see DatabaseMetaData#updatesAreDetected
@@ -1508,8 +1508,8 @@ public class UpdatableResultSet extends ResultSetImpl {
      * JDBC 2.0 Update a column with an ascii stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -1519,7 +1519,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the length of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateAsciiStream(int columnIndex, java.io.InputStream x, int length) throws SQLException {
@@ -1542,8 +1542,8 @@ public class UpdatableResultSet extends ResultSetImpl {
      * JDBC 2.0 Update a column with an ascii stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -1553,7 +1553,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateAsciiStream(String columnName, java.io.InputStream x, int length) throws SQLException {
@@ -1563,8 +1563,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a BigDecimal value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -1572,7 +1572,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateBigDecimal(int columnIndex, BigDecimal x) throws SQLException {
@@ -1599,8 +1599,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a BigDecimal value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -1608,7 +1608,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateBigDecimal(String columnName, BigDecimal x) throws SQLException {
@@ -1619,8 +1619,8 @@ public class UpdatableResultSet extends ResultSetImpl {
      * JDBC 2.0 Update a column with a binary stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -1630,7 +1630,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the length of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateBinaryStream(int columnIndex, java.io.InputStream x, int length) throws SQLException {
@@ -1658,8 +1658,8 @@ public class UpdatableResultSet extends ResultSetImpl {
      * JDBC 2.0 Update a column with a binary stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -1669,7 +1669,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateBinaryStream(String columnName, java.io.InputStream x, int length) throws SQLException {
@@ -1712,8 +1712,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a boolean value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -1721,7 +1721,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateBoolean(int columnIndex, boolean x) throws SQLException {
@@ -1744,8 +1744,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a boolean value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -1753,7 +1753,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateBoolean(String columnName, boolean x) throws SQLException {
@@ -1763,8 +1763,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a byte value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -1772,7 +1772,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateByte(int columnIndex, byte x) throws SQLException {
@@ -1795,8 +1795,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a byte value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -1804,7 +1804,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateByte(String columnName, byte x) throws SQLException {
@@ -1814,8 +1814,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a byte array value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -1823,7 +1823,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateBytes(int columnIndex, byte[] x) throws SQLException {
@@ -1846,8 +1846,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a byte array value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -1855,7 +1855,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateBytes(String columnName, byte[] x) throws SQLException {
@@ -1866,8 +1866,8 @@ public class UpdatableResultSet extends ResultSetImpl {
      * JDBC 2.0 Update a column with a character stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -1877,7 +1877,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the length of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateCharacterStream(int columnIndex, java.io.Reader x, int length) throws SQLException {
@@ -1905,8 +1905,8 @@ public class UpdatableResultSet extends ResultSetImpl {
      * JDBC 2.0 Update a column with a character stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -1916,7 +1916,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateCharacterStream(String columnName, java.io.Reader reader, int length) throws SQLException {
@@ -1940,8 +1940,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a Date value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -1949,7 +1949,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateDate(int columnIndex, java.sql.Date x) throws SQLException {
@@ -1972,8 +1972,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a Date value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -1981,7 +1981,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateDate(String columnName, java.sql.Date x) throws SQLException {
@@ -1991,8 +1991,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a Double value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -2000,7 +2000,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateDouble(int columnIndex, double x) throws SQLException {
@@ -2023,8 +2023,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a double value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -2032,7 +2032,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateDouble(String columnName, double x) throws SQLException {
@@ -2042,8 +2042,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a float value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -2051,7 +2051,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateFloat(int columnIndex, float x) throws SQLException {
@@ -2074,8 +2074,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a float value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -2083,7 +2083,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateFloat(String columnName, float x) throws SQLException {
@@ -2093,8 +2093,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with an integer value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -2102,7 +2102,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateInt(int columnIndex, int x) throws SQLException {
@@ -2125,8 +2125,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with an integer value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -2134,7 +2134,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateInt(String columnName, int x) throws SQLException {
@@ -2144,8 +2144,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a long value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -2153,7 +2153,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateLong(int columnIndex, long x) throws SQLException {
@@ -2176,8 +2176,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a long value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -2185,7 +2185,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateLong(String columnName, long x) throws SQLException {
@@ -2195,14 +2195,14 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Give a nullable column a null value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateNull(int columnIndex) throws SQLException {
@@ -2225,14 +2225,14 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a null value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateNull(String columnName) throws SQLException {
@@ -2242,8 +2242,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with an Object value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -2251,7 +2251,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateObject(int columnIndex, Object x) throws SQLException {
@@ -2261,8 +2261,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with an Object value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -2274,7 +2274,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            types this value will be ignored.
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateObject(int columnIndex, Object x, int scale) throws SQLException {
@@ -2319,8 +2319,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with an Object value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -2328,7 +2328,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateObject(String columnName, Object x) throws SQLException {
@@ -2338,8 +2338,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with an Object value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -2351,7 +2351,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            types this value will be ignored.
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateObject(String columnName, Object x, int scale) throws SQLException {
@@ -2359,11 +2359,11 @@ public class UpdatableResultSet extends ResultSetImpl {
     }
 
     /**
-     * JDBC 2.0 Update the underlying database with the new contents of the
+     * JDBC 2.0 Update the underlying dal.database with the new contents of the
      * current row. Cannot be called when on the insert row.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or if called when on
+     *                if a dal.database-access error occurs, or if called when on
      *                the insert row
      * @throws NotUpdatable
      */
@@ -2392,8 +2392,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a short value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -2401,7 +2401,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateShort(int columnIndex, short x) throws SQLException {
@@ -2424,8 +2424,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a short value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -2433,7 +2433,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateShort(String columnName, short x) throws SQLException {
@@ -2443,8 +2443,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a String value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -2452,7 +2452,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateString(int columnIndex, String x) throws SQLException {
@@ -2484,8 +2484,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a String value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -2493,7 +2493,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateString(String columnName, String x) throws SQLException {
@@ -2503,8 +2503,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a Time value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -2512,7 +2512,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateTime(int columnIndex, java.sql.Time x) throws SQLException {
@@ -2535,8 +2535,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a Time value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -2544,7 +2544,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateTime(String columnName, java.sql.Time x) throws SQLException {
@@ -2554,8 +2554,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a Timestamp value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -2563,7 +2563,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateTimestamp(int columnIndex, java.sql.Timestamp x) throws SQLException {
@@ -2586,8 +2586,8 @@ public class UpdatableResultSet extends ResultSetImpl {
     /**
      * JDBC 2.0 Update a column with a Timestamp value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -2595,7 +2595,7 @@ public class UpdatableResultSet extends ResultSetImpl {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     @Override
     public void updateTimestamp(String columnName, java.sql.Timestamp x) throws SQLException {

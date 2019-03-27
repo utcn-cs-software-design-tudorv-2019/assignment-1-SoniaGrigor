@@ -23,128 +23,147 @@
 -->
 <project name="MySQL Connector/J" default="dist" basedir=".">
     <description>
-Compiling Connector/J
-=====================
+        Compiling Connector/J
+        =====================
 
-Connector/J 5.1 supports both JDBC 3 and JDBC 4+ with a single code base. This requires JDBC 3 classes to be compiled with Java 5 and JDBC 4+ to be compiled
-with Java 8.
-The variables 'com.mysql.jdbc.jdk5' and 'com.mysql.jdbc.jdk8' are used to find the respective compilers when building the driver. Side by side
-with these, the variable 'com.mysql.jdbc.extra.libs' must point to the location of third-party libraries that we don't distribute and are required for
-compiling.
-Compiling all JDBC 4+ code with Java 8 alone produces some warnings since JDBC 4.0 and JDBC 4.1 classes don't require a compliler higher than Java 6. To get
-more precise results and avoid warnings use the property 'com.mysql.jdbc.jre6.rtjar' to point to the Java 6 'rt.jar' library (usually in 'jre/lib/rt.jar').
-Further details can be found in http://dev.mysql.com/doc/connector-j/en/connector-j-installing-source.html.
+        Connector/J 5.1 supports both JDBC 3 and JDBC 4+ with a single code base. This requires JDBC 3 classes to be
+        compiled with Java 5 and JDBC 4+ to be compiled
+        with Java 8.
+        The variables 'com.mysql.jdbc.jdk5' and 'com.mysql.jdbc.jdk8' are used to find the respective compilers when
+        building the driver. Side by side
+        with these, the variable 'com.mysql.jdbc.extra.libs' must point to the location of third-party libraries that we
+        don't distribute and are required for
+        compiling.
+        Compiling all JDBC 4+ code with Java 8 alone produces some warnings since JDBC 4.0 and JDBC 4.1 classes don't
+        require a compliler higher than Java 6. To get
+        more precise results and avoid warnings use the property 'com.mysql.jdbc.jre6.rtjar' to point to the Java 6
+        'rt.jar' library (usually in 'jre/lib/rt.jar').
+        Further details can be found in http://dev.mysql.com/doc/connector-j/en/connector-j-installing-source.html.
 
-Targets: "dist", "full-dist", "package", "full-package", "full-package-no-sources", "compile", "install"
-
-
-Testing Connector/J
-===================
-
-Connector/J 5.1 ships with an extensive test suite that can be run simply by providing a MySQL JDBC URL in the variable 'com.mysql.jdbc.testsuite.url' and by
-calling the target "test". If nothing more is set, these tests run with the JVMs referred in the variables 'com.mysql.jdbc.jdk5' and 'com.mysql.jdbc.jdk8' for
-JDBC 3 and JDBC 4+ related tests respectively. Alternatively, all tests can be run with a single JVM, provided that it is pointed out in the variable
-'com.mysql.jdbc.testsuite.jvm'.
-Running the full test suite with different JVMs and different MySQL servers at once is also possible. The variables 'com.mysql.jdbc.testsuite.jvm' and
-'com.mysql.jdbc.testsuite.url' can be suffixed with an index ".1" to ".9" to indicate the multiple alternatives which results in the matrix of all possible
-combinations. The target "test-multijvm" must be called in this case.
-Running only one test set is possible by setting the variable 'test' with the class' fully qualified name. If also a comma separated list of test names is
-provided in the variable 'methods', then only these will be executed.
-
-Targets: "test", "test-multijvm"
+        Targets: "dist", "full-dist", "package", "full-package", "full-package-no-sources", "compile", "install"
 
 
-Compliance
-==========
+        Testing Connector/J
+        ===================
 
-This file ships with targets for these matters. Further details can be found in the respective targets.
+        Connector/J 5.1 ships with an extensive test suite that can be run simply by providing a MySQL JDBC URL in the
+        variable 'com.mysql.jdbc.testsuite.url' and by
+        calling the target "test". If nothing more is set, these tests run with the JVMs referred in the variables
+        'com.mysql.jdbc.jdk5' and 'com.mysql.jdbc.jdk8' for
+        JDBC 3 and JDBC 4+ related tests respectively. Alternatively, all tests can be run with a single JVM, provided
+        that it is pointed out in the variable
+        'com.mysql.jdbc.testsuite.jvm'.
+        Running the full test suite with different JVMs and different MySQL servers at once is also possible. The
+        variables 'com.mysql.jdbc.testsuite.jvm' and
+        'com.mysql.jdbc.testsuite.url' can be suffixed with an index ".1" to ".9" to indicate the multiple alternatives
+        which results in the matrix of all possible
+        combinations. The target "test-multijvm" must be called in this case.
+        Running only one test set is possible by setting the variable 'test' with the class' fully qualified name. If
+        also a comma separated list of test names is
+        provided in the variable 'methods', then only these will be executed.
 
-
-Coverage and instrumentation
-============================
-
-This file ships with target "test-coverage" for collecting coverage results and "report-coverage" for creating the HTML coverage report.
-The JCov library needed to run these targets can be found at http://hg.openjdk.java.net/code-tools/jcov, it's JARs should be placed
-into ${com.mysql.jdbc.extra.libs}/jcov directory.
-The "test-coverage" target instruments classes using JCov, runs tests collecting coverage info into result file set as
-${com.mysql.jdbc.coverage.result.dir}/${com.mysql.jdbc.coverage.result.name}.
-The "report-coverage" target first merges coverage result files which full paths are passed via 'com.mysql.jdbc.coverage.merge.files'
-property into file which path is passed via 'com.mysql.jdbc.coverage.merge.result' property, then builds the HTML report from
-'com.mysql.jdbc.coverage.merge.result' file into the directory passed via 'com.mysql.jdbc.coverage.report.dir' property.
-If some properties are not passed to ANT script then default values are used:
-    com.mysql.jdbc.coverage.result.dir - "${buildDir}/coverage"
-    com.mysql.jdbc.coverage.result.name - "result.xml"
-    com.mysql.jdbc.coverage.merge.files - none, merge step is skipped
-    com.mysql.jdbc.coverage.merge.result - ${com.mysql.jdbc.coverage.result.dir}/result.xml
-    com.mysql.jdbc.coverage.report.dir - ${com.mysql.jdbc.coverage.result.dir}/report
-
-Targets: "test-coverage", "report-coverage"
+        Targets: "test", "test-multijvm"
 
 
-MySQL Fabric support and testing
-================================
+        Compliance
+        ==========
 
-Support for MySQL Fabric connections is seamlessly included in Connector/J, so when the driver is compiled it already includes all the required classes for it.
-Testing MySQL Fabric support can be done by setting specific variables and running the respective targets. Further details can be found in the last targets in
-this file.
+        This file ships with targets for these matters. Further details can be found in the respective targets.
 
 
-Sample 'build.properties' that can be used to compile, build, test and test with multi JVMs
-===========================================================================================
-~~~start cut here~~~
-# Basic settings for 'compile', 'test', 'test-multijvm' and targets that depend on these.
+        Coverage and instrumentation
+        ============================
 
-# External libraries needed for both compiling and testing:
-# - Further details in http://dev.mysql.com/doc/connector-j/en/connector-j-installing-source.html
-# - Mandatory.
-com.mysql.jdbc.extra.libs=&lt;full_path_to_connector-j-jardeps&gt;
+        This file ships with target "test-coverage" for collecting coverage results and "report-coverage" for creating
+        the HTML coverage report.
+        The JCov library needed to run these targets can be found at http://hg.openjdk.java.net/code-tools/jcov, it's
+        JARs should be placed
+        into ${com.mysql.jdbc.extra.libs}/jcov directory.
+        The "test-coverage" target instruments classes using JCov, runs tests collecting coverage info into result file
+        set as
+        ${com.mysql.jdbc.coverage.result.dir}/${com.mysql.jdbc.coverage.result.name}.
+        The "report-coverage" target first merges coverage result files which full paths are passed via
+        'com.mysql.jdbc.coverage.merge.files'
+        property into file which path is passed via 'com.mysql.jdbc.coverage.merge.result' property, then builds the
+        HTML report from
+        'com.mysql.jdbc.coverage.merge.result' file into the directory passed via 'com.mysql.jdbc.coverage.report.dir'
+        property.
+        If some properties are not passed to ANT script then default values are used:
+        com.mysql.jdbc.coverage.result.dir - "${buildDir}/coverage"
+        com.mysql.jdbc.coverage.result.name - "result.xml"
+        com.mysql.jdbc.coverage.merge.files - none, merge step is skipped
+        com.mysql.jdbc.coverage.merge.result - ${com.mysql.jdbc.coverage.result.dir}/result.xml
+        com.mysql.jdbc.coverage.report.dir - ${com.mysql.jdbc.coverage.result.dir}/report
 
-# JDKs needed for compiling:
-# - Must point to JDK home directories.
-# - Also used for testing if 'com.mysql.jdbc.testsuite.jvm' is not provided.
-# - Mandatory.
-com.mysql.jdbc.jdk5=&lt;full_path_to_jdk1.5&gt;
-com.mysql.jdbc.jdk8=&lt;full_path_to_jdk1.8&gt;
+        Targets: "test-coverage", "report-coverage"
 
-# Java 6 runtime libraries for compiling JDBC 4.0 and JDBC 4.1 classes:
-# - Must point to the library 'jre/lib/rt.jar'.
-# - Optional. If not provided, Java 8 runtime is used in its place.
-com.mysql.jdbc.jre6.rtjar=&lt;full_path_to_jre1.6/lib/rt.jar&gt;
 
-# Single JVM/MySQL tests:
-# - Must point to JDK or JRE home directories.
-# - If not provided, JDBC 3 tests are run with 'com.mysql.jdbc.jdk5'.
-# - If not provided or pointing to a Java5 JVM, JDBC 4+(&lt;4.2) tests are run with 'com.mysql.jdbc.jdk8'.
-# - If not provided or pointing to a JVM lower than 8, JDBC 4.2 tests are run with 'com.mysql.jdbc.jdk8'.
-# - Optional.
-com.mysql.jdbc.testsuite.jvm=&lt;full_path_to_a_jdk_or_jre&gt;
-# - URL to the test database.
-# - Any of the current MySQL versions.
-# - Mandatory for 'test' target.
-com.mysql.jdbc.testsuite.url=jdbc:mysql://&lt;host&gt;:&lt;port&gt;/&lt;testDB&gt;?user=&lt;user&gt;&amp;password=&lt;pwd&gt;
+        MySQL Fabric support and testing
+        ================================
 
-# Multiple JVM/MySQL tests:
-# - Must point to JDK or JRE home directories.
-# - If pointing to a Java5 JVM, JDBC 4+(&lt;4.2) tests are run with 'com.mysql.jdbc.jdk8' instead.
-# - If pointing to a JVM lower than 8, JDBC 4.2 tests are run with 'com.mysql.jdbc.jdk8'.
-# - Mandatory (at least one, at most eight) for 'test-multijdk' target.
-com.mysql.jdbc.testsuite.jvm.1=&lt;full_path_to_a_jdk_or_jre&gt;
-com.mysql.jdbc.testsuite.jvm.2=&lt;full_path_to_a_jdk_or_jre&gt;
-com.mysql.jdbc.testsuite.jvm.3=&lt;full_path_to_a_jdk_or_jre&gt;
-# - URL to the test database(s).
-# - Any of the current MySQL versions.
-# - Mandatory (at least one, at most eight) for 'test-multijdk' target.
-com.mysql.jdbc.testsuite.url.1=jdbc:mysql://&lt;host1&gt;:&lt;port1&gt;/&lt;testDB1&gt;?user=&lt;user1&gt;&amp;password=&lt;pwd1&gt;
-com.mysql.jdbc.testsuite.url.2=jdbc:mysql://&lt;host2&gt;:&lt;port2&gt;/&lt;testDB2&gt;?user=&lt;user2&gt;&amp;password=&lt;pwd2&gt;
+        Support for MySQL Fabric connections is seamlessly included in Connector/J, so when the driver is compiled it
+        already includes all the required classes for it.
+        Testing MySQL Fabric support can be done by setting specific variables and running the respective targets.
+        Further details can be found in the last targets in
+        this file.
 
-# Cancels re-compiling between successive test executions.
-# - Implicit in multiple JVM/MySQL in between iterations.
-# - Comment variable if not needed.
-# - Optional.
-com.mysql.jdbc.noCleanBetweenCompiles=yes
 
-# Other targets may require specific settings. Check 'build.xml' for details.
-~~~end cut here~~~
+        Sample 'build.properties' that can be used to compile, build, test and test with multi JVMs
+        ===========================================================================================
+        ~~~start cut here~~~
+        # Basic settings for 'compile', 'test', 'test-multijvm' and targets that depend on these.
+
+        # External libraries needed for both compiling and testing:
+        # - Further details in http://dev.mysql.com/doc/connector-j/en/connector-j-installing-source.html
+        # - Mandatory.
+        com.mysql.jdbc.extra.libs=&lt;full_path_to_connector-j-jardeps&gt;
+
+        # JDKs needed for compiling:
+        # - Must point to JDK home directories.
+        # - Also used for testing if 'com.mysql.jdbc.testsuite.jvm' is not provided.
+        # - Mandatory.
+        com.mysql.jdbc.jdk5=&lt;full_path_to_jdk1.5&gt;
+        com.mysql.jdbc.jdk8=&lt;full_path_to_jdk1.8&gt;
+
+        # Java 6 runtime libraries for compiling JDBC 4.0 and JDBC 4.1 classes:
+        # - Must point to the library 'jre/lib/rt.jar'.
+        # - Optional. If not provided, Java 8 runtime is used in its place.
+        com.mysql.jdbc.jre6.rtjar=&lt;full_path_to_jre1.6/lib/rt.jar&gt;
+
+        # Single JVM/MySQL tests:
+        # - Must point to JDK or JRE home directories.
+        # - If not provided, JDBC 3 tests are run with 'com.mysql.jdbc.jdk5'.
+        # - If not provided or pointing to a Java5 JVM, JDBC 4+(&lt;4.2) tests are run with 'com.mysql.jdbc.jdk8'.
+        # - If not provided or pointing to a JVM lower than 8, JDBC 4.2 tests are run with 'com.mysql.jdbc.jdk8'.
+        # - Optional.
+        com.mysql.jdbc.testsuite.jvm=&lt;full_path_to_a_jdk_or_jre&gt;
+        # - URL to the test dal.database.
+        # - Any of the current MySQL versions.
+        # - Mandatory for 'test' target.
+        com.mysql.jdbc.testsuite.url=jdbc:mysql://&lt;host&gt;:&lt;port&gt;/&lt;testDB&gt;?user=&lt;user&gt;&amp;password=&lt;pwd&gt;
+
+        # Multiple JVM/MySQL tests:
+        # - Must point to JDK or JRE home directories.
+        # - If pointing to a Java5 JVM, JDBC 4+(&lt;4.2) tests are run with 'com.mysql.jdbc.jdk8' instead.
+        # - If pointing to a JVM lower than 8, JDBC 4.2 tests are run with 'com.mysql.jdbc.jdk8'.
+        # - Mandatory (at least one, at most eight) for 'test-multijdk' target.
+        com.mysql.jdbc.testsuite.jvm.1=&lt;full_path_to_a_jdk_or_jre&gt;
+        com.mysql.jdbc.testsuite.jvm.2=&lt;full_path_to_a_jdk_or_jre&gt;
+        com.mysql.jdbc.testsuite.jvm.3=&lt;full_path_to_a_jdk_or_jre&gt;
+        # - URL to the test dal.database(s).
+        # - Any of the current MySQL versions.
+        # - Mandatory (at least one, at most eight) for 'test-multijdk' target.
+        com.mysql.jdbc.testsuite.url.1=jdbc:mysql://&lt;host1&gt;:&lt;port1&gt;/&lt;testDB1&gt;?user=&lt;user1&gt;&amp;password=&lt;pwd1&gt;
+        com.mysql.jdbc.testsuite.url.2=jdbc:mysql://&lt;host2&gt;:&lt;port2&gt;/&lt;testDB2&gt;?user=&lt;user2&gt;&amp;password=&lt;pwd2&gt;
+
+        # Cancels re-compiling between successive test executions.
+        # - Implicit in multiple JVM/MySQL in between iterations.
+        # - Comment variable if not needed.
+        # - Optional.
+        com.mysql.jdbc.noCleanBetweenCompiles=yes
+
+        # Other targets may require specific settings. Check 'build.xml' for details.
+        ~~~end cut here~~~
     </description>
 
 
@@ -334,7 +353,7 @@ Java 8 (for JDBC 4+ implementation) is also required. Set the full path to this 
             <isset property="com.mysql.jdbc.testsuite.url.internal" />
         </condition>
 
-        <fail message="Set the MySQL database connection string for the test suite in one of the properties, 'com.mysql.jdbc.testsuite.url' or 'com.mysql.jdbc.testsuite.url.N', according to desired target.">
+        <fail message="Set the MySQL dal.database connection string for the test suite in one of the properties, 'com.mysql.jdbc.testsuite.url' or 'com.mysql.jdbc.testsuite.url.N', according to desired target.">
             <condition>
                 <not>
                     <or>
@@ -353,7 +372,7 @@ Java 8 (for JDBC 4+ implementation) is also required. Set the full path to this 
             <isset property="com.mysql.jdbc.compliance.url.internal" />
         </condition>
 
-        <fail message="Set the MySQL database connection string for the compliance tests in one of the properties, 'com.mysql.jdbc.compliance.url' or 'com.mysql.jdbc.compliance.url.N', according to desired target.">
+        <fail message="Set the MySQL dal.database connection string for the compliance tests in one of the properties, 'com.mysql.jdbc.compliance.url' or 'com.mysql.jdbc.compliance.url.N', according to desired target.">
             <condition>
                 <not>
                     <or>
@@ -604,8 +623,8 @@ Java 8 (for JDBC 4+ implementation) is also required. Set the full path to this 
     <target name="full-dist" description="Builds driver, binary .jar file and docs, basically a distribution 'image'." depends="dist, -bundle-docs" />
 
 
-    <!-- Build and install the driver jar into the local maven repository. -->
-    <target name="install" description="Builds and installs the driver jar into the local maven repository." depends="full-package">
+    <!-- Build and install the driver jar into the local maven dal.repository. -->
+    <target name="install" description="Builds and installs the driver jar into the local maven dal.repository." depends="full-package">
         <exec executable="mvn" osfamily="unix" failonerror="true" failifexecutionfails="true">
             <arg line="install:install-file 
                 -Dfile=${mavenUploadDir}/${fullProdName}.jar
@@ -623,7 +642,7 @@ Java 8 (for JDBC 4+ implementation) is also required. Set the full path to this 
 
         <mkdir dir="${buildDir}/META-INF" />
 
-        <!-- JDBC 4+ support of service provider mechanism. -->
+        <!-- JDBC 4+ support of bll.service provider mechanism. -->
         <mkdir dir="${buildDir}/${fullProdName}/META-INF/services/" />
         <echo file="${buildDir}/${fullProdName}/META-INF/services/java.sql.Driver"
               message="com.mysql.jdbc.Driver${line.separator}com.mysql.fabric.jdbc.FabricMySQLDriver" />
@@ -639,7 +658,7 @@ Java 8 (for JDBC 4+ implementation) is also required. Set the full path to this 
                   value="com.mchange.v2.c3p0;version=&quot;[0.9.1.2,1.0.0)&quot;;resolution:=optional,org.jboss.resource.adapter.jdbc;org.jboss.resource.adapter.jdbc.vendor;resolution:=optional" />
         <property name="logging-imports" value="org.slf4j;resolution:=optional" />
         <property name="fabric-imports"
-                  value="javax.xml.datatype;org.hibernate;org.hibernate.cfg;org.hibernate.service;org.hibernate.service.jdbc.connections.spi;resolution:=optional" />
+                  value="javax.xml.datatype;org.hibernate;org.hibernate.cfg;org.hibernate.service;org.hibernate.bll.service.jdbc.connections.spi;resolution:=optional" />
 
         <property name="driver-exports"
                   value="com.mysql.jdbc;version=&quot;${osgid-version}&quot;;uses:=&quot;com.mysql.jdbc.log,javax.management,javax.naming,javax.net.ssl,javax.xml.parsers,javax.xml.stream,javax.xml.transform,javax.xml.transform.dom,javax.xml.transform.sax,javax.xml.transform.stax,javax.xml.transform.stream,org.xml.sax&quot;" />
@@ -780,7 +799,7 @@ Java 8 (for JDBC 4+ implementation) is also required. Set the full path to this 
     </target>
 
 
-    <!-- Create a Maven bundle for upload to their repository. -->
+    <!-- Create a Maven bundle for upload to their dal.repository. -->
     <target name="-create-maven-archive"
             depends="-make-packages, -create-maven-archive-common, -create-maven-archive-sources"
             unless="com.mysql.jdbc.commercialBuild">
@@ -790,7 +809,7 @@ Java 8 (for JDBC 4+ implementation) is also required. Set the full path to this 
     </target>
 
 
-    <!-- Create a Maven bundle for upload to their repository (common files to all packaging modes). -->
+    <!-- Create a Maven bundle for upload to their dal.repository (common files to all packaging modes). -->
     <target name="-create-maven-archive-common">
         <tempfile destdir="${buildDir}" prefix="maven-bundle-" property="mavenUploadDir" />
 
@@ -815,7 +834,7 @@ Java 8 (for JDBC 4+ implementation) is also required. Set the full path to this 
     </target>
 
 
-    <!-- Create a Maven bundle for upload to their repository (include sources). -->
+    <!-- Create a Maven bundle for upload to their dal.repository (include sources). -->
     <target name="-create-maven-archive-sources" depends="-create-maven-archive-common" unless="com.mysql.jdbc.noSources">
         <jar jarfile="${mavenUploadDir}/${fullProdName}-sources.jar"
              basedir="${compiler.output}"

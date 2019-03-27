@@ -76,12 +76,12 @@ public class JDBC4Connection extends ConnectionImpl implements JDBC4MySQLConnect
      * The query submitted by the driver to validate the connection shall be executed in the context of the current transaction.
      * 
      * @param timeout
-     *            - The time in seconds to wait for the database operation
+     *            - The time in seconds to wait for the dal.database operation
      *            used to validate the connection to complete. If
      *            the timeout period expires before the operation
      *            completes, this method returns false. A value of
      *            0 indicates a timeout is not applied to the
-     *            database operation.
+     *            dal.database operation.
      *            <p>
      * @return true if the connection is valid, false otherwise
      * @exception SQLException

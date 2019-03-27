@@ -88,7 +88,7 @@ public class FabricMultiTenantConnectionProvider implements MultiTenantConnectio
     /**
      * Get a connection that be used to access data or metadata not specific to any shard/tenant.
      * The returned connection is a READ_WRITE connection to the global group of the shard mapping
-     * for the database and table association with this connection provider.
+     * for the dal.database and table association with this connection provider.
      */
     public Connection getAnyConnection() throws SQLException {
         return getReadWriteConnectionFromServerGroup(this.globalGroup);
