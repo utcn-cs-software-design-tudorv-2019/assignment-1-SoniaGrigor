@@ -38,7 +38,7 @@ public class EmployeesDataSource {
     public static void main(String args[]) throws Exception {
         String hostname = System.getProperty("com.mysql.fabric.testsuite.hostname");
         String port = System.getProperty("com.mysql.fabric.testsuite.port");
-        String database = System.getProperty("com.mysql.fabric.testsuite.database");
+        String database = System.getProperty("com.mysql.fabric.testsuite.dal.database");
         // credentials to authenticate with the SQL nodes
         String user = System.getProperty("com.mysql.fabric.testsuite.username");
         String password = System.getProperty("com.mysql.fabric.testsuite.password");
@@ -59,12 +59,12 @@ public class EmployeesDataSource {
             Class.forName("com.mysql.fabric.jdbc.FabricMySQLDriver");
         }
 
-        // 1. Create database and table for our demo
-        ds.setDatabaseName("mysql"); // connect to the `mysql` database before creating our `employees` database
+        // 1. Create dal.database and table for our demo
+        ds.setDatabaseName("mysql"); // connect to the `mysql` dal.database before creating our `employees` dal.database
         ds.setFabricServerGroup("fabric_test1_global"); // connect to the global group
         Connection rawConnection = ds.getConnection(user, password);
         Statement statement = rawConnection.createStatement();
-        statement.executeUpdate("create database if not exists employees");
+        statement.executeUpdate("create dal.database if not exists employees");
         statement.close();
         rawConnection.close();
 
@@ -74,7 +74,7 @@ public class EmployeesDataSource {
         ds.setFabricServerGroup("fabric_test1_global");
         rawConnection = ds.getConnection(user, password);
         statement = rawConnection.createStatement();
-        statement.executeUpdate("create database if not exists employees");
+        statement.executeUpdate("create dal.database if not exists employees");
         statement.close();
         rawConnection.close();
 

@@ -2475,7 +2475,7 @@ public class ConnectionPropertiesImpl implements Serializable, ConnectionPropert
 
     /**
      * Initializes driver properties that come from a JNDI reference (in the
-     * case of a javax.sql.DataSource bound into some name service that doesn't
+     * case of a javax.sql.DataSource bound into some name bll.service that doesn't
      * handle Java objects directly).
      * 
      * @param ref

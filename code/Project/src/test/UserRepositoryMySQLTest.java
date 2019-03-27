@@ -1,13 +1,13 @@
 package test;
 
-import database.DBConnectionFactory;
-import model.User;
-import model.builder.UserBuilder;
+import dal.database.DBConnectionFactory;
+import dal.model.User;
+import dal.model.builder.UserBuilder;
 import org.junit.*;
-import repository.security.RightsRolesRepository;
-import repository.security.RightsRolesRepositoryMySQL;
-import repository.user.AuthenticationException;
-import repository.user.UserRepositoryMySQL;
+import dal.repository.security.RightsRolesRepository;
+import dal.repository.security.RightsRolesRepositoryMySQL;
+import dal.repository.user.AuthenticationException;
+import dal.repository.user.UserRepositoryMySQL;
 
 import javax.swing.*;
 import java.sql.Connection;

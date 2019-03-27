@@ -40,7 +40,7 @@ import java.util.StringTokenizer;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * The Java SQL framework allows for multiple database drivers. Each driver should supply a class that implements the Driver interface
+ * The Java SQL framework allows for multiple dal.database drivers. Each driver should supply a class that implements the Driver interface
  * 
  * <p>
  * The DriverManager will try to load as many drivers as it can find and then for any given connection request, it will ask each driver in turn to try to
@@ -109,7 +109,7 @@ public class NonRegisteringDriver implements java.sql.Driver {
     }
 
     /**
-     * Key used to retreive the database value from the properties instance
+     * Key used to retreive the dal.database value from the properties instance
      * passed to the driver.
      */
     public static final String DBNAME_PROPERTY_KEY = "DBNAME";
@@ -238,7 +238,7 @@ public class NonRegisteringDriver implements java.sql.Driver {
      * Construct a new driver and register it with DriverManager
      * 
      * @throws SQLException
-     *             if a database error occurs.
+     *             if a dal.database error occurs.
      */
     public NonRegisteringDriver() throws SQLException {
         // Required for Class.forName().newInstance()
@@ -255,7 +255,7 @@ public class NonRegisteringDriver implements java.sql.Driver {
      * @return true if this driver accepts the given URL
      * 
      * @exception SQLException
-     *                if a database access error occurs or the url is null
+     *                if a dal.database access error occurs or the url is null
      * 
      * @see java.sql.Driver#acceptsURL
      */
@@ -267,16 +267,16 @@ public class NonRegisteringDriver implements java.sql.Driver {
     }
 
     //
-    // return the database name property
+    // return the dal.database name property
     //
 
     /**
-     * Try to make a database connection to the given URL. The driver should return "null" if it realizes it is the wrong kind of driver to connect to the given
+     * Try to make a dal.database connection to the given URL. The driver should return "null" if it realizes it is the wrong kind of driver to connect to the given
      * URL. This will be common, as when the JDBC driverManager is asked to connect to a given URL, it passes the URL to each loaded driver in turn.
      * 
      * <p>
      * The driver should raise an SQLException if the URL is null or if it is the right driver to connect to the given URL, but has trouble connecting to the
-     * database.
+     * dal.database.
      * </p>
      * 
      * <p>
@@ -288,20 +288,20 @@ public class NonRegisteringDriver implements java.sql.Driver {
      * MySQL protocol takes the form:
      * 
      * <PRE>
-     * jdbc:mysql://host:port/database
+     * jdbc:mysql://host:port/dal.database
      * </PRE>
      * 
      * </p>
      * 
      * @param url
-     *            the URL of the database to connect to
+     *            the URL of the dal.database to connect to
      * @param info
      *            a list of arbitrary tag/value pairs as connection arguments
      * 
      * @return a connection to the URL or null if it isn't us
      * 
      * @exception SQLException
-     *                if a database access error occurs or the url is null
+     *                if a dal.database access error occurs or the url is null
      * 
      * @see java.sql.Driver#connect
      */
@@ -470,12 +470,12 @@ public class NonRegisteringDriver implements java.sql.Driver {
     }
 
     /**
-     * Returns the database property from <code>props</code>
+     * Returns the dal.database property from <code>props</code>
      * 
      * @param props
-     *            the Properties to look for the database property.
+     *            the Properties to look for the dal.database property.
      * 
-     * @return the database name.
+     * @return the dal.database name.
      */
     public String database(Properties props) {
         return props.getProperty(DBNAME_PROPERTY_KEY);
@@ -502,7 +502,7 @@ public class NonRegisteringDriver implements java.sql.Driver {
     /**
      * The getPropertyInfo method is intended to allow a generic GUI tool to
      * discover what properties it should prompt a human for in order to get
-     * enough information to connect to a database.
+     * enough information to connect to a dal.database.
      * 
      * <p>
      * Note that depending on the values the human has supplied so far, additional values may become necessary, so it may be necessary to iterate through
@@ -510,7 +510,7 @@ public class NonRegisteringDriver implements java.sql.Driver {
      * </p>
      * 
      * @param url
-     *            the Url of the database to connect to
+     *            the Url of the dal.database to connect to
      * @param info
      *            a proposed list of tag/value pairs that will be sent on
      *            connect open.
@@ -520,7 +520,7 @@ public class NonRegisteringDriver implements java.sql.Driver {
      *         required
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * 
      * @see java.sql.Driver#getPropertyInfo
      */

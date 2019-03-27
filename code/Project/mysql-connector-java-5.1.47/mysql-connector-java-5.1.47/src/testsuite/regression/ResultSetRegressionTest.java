@@ -313,7 +313,7 @@ public class ResultSetRegressionTest extends BaseTestCase {
     }
 
     /**
-     * Checks fix for BUG#1592 -- cross-database updatable result sets are not
+     * Checks fix for BUG#1592 -- cross-dal.database updatable result sets are not
      * checked for updatability correctly.
      * 
      * @throws Exception
@@ -331,7 +331,7 @@ public class ResultSetRegressionTest extends BaseTestCase {
                 String message = sqlEx.getMessage();
 
                 if ((message != null) && (message.indexOf("denied") != -1)) {
-                    System.err.println("WARN: Can't complete testFixForBug1592(), access to 'mysql' database not allowed");
+                    System.err.println("WARN: Can't complete testFixForBug1592(), access to 'mysql' dal.database not allowed");
                 } else {
                     throw sqlEx;
                 }

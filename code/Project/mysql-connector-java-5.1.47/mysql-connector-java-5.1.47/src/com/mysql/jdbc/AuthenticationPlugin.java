@@ -56,8 +56,8 @@ public interface AuthenticationPlugin extends Extension {
      * This method called from cJ before first nextAuthenticationStep
      * call. Values of user and password parameters are passed from
      * those in MysqlIO.changeUser(String userName, String password,
-     * String database) or MysqlIO.doHandshake(String user, String
-     * password, String database).
+     * String dal.database) or MysqlIO.doHandshake(String user, String
+     * password, String dal.database).
      * 
      * Plugin should use these values instead of values from connection
      * properties because parent method may be a changeUser call which

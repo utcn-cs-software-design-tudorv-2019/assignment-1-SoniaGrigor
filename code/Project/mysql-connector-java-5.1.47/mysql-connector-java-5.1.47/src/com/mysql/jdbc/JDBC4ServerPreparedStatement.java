@@ -87,7 +87,7 @@ public class JDBC4ServerPreparedStatement extends ServerPreparedStatement {
      *            the number of characters in the stream
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void setNClob(int parameterIndex, Reader reader, long length) throws SQLException {
         // can't take if characterEncoding isn't utf8

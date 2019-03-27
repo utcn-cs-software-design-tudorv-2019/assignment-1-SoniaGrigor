@@ -26,7 +26,7 @@ package com.mysql.jdbc;
 import java.sql.SQLException;
 
 /**
- * The Java SQL framework allows for multiple database drivers. Each driver should supply a class that implements the Driver interface
+ * The Java SQL framework allows for multiple dal.database drivers. Each driver should supply a class that implements the Driver interface
  * 
  * <p>
  * The DriverManager will try to load as many drivers as it can find and then for any given connection request, it will ask each driver in turn to try to
@@ -56,7 +56,7 @@ public class ReplicationDriver extends NonRegisteringReplicationDriver implement
      * Construct a new driver and register it with DriverManager
      * 
      * @throws SQLException
-     *             if a database error occurs.
+     *             if a dal.database error occurs.
      */
     public ReplicationDriver() throws SQLException {
         // Required for Class.forName().newInstance()

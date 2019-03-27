@@ -39,7 +39,7 @@ public class EmployeesJdbc {
 
         String hostname = System.getProperty("com.mysql.fabric.testsuite.hostname");
         String port = System.getProperty("com.mysql.fabric.testsuite.port");
-        String database = System.getProperty("com.mysql.fabric.testsuite.database");
+        String database = System.getProperty("com.mysql.fabric.testsuite.dal.database");
         String user = System.getProperty("com.mysql.fabric.testsuite.username");
         String password = System.getProperty("com.mysql.fabric.testsuite.password");
 
@@ -50,10 +50,10 @@ public class EmployeesJdbc {
             Class.forName("com.mysql.fabric.jdbc.FabricMySQLDriver");
         }
 
-        // 1. Create database and table for our demo
+        // 1. Create dal.database and table for our demo
         Connection rawConnection = DriverManager.getConnection(baseUrl + "mysql?fabricServerGroup=fabric_test1_global", user, password);
         Statement statement = rawConnection.createStatement();
-        statement.executeUpdate("create database if not exists employees");
+        statement.executeUpdate("create dal.database if not exists employees");
         statement.close();
         rawConnection.close();
 
@@ -62,7 +62,7 @@ public class EmployeesJdbc {
         // The 1-st way is to set it's name explicitly via the "fabricServerGroup" connection property
         rawConnection = DriverManager.getConnection(baseUrl + database + "?fabricServerGroup=fabric_test1_global", user, password);
         statement = rawConnection.createStatement();
-        statement.executeUpdate("create database if not exists employees");
+        statement.executeUpdate("create dal.database if not exists employees");
         statement.close();
         rawConnection.close();
 

@@ -421,7 +421,7 @@ public class ServerPreparedStatement extends PreparedStatement {
      * JDBC 2.0 Add a set of parameters to the batch.
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      * 
      * @see StatementImpl#addBatch
      */
@@ -1821,7 +1821,7 @@ public class ServerPreparedStatement extends PreparedStatement {
 
     /**
      * Set a parameter to a java.sql.Date value. The driver converts this to a
-     * SQL DATE value when it sends it to the database.
+     * SQL DATE value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1, the second is 2, ...
@@ -1829,7 +1829,7 @@ public class ServerPreparedStatement extends PreparedStatement {
      *            the parameter value
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     @Override
     public void setDate(int parameterIndex, Date x) throws SQLException {
@@ -1838,7 +1838,7 @@ public class ServerPreparedStatement extends PreparedStatement {
 
     /**
      * Set a parameter to a java.sql.Date value. The driver converts this to a
-     * SQL DATE value when it sends it to the database.
+     * SQL DATE value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1, the second is 2, ...
@@ -1848,7 +1848,7 @@ public class ServerPreparedStatement extends PreparedStatement {
      *            the calendar to interpret the date with
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     @Override
     public void setDate(int parameterIndex, Date x, Calendar cal) throws SQLException {
@@ -1997,7 +1997,7 @@ public class ServerPreparedStatement extends PreparedStatement {
      *            the parameter value
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     @Override
     public void setTime(int parameterIndex, java.sql.Time x) throws SQLException {
@@ -2008,7 +2008,7 @@ public class ServerPreparedStatement extends PreparedStatement {
 
     /**
      * Set a parameter to a java.sql.Time value. The driver converts this to a
-     * SQL TIME value when it sends it to the database, using the given
+     * SQL TIME value when it sends it to the dal.database, using the given
      * timezone.
      * 
      * @param parameterIndex
@@ -2019,7 +2019,7 @@ public class ServerPreparedStatement extends PreparedStatement {
      *            the timezone to use
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     @Override
     public void setTime(int parameterIndex, java.sql.Time x, Calendar cal) throws SQLException {
@@ -2030,7 +2030,7 @@ public class ServerPreparedStatement extends PreparedStatement {
 
     /**
      * Set a parameter to a java.sql.Time value. The driver converts this to a
-     * SQL TIME value when it sends it to the database, using the given
+     * SQL TIME value when it sends it to the dal.database, using the given
      * timezone.
      * 
      * @param parameterIndex
@@ -2041,7 +2041,7 @@ public class ServerPreparedStatement extends PreparedStatement {
      *            the timezone to use
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     private void setTimeInternal(int parameterIndex, java.sql.Time x, Calendar targetCalendar, TimeZone tz, boolean rollForward) throws SQLException {
         if (x == null) {
@@ -2066,7 +2066,7 @@ public class ServerPreparedStatement extends PreparedStatement {
 
     /**
      * Set a parameter to a java.sql.Timestamp value. The driver converts this
-     * to a SQL TIMESTAMP value when it sends it to the database.
+     * to a SQL TIMESTAMP value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1, the second is 2, ...
@@ -2074,7 +2074,7 @@ public class ServerPreparedStatement extends PreparedStatement {
      *            the parameter value
      * 
      * @throws SQLException
-     *             if a database-access error occurs.
+     *             if a dal.database-access error occurs.
      */
     @Override
     public void setTimestamp(int parameterIndex, java.sql.Timestamp x) throws SQLException {
@@ -2085,7 +2085,7 @@ public class ServerPreparedStatement extends PreparedStatement {
 
     /**
      * Set a parameter to a java.sql.Timestamp value. The driver converts this
-     * to a SQL TIMESTAMP value when it sends it to the database.
+     * to a SQL TIMESTAMP value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1, the second is 2, ...
@@ -2095,7 +2095,7 @@ public class ServerPreparedStatement extends PreparedStatement {
      *            the timezone to use
      * 
      * @throws SQLException
-     *             if a database-access error occurs.
+     *             if a dal.database-access error occurs.
      */
     @Override
     public void setTimestamp(int parameterIndex, java.sql.Timestamp x, Calendar cal) throws SQLException {

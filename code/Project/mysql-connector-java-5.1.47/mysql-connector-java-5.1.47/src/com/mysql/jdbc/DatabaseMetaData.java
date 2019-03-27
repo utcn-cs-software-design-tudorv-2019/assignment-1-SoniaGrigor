@@ -50,7 +50,7 @@ import java.util.TreeSet;
 /**
  * JDBC Interface to Mysql functions
  * <p>
- * This class provides information about the database as a whole.
+ * This class provides information about the dal.database as a whole.
  * </p>
  * <p>
  * Many of the methods here return lists of information in ResultSets. You can use the normal ResultSet methods such as getString and getInt to retrieve the
@@ -748,10 +748,10 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
 
     private static volatile String mysqlKeywords = null;
 
-    /** The connection to the database */
+    /** The connection to the dal.database */
     protected MySQLConnection conn;
 
-    /** The 'current' database name being used */
+    /** The 'current' dal.database name being used */
     protected String database = null;
 
     /** What character to use when quoting identifiers */
@@ -909,7 +909,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Builds and returns a fully qualified name, quoted if necessary, for the given catalog and database entity.
+     * Builds and returns a fully qualified name, quoted if necessary, for the given catalog and dal.database entity.
      */
     protected String getFullyQualifiedName(String catalog, String entity) {
         StringBuilder fullyQualifiedName = new StringBuilder(
@@ -1106,7 +1106,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            set type, i.e. ResultSet.TYPE_XXX
      * @return true if changes are detected by the resultset type
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public boolean deletesAreDetected(int type) throws SQLException {
         return false;
@@ -1132,10 +1132,10 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * @param rs
      *            the result set from 'SHOW CREATE TABLE'
      * @param catalog
-     *            the database name
+     *            the dal.database name
      * @return the list of rows with new rows added
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public List<ResultSetRow> extractForeignKeyForTable(ArrayList<ResultSetRow> rows, java.sql.ResultSet rs, String catalog) throws SQLException {
         byte[][] row = new byte[3][];
@@ -1275,16 +1275,16 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * same code to work on extracting the foreign key data
      * 
      * @param connToUse
-     *            the database connection to use
+     *            the dal.database connection to use
      * @param metadata
      *            the DatabaseMetaData instance calling this method
      * @param catalog
-     *            the database name to extract foreign key info for
+     *            the dal.database name to extract foreign key info for
      * @param tableName
      *            the table to extract foreign key info for
      * @return A result set that has the structure of 'show table status'
      * @throws SQLException
-     *             if a database access error occurs.
+     *             if a dal.database access error occurs.
      */
     public ResultSet extractForeignKeyFromCreateTable(String catalog, String tableName) throws SQLException {
         ArrayList<String> tableList = new ArrayList<String>();
@@ -1618,7 +1618,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
                 dbName = StringUtils.quoteIdentifier(catalog, this.quotedId, this.conn.getPedantic());
             }
 
-            // Moved from above so that procName is *without* database as expected by the rest of code
+            // Moved from above so that procName is *without* dal.database as expected by the rest of code
             // Removing QuoteChar to get output as it was before PROC_CAT fixes
             String tmpProcName = StringUtils.unQuoteIdentifier(quotedProcName, this.quotedId);
             try {
@@ -2043,7 +2043,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Get the catalog names available in this database. The results are ordered
+     * Get the catalog names available in this dal.database. The results are ordered
      * by catalog name.
      * <P>
      * The catalog column is:
@@ -2120,17 +2120,17 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
         return ".";
     }
 
-    // The following group of methods exposes various limitations based on the target database with the current driver. Unless otherwise specified, a result of
+    // The following group of methods exposes various limitations based on the target dal.database with the current driver. Unless otherwise specified, a result of
     // zero means there is no limit, or the limit is not known.
 
     /**
-     * What's the database vendor's preferred term for "catalog"?
+     * What's the dal.database vendor's preferred term for "catalog"?
      * 
      * @return the vendor term
      * @throws SQLException
      */
     public String getCatalogTerm() throws SQLException {
-        return "database";
+        return "dal/database";
     }
 
     /**
@@ -2162,7 +2162,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            a column name pattern
      * @return ResultSet each row is a column privilege description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see #getSearchStringEscape
      */
     public java.sql.ResultSet getColumnPrivileges(String catalog, String schema, String table, String columnNamePattern) throws SQLException {
@@ -2310,7 +2310,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            a column name pattern
      * @return ResultSet each row is a column description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see #getSearchStringEscape
      */
     public java.sql.ResultSet getColumns(final String catalog, final String schemaPattern, final String tableNamePattern, String columnNamePattern)
@@ -2602,7 +2602,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * 
      * @return the connection that produced this metadata object.
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public java.sql.Connection getConnection() throws SQLException {
         return this.conn;
@@ -2660,7 +2660,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            a table name
      * @return ResultSet each row is a foreign key column description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public java.sql.ResultSet getCrossReference(final String primaryCatalog, final String primarySchema, final String primaryTable, final String foreignCatalog,
             final String foreignSchema, final String foreignTable) throws SQLException {
@@ -2835,9 +2835,9 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * What's the name of this database product?
+     * What's the name of this dal.database product?
      * 
-     * @return database product name
+     * @return dal.database product name
      * @throws SQLException
      */
     public String getDatabaseProductName() throws SQLException {
@@ -2845,9 +2845,9 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * What's the version of this database product?
+     * What's the version of this dal.database product?
      * 
-     * @return database version
+     * @return dal.database version
      * @throws SQLException
      */
     public String getDatabaseProductVersion() throws SQLException {
@@ -2855,12 +2855,12 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * What's the database's default transaction isolation level? The values are
+     * What's the dal.database's default transaction isolation level? The values are
      * defined in java.sql.Connection.
      * 
      * @return the default isolation level
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see Connection
      */
     public int getDefaultTransactionIsolation() throws SQLException {
@@ -2952,7 +2952,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            a table name
      * @return ResultSet each row is a foreign key column description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see #getImportedKeys
      */
     public java.sql.ResultSet getExportedKeys(String catalog, String schema, final String table) throws SQLException {
@@ -3053,7 +3053,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * part of the comment field that follows the "InnoDB free ...;" prefix.
      * 
      * @param catalog
-     *            the database to use
+     *            the dal.database to use
      * @param exportingTable
      *            the table keys are being exported from
      * @param keysComment
@@ -3063,7 +3063,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * @param fkTableName
      *            the foreign key table name
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     protected void getExportKeyResults(String catalog, String exportingTable, String keysComment, List<ResultSetRow> tuples, String fkTableName)
             throws SQLException {
@@ -3165,7 +3165,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            a table name
      * @return ResultSet each row is a primary key column description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see #getExportedKeys
      */
     public java.sql.ResultSet getImportedKeys(String catalog, String schema, final String table) throws SQLException {
@@ -3264,7 +3264,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * prefix.
      * 
      * @param catalog
-     *            the database to use
+     *            the dal.database to use
      * @param importingTable
      *            the table keys are being imported to
      * @param keysComment
@@ -3272,7 +3272,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * @param tuples
      *            the rows to add results to
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     protected void getImportKeyResults(String catalog, String importingTable, String keysComment, List<ResultSetRow> tuples) throws SQLException {
         getResultsImpl(catalog, importingTable, keysComment, tuples, null, false);
@@ -3560,7 +3560,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * How many active connections can we have at a time to this database?
+     * How many active connections can we have at a time to this dal.database?
      * 
      * @return max connections
      * @throws SQLException
@@ -3630,7 +3630,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * How many active statements can we have open at one time to this database?
+     * How many active statements can we have open at one time to this dal.database?
      * 
      * @return the maximum
      * @throws SQLException
@@ -3856,7 +3856,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * @return ResultSet each row is a stored procedure parameter or column
      *         description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see #getSearchStringEscape
      */
     public java.sql.ResultSet getProcedureColumns(String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern)
@@ -4031,7 +4031,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            a procedure name pattern
      * @return ResultSet each row is a procedure description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see #getSearchStringEscape
      */
     public java.sql.ResultSet getProcedures(String catalog, String schemaPattern, String procedureNamePattern) throws SQLException {
@@ -4194,7 +4194,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * What's the database vendor's preferred term for "procedure"?
+     * What's the dal.database vendor's preferred term for "procedure"?
      * 
      * @return the vendor term
      * @throws SQLException
@@ -4256,7 +4256,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Get the schema names available in this database. The results are ordered
+     * Get the schema names available in this dal.database. The results are ordered
      * by schema name.
      * <P>
      * The schema column is:
@@ -4281,7 +4281,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * What's the database vendor's preferred term for "schema"?
+     * What's the dal.database vendor's preferred term for "schema"?
      * 
      * @return the vendor term
      * @throws SQLException
@@ -4308,7 +4308,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Get a comma separated list of all a database's SQL keywords that are NOT also SQL92/SQL2003 keywords.
+     * Get a comma separated list of all a dal.database's SQL keywords that are NOT also SQL92/SQL2003 keywords.
      * 
      * @return the list
      * @throws SQLException
@@ -4439,7 +4439,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            a table name pattern
      * @return ResultSet each row is a table privilege description
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see #getSearchStringEscape
      */
     public java.sql.ResultSet getTablePrivileges(String catalog, String schemaPattern, String tableNamePattern) throws SQLException {
@@ -4831,7 +4831,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Get the table types available in this database. The results are ordered
+     * Get the table types available in this dal.database. The results are ordered
      * by table type.
      * <P>
      * The table type is:
@@ -4878,7 +4878,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
 
     /**
      * Get a description of all the standard SQL types supported by this
-     * database. They are ordered by DATA_TYPE and then by how closely the data
+     * dal.database. They are ordered by DATA_TYPE and then by how closely the data
      * type maps to the corresponding JDBC SQL type.
      * <P>
      * Each type description has the following columns:
@@ -4922,7 +4922,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      */
     /**
      * Get a description of all the standard SQL types supported by this
-     * database. They are ordered by DATA_TYPE and then by how closely the data
+     * dal.database. They are ordered by DATA_TYPE and then by how closely the data
      * type maps to the corresponding JDBC SQL type.
      * <P>
      * Each type description has the following columns:
@@ -6230,7 +6230,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            DISTINCT); null returns all types
      * @return ResultSet - each row is a type description
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public java.sql.ResultSet getUDTs(String catalog, String schemaPattern, String typeNamePattern, int[] types) throws SQLException {
         Field[] fields = new Field[7];
@@ -6248,7 +6248,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * What's the url for this database?
+     * What's the url for this dal.database?
      * 
      * @return the url or null if it can't be generated
      * @throws SQLException
@@ -6258,9 +6258,9 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * What's our user name as known to the database?
+     * What's our user name as known to the dal.database?
      * 
-     * @return our database user name
+     * @return our dal.database user name
      * @throws SQLException
      */
     public String getUserName() throws SQLException {
@@ -6491,7 +6491,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            set type, i.e. ResultSet.TYPE_XXX
      * @return true if changes are detected by the resultset type
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public boolean insertsAreDetected(int type) throws SQLException {
         return false;
@@ -6509,7 +6509,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Is the database in read-only mode?
+     * Is the dal.database in read-only mode?
      * 
      * @return true if so
      * @throws SQLException
@@ -6599,7 +6599,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            set type, i.e. ResultSet.TYPE_XXX
      * @return true if changes are visible for the result set type
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public boolean othersUpdatesAreVisible(int type) throws SQLException {
         return false;
@@ -6628,7 +6628,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            set type, i.e. ResultSet.TYPE_XXX
      * @return true if changes are visible for the result set type
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public boolean ownUpdatesAreVisible(int type) throws SQLException {
         return false;
@@ -6729,7 +6729,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Does the database store mixed case unquoted SQL identifiers in lower
+     * Does the dal.database store mixed case unquoted SQL identifiers in lower
      * case?
      * 
      * @return true if so
@@ -6740,7 +6740,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Does the database store mixed case quoted SQL identifiers in lower case?
+     * Does the dal.database store mixed case quoted SQL identifiers in lower case?
      * A JDBC compliant driver will always return false.
      * 
      * @return true if so
@@ -6751,7 +6751,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Does the database store mixed case unquoted SQL identifiers in mixed
+     * Does the dal.database store mixed case unquoted SQL identifiers in mixed
      * case?
      * 
      * @return true if so
@@ -6762,7 +6762,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Does the database store mixed case quoted SQL identifiers in mixed case?
+     * Does the dal.database store mixed case quoted SQL identifiers in mixed case?
      * A JDBC compliant driver will always return false.
      * 
      * @return true if so
@@ -6773,7 +6773,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Does the database store mixed case unquoted SQL identifiers in upper
+     * Does the dal.database store mixed case unquoted SQL identifiers in upper
      * case?
      * 
      * @return true if so
@@ -6784,7 +6784,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Does the database store mixed case quoted SQL identifiers in upper case?
+     * Does the dal.database store mixed case quoted SQL identifiers in upper case?
      * A JDBC compliant driver will always return true.
      * 
      * @return true if so
@@ -7275,7 +7275,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Does the database support mixed case unquoted SQL identifiers?
+     * Does the dal.database support mixed case unquoted SQL identifiers?
      * 
      * @return true if so
      * @throws SQLException
@@ -7285,7 +7285,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Does the database support mixed case quoted SQL identifiers? A JDBC
+     * Does the dal.database support mixed case quoted SQL identifiers? A JDBC
      * compliant driver will always return true.
      * 
      * @return true if so
@@ -7346,7 +7346,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * 
      * @return true if so
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see Connection#disableAutoClose
      */
     public boolean supportsOpenCursorsAcrossCommit() throws SQLException {
@@ -7430,7 +7430,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * JDBC 2.0 Does the database support the concurrency type in combination
+     * JDBC 2.0 Does the dal.database support the concurrency type in combination
      * with the given result set type?
      * 
      * @param type
@@ -7439,7 +7439,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            type defined in java.sql.ResultSet
      * @return true if so
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      * @see Connection
      */
     public boolean supportsResultSetConcurrency(int type, int concurrency) throws SQLException {
@@ -7475,13 +7475,13 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * JDBC 2.0 Does the database support the given result set type?
+     * JDBC 2.0 Does the dal.database support the given result set type?
      * 
      * @param type
      *            defined in java.sql.ResultSet
      * @return true if so
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      * @see Connection
      */
     public boolean supportsResultSetType(int type) throws SQLException {
@@ -7630,13 +7630,13 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Does the database support the given transaction isolation level?
+     * Does the dal.database support the given transaction isolation level?
      * 
      * @param level
      *            the values are defined in java.sql.Connection
      * @return true if so
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * @see Connection
      */
     public boolean supportsTransactionIsolationLevel(int level) throws SQLException {
@@ -7695,16 +7695,16 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      *            set type, i.e. ResultSet.TYPE_XXX
      * @return true if changes are detected by the resultset type
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public boolean updatesAreDetected(int type) throws SQLException {
         return false;
     }
 
     /**
-     * Does the database use a file for each table?
+     * Does the dal.database use a file for each table?
      * 
-     * @return true if the database uses a local file for each table
+     * @return true if the dal.database uses a local file for each table
      * @throws SQLException
      */
     public boolean usesLocalFilePerTable() throws SQLException {
@@ -7712,7 +7712,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     /**
-     * Does the database store tables in a local file?
+     * Does the dal.database store tables in a local file?
      * 
      * @return true if so
      * @throws SQLException
@@ -7734,7 +7734,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * <li><b>MAX_LEN</b> int=> The maximum length of the value for the property<br>
      * <li><b>DEFAULT_VALUE</b> String=> The default value of the property<br>
      * <li><b>DESCRIPTION</b> String=> A description of the property. This will typically contain information as to where this property is stored in the
-     * database.
+     * dal.database.
      * </ol>
      * <p>
      * The <code>ResultSet</code> is sorted by the NAME column
@@ -7743,7 +7743,7 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * @return A <code>ResultSet</code> object; each row is a supported client info property
      *         <p>
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      *                <p>
      * @since 1.6
      */
@@ -7811,19 +7811,19 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
      * 
      * @param catalog
      *            a catalog name; must match the catalog name as it
-     *            is stored in the database; "" retrieves those without a catalog; <code>null</code> means that the catalog name should not be used to narrow
+     *            is stored in the dal.database; "" retrieves those without a catalog; <code>null</code> means that the catalog name should not be used to narrow
      *            the search
      * @param schemaPattern
      *            a schema name pattern; must match the schema name
-     *            as it is stored in the database; "" retrieves those without a schema; <code>null</code> means that the schema name should not be used to
+     *            as it is stored in the dal.database; "" retrieves those without a schema; <code>null</code> means that the schema name should not be used to
      *            narrow
      *            the search
      * @param functionNamePattern
      *            a function name pattern; must match the
-     *            function name as it is stored in the database
+     *            function name as it is stored in the dal.database
      * @return <code>ResultSet</code> - each row is a function description
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * @see #getSearchStringEscape
      * @since 1.6
      */

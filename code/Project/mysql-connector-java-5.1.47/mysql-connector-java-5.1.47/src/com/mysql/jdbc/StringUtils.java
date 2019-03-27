@@ -1961,8 +1961,8 @@ public class StringUtils {
 
     /**
      * Next two functions are to help DBMD check if
-     * the given string is in form of database.name and return it
-     * as "database";"name" with comments removed.
+     * the given string is in form of dal.database.name and return it
+     * as "dal.database";"name" with comments removed.
      * If string is NULL or wildcard (%), returns null and exits.
      * 
      * First, we sanitize...
@@ -1980,8 +1980,8 @@ public class StringUtils {
     }
 
     /**
-     * Splits an entity identifier into its parts (database and entity name) and returns a list containing the two elements. If the identifier doesn't contain
-     * the database part then the argument <code>catalog</code> is used in its place and <code>source</code> corresponds to the full entity name.
+     * Splits an entity identifier into its parts (dal.database and entity name) and returns a list containing the two elements. If the identifier doesn't contain
+     * the dal.database part then the argument <code>catalog</code> is used in its place and <code>source</code> corresponds to the full entity name.
      * If argument <code>source</code> is NULL or wildcard (%), returns an empty list.
      * 
      * @param source
@@ -2073,7 +2073,7 @@ public class StringUtils {
      *            ` or "
      * @param identifier
      *            in pedantic mode (connection property pedantic=true) identifier is treated as unquoted
-     *            (as it is stored in the database) even if it starts and ends with quoteChar;
+     *            (as it is stored in the dal.database) even if it starts and ends with quoteChar;
      *            in non-pedantic mode if identifier starts and ends with quoteChar method treats it as already quoted and doesn't modify.
      * @param isPedantic
      *            are we in pedantic mode
@@ -2140,7 +2140,7 @@ public class StringUtils {
      * 
      * @param identifier
      *            in pedantic mode (connection property pedantic=true) identifier is treated as unquoted
-     *            (as it is stored in the database) even if it starts and ends with "`";
+     *            (as it is stored in the dal.database) even if it starts and ends with "`";
      *            in non-pedantic mode if identifier starts and ends with "`" method treats it as already quoted and doesn't modify.
      * @param isPedantic
      *            are we in pedantic mode
@@ -2161,7 +2161,7 @@ public class StringUtils {
     /**
      * Trims identifier, removes quote chars from first and last positions
      * and replaces double occurrences of quote char from entire identifier,
-     * i.e converts quoted identifier into form as it is stored in database.
+     * i.e converts quoted identifier into form as it is stored in dal.database.
      * 
      * @param identifier
      * @param quoteChar

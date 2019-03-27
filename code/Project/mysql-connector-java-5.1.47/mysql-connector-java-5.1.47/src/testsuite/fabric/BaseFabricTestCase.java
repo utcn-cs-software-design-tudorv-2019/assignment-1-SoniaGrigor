@@ -34,7 +34,7 @@ public abstract class BaseFabricTestCase extends TestCase {
     protected String fabricPassword = System.getProperty("com.mysql.fabric.testsuite.fabricPassword");
     protected String username = System.getProperty("com.mysql.fabric.testsuite.username");
     protected String password = System.getProperty("com.mysql.fabric.testsuite.password");
-    protected String database = System.getProperty("com.mysql.fabric.testsuite.database");
+    protected String database = System.getProperty("com.mysql.fabric.testsuite.dal.database");
 
     protected String globalHost = System.getProperty("com.mysql.fabric.testsuite.global.host");
     protected String globalPort = System.getProperty("com.mysql.fabric.testsuite.global.port");

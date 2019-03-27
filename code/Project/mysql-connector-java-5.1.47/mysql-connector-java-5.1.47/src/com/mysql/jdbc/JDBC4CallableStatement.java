@@ -109,7 +109,7 @@ public class JDBC4CallableStatement extends CallableStatement {
      *            an object representing a NCLOB
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void setNClob(int parameterIndex, NClob value) throws SQLException {
         JDBC4PreparedStatementHelper.setNClob(this, parameterIndex, value);

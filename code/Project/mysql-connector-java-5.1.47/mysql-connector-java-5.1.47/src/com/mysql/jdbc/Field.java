@@ -55,7 +55,7 @@ public class Field {
 
     private int databaseNameLength = -1;
 
-    // database name info
+    // dal.database name info
     private int databaseNameStart = -1;
 
     protected int defaultValueLength = -1;

@@ -269,7 +269,7 @@ public class MysqlIO {
      * @throws IOException
      *             if an IOException occurs during connect.
      * @throws SQLException
-     *             if a database access error occurs.
+     *             if a dal.database access error occurs.
      */
     public MysqlIO(String host, int port, Properties props, String socketFactoryClassName, MySQLConnection conn, int socketTimeout,
             int useBufferRowSizeThreshold) throws IOException, SQLException {
@@ -391,7 +391,7 @@ public class MysqlIO {
      *            should the result set be read all at once, or
      *            streamed?
      * @param catalog
-     *            the database name in use when the result set was created
+     *            the dal.database name in use when the result set was created
      * @param isBinaryEncoded
      *            is this result set in native encoding?
      * @param unpackFieldInfo
@@ -400,7 +400,7 @@ public class MysqlIO {
      * @return a result set
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     protected ResultSetImpl getResultSet(StatementImpl callingStatement, long columnCount, int maxRows, int resultSetType, int resultSetConcurrency,
             boolean streamResults, String catalog, boolean isBinaryEncoded, Field[] metadataFromCache) throws SQLException {
@@ -872,7 +872,7 @@ public class MysqlIO {
     }
 
     /**
-     * Determines if the database charset is the same as the platform charset
+     * Determines if the dal.database charset is the same as the platform charset
      */
     protected void checkForCharsetMismatch() {
         if (this.connection.getUseUnicode() && (this.connection.getEncoding() != null)) {
@@ -1579,7 +1579,7 @@ public class MysqlIO {
 
     /**
      * Performs an authentication handshake to authorize connection to a
-     * given database as a given MySQL user. This can happen upon initial
+     * given dal.database as a given MySQL user. This can happen upon initial
      * connection to the server, after receiving Auth Challenge Packet, or
      * at any moment during the connection life-time via a Change User
      * request.
@@ -1593,7 +1593,7 @@ public class MysqlIO {
      *            authentication data for the user account (depends
      *            on authentication method used - can be empty)
      * @param database
-     *            database to connect to (can be empty)
+     *            dal.database to connect to (can be empty)
      * @param challenge
      *            the Auth Challenge Packet received from server if
      *            this method is used during the initial connection.
@@ -1801,7 +1801,7 @@ public class MysqlIO {
                     if (this.useConnectWithDb) {
                         last_sent.writeString(database, enc, this.connection);
                     } else {
-                        /* For empty database */
+                        /* For empty dal.database */
                         last_sent.writeByte((byte) 0);
                     }
 
@@ -4413,7 +4413,7 @@ public class MysqlIO {
         if (this.useConnectWithDb) {
             packet.writeString(database, enc, this.connection);
         } else if (forChangeUser) {
-            /* For empty database */
+            /* For empty dal.database */
             packet.writeByte((byte) 0);
         }
 

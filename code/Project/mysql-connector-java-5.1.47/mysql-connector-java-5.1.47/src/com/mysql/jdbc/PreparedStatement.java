@@ -852,10 +852,10 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * @param sql
      *            the SQL for this statement
      * @param catalog
-     *            the catalog/database this statement should be issued against
+     *            the catalog/dal.database this statement should be issued against
      * 
      * @throws SQLException
-     *             if a database error occurs.
+     *             if a dal.database error occurs.
      */
     public PreparedStatement(MySQLConnection conn, String sql, String catalog) throws SQLException {
         super(conn, catalog);
@@ -892,7 +892,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * @param sql
      *            the SQL for this statement
      * @param catalog
-     *            the catalog/database this statement should be issued against
+     *            the catalog/dal.database this statement should be issued against
      * @param cachedParseInfo
      *            already created parseInfo.
      * 
@@ -929,7 +929,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * JDBC 2.0 Add a set of parameters to the batch.
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      * 
      * @see StatementImpl#addBatch
      */
@@ -1060,7 +1060,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * calling clearParameters
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void clearParameters() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -1168,7 +1168,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *         count or there are no more results
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public boolean execute() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -1958,7 +1958,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *         null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public java.sql.ResultSet executeQuery() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -2037,7 +2037,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *         statements that return nothing.
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public int executeUpdate() throws SQLException {
         return Util.truncateAndConvertToInt(executeLargeUpdate());
@@ -2076,7 +2076,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * @return the update count
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     protected long executeUpdateInternal(byte[][] batchedParameterStrings, InputStream[] batchedParameterStreams, boolean[] batchedIsStream,
             int[] batchedStreamLengths, boolean[] batchedIsNull, boolean isReallyBatch) throws SQLException {
@@ -2535,7 +2535,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * @return the description of a ResultSet's columns
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public java.sql.ResultSetMetaData getMetaData() throws SQLException {
 
@@ -2791,7 +2791,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * When a very large ASCII value is input to a LONGVARCHAR parameter, it may
      * be more practical to send it via a java.io.InputStream. JDBC will read
      * the data from the stream as needed, until it reaches end-of-file. The
-     * JDBC driver will do any necessary conversion from ASCII to the database
+     * JDBC driver will do any necessary conversion from ASCII to the dal.database
      * char format.
      * 
      * <P>
@@ -2806,7 +2806,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the number of bytes in the stream
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setAsciiStream(int parameterIndex, InputStream x, int length) throws SQLException {
         if (x == null) {
@@ -2818,7 +2818,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a java.math.BigDecimal value. The driver converts this
-     * to a SQL NUMERIC value when it sends it to the database.
+     * to a SQL NUMERIC value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -2826,7 +2826,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setBigDecimal(int parameterIndex, BigDecimal x) throws SQLException {
         if (x == null) {
@@ -2855,7 +2855,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the number of bytes to read from the stream (ignored)
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public void setBinaryStream(int parameterIndex, InputStream x, int length) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -2896,7 +2896,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            an object representing a BLOB
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void setBlob(int i, java.sql.Blob x) throws SQLException {
         if (x == null) {
@@ -2916,7 +2916,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a Java boolean value. The driver converts this to a
-     * SQL BIT value when it sends it to the database.
+     * SQL BIT value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -2924,7 +2924,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public void setBoolean(int parameterIndex, boolean x) throws SQLException {
         if (this.useTrueBoolean) {
@@ -2938,7 +2938,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a Java byte value. The driver converts this to a SQL
-     * TINYINT value when it sends it to the database.
+     * TINYINT value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -2946,7 +2946,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setByte(int parameterIndex, byte x) throws SQLException {
         setInternal(parameterIndex, String.valueOf(x));
@@ -2957,7 +2957,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
     /**
      * Set a parameter to a Java array of bytes. The driver converts this to a
      * SQL VARBINARY or LONGVARBINARY (depending on the argument's size relative
-     * to the driver's limits on VARBINARYs) when it sends it to the database.
+     * to the driver's limits on VARBINARYs) when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -2965,7 +2965,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setBytes(int parameterIndex, byte[] x) throws SQLException {
         setBytes(parameterIndex, x, true, true);
@@ -3126,7 +3126,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * parameter, it may be more practical to send it via a java.io.Reader. JDBC
      * will read the data from the stream as needed, until it reaches
      * end-of-file. The JDBC driver will do any necessary conversion from
-     * UNICODE to the database char format.
+     * UNICODE to the dal.database char format.
      * 
      * <P>
      * <B>Note:</B> This stream object can either be a standard Java stream object or your own subclass that implements the standard interface.
@@ -3140,7 +3140,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the number of characters in the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public void setCharacterStream(int parameterIndex, java.io.Reader reader, int length) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -3208,7 +3208,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            an object representing a CLOB
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void setClob(int i, Clob x) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -3236,7 +3236,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a java.sql.Date value. The driver converts this to a
-     * SQL DATE value when it sends it to the database.
+     * SQL DATE value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -3244,7 +3244,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @exception java.sql.SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setDate(int parameterIndex, java.sql.Date x) throws java.sql.SQLException {
         setDate(parameterIndex, x, null);
@@ -3252,7 +3252,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a java.sql.Date value. The driver converts this to a
-     * SQL DATE value when it sends it to the database.
+     * SQL DATE value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1, the second is 2, ...
@@ -3262,7 +3262,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the calendar to interpret the date with
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public void setDate(int parameterIndex, java.sql.Date x, Calendar cal) throws SQLException {
         if (x == null) {
@@ -3284,7 +3284,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a Java double value. The driver converts this to a SQL
-     * DOUBLE value when it sends it to the database
+     * DOUBLE value when it sends it to the dal.database
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -3292,7 +3292,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setDouble(int parameterIndex, double x) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -3310,7 +3310,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a Java float value. The driver converts this to a SQL
-     * FLOAT value when it sends it to the database.
+     * FLOAT value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -3318,7 +3318,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setFloat(int parameterIndex, float x) throws SQLException {
         setInternal(parameterIndex, StringUtils.fixDecimalExponent(String.valueOf(x)));
@@ -3328,7 +3328,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a Java int value. The driver converts this to a SQL
-     * INTEGER value when it sends it to the database.
+     * INTEGER value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -3336,7 +3336,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setInt(int parameterIndex, int x) throws SQLException {
         setInternal(parameterIndex, String.valueOf(x));
@@ -3394,7 +3394,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a Java long value. The driver converts this to a SQL
-     * BIGINT value when it sends it to the database.
+     * BIGINT value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -3402,7 +3402,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setLong(int parameterIndex, long x) throws SQLException {
         setInternal(parameterIndex, String.valueOf(x));
@@ -3423,7 +3423,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the SQL type code defined in java.sql.Types
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setNull(int parameterIndex, int sqlType) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -3449,7 +3449,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            argument parameters for null
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public void setNull(int parameterIndex, int sqlType, String arg) throws SQLException {
         setNull(parameterIndex, sqlType);
@@ -3628,11 +3628,11 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * equivalent objects for integral values.
      * 
      * <P>
-     * The given Java object will be converted to the targetSqlType before being sent to the database.
+     * The given Java object will be converted to the targetSqlType before being sent to the dal.database.
      * </p>
      * 
      * <P>
-     * note that this method may be used to pass database-specific abstract data types. This is done by using a Driver-specific Java type and using a
+     * note that this method may be used to pass dal.database-specific abstract data types. This is done by using a Driver-specific Java type and using a
      * targetSqlType of java.sql.Types.OTHER
      * </p>
      * 
@@ -3641,14 +3641,14 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * @param parameterObj
      *            the object containing the input parameter value
      * @param targetSqlType
-     *            The SQL type to be send to the database
+     *            The SQL type to be send to the dal.database
      * @param scale
      *            For java.sql.Types.DECIMAL or java.sql.Types.NUMERIC types
      *            this is the number of digits after the decimal. For all other
      *            types this value will be ignored.
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public void setObject(int parameterIndex, Object parameterObj, int targetSqlType, int scale) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -3842,7 +3842,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            an object representing data of an SQL REF Type
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      * @throws NotImplemented
      */
     public void setRef(int i, Ref x) throws SQLException {
@@ -3883,7 +3883,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a Java short value. The driver converts this to a SQL
-     * SMALLINT value when it sends it to the database.
+     * SMALLINT value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -3891,7 +3891,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setShort(int parameterIndex, short x) throws SQLException {
         setInternal(parameterIndex, String.valueOf(x));
@@ -3902,7 +3902,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
     /**
      * Set a parameter to a Java String value. The driver converts this to a SQL
      * VARCHAR or LONGVARCHAR value (depending on the arguments size relative to
-     * the driver's limits on VARCHARs) when it sends it to the database.
+     * the driver's limits on VARCHARs) when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -3910,7 +3910,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setString(int parameterIndex, String x) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -4122,7 +4122,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a java.sql.Time value. The driver converts this to a
-     * SQL TIME value when it sends it to the database.
+     * SQL TIME value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1, the second is 2, ...
@@ -4132,7 +4132,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the cal specifying the timezone
      * 
      * @throws SQLException
-     *             if a database-access error occurs.
+     *             if a dal.database-access error occurs.
      */
     public void setTime(int parameterIndex, java.sql.Time x, Calendar cal) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -4142,7 +4142,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a java.sql.Time value. The driver converts this to a
-     * SQL TIME value when it sends it to the database.
+     * SQL TIME value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...));
@@ -4150,7 +4150,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @throws java.sql.SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public void setTime(int parameterIndex, Time x) throws java.sql.SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -4160,7 +4160,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a java.sql.Time value. The driver converts this to a
-     * SQL TIME value when it sends it to the database, using the given
+     * SQL TIME value when it sends it to the dal.database, using the given
      * timezone.
      * 
      * @param parameterIndex
@@ -4171,7 +4171,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the timezone to use
      * 
      * @throws java.sql.SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     private void setTimeInternal(int parameterIndex, Time x, Calendar targetCalendar, TimeZone tz, boolean rollForward) throws java.sql.SQLException {
         if (x == null) {
@@ -4195,7 +4195,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a java.sql.Timestamp value. The driver converts this
-     * to a SQL TIMESTAMP value when it sends it to the database.
+     * to a SQL TIMESTAMP value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1, the second is 2, ...
@@ -4205,7 +4205,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the calendar specifying the timezone to use
      * 
      * @throws SQLException
-     *             if a database-access error occurs.
+     *             if a dal.database-access error occurs.
      */
     public void setTimestamp(int parameterIndex, java.sql.Timestamp x, Calendar cal) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -4223,7 +4223,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a java.sql.Timestamp value. The driver converts this
-     * to a SQL TIMESTAMP value when it sends it to the database.
+     * to a SQL TIMESTAMP value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -4231,7 +4231,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @throws java.sql.SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public void setTimestamp(int parameterIndex, Timestamp x) throws java.sql.SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -4249,7 +4249,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
 
     /**
      * Set a parameter to a java.sql.Timestamp value. The driver converts this
-     * to a SQL TIMESTAMP value when it sends it to the database.
+     * to a SQL TIMESTAMP value when it sends it to the dal.database.
      * 
      * @param parameterIndex
      *            the first parameter is 1, the second is 2, ...
@@ -4259,7 +4259,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the timezone to use
      * 
      * @throws SQLException
-     *             if a database-access error occurs.
+     *             if a dal.database-access error occurs.
      */
     protected void setTimestampInternal(int parameterIndex, Timestamp x, Calendar targetCalendar, TimeZone tz, boolean rollForward, int fractionalLength,
             boolean useSSPSCompatibleTimezoneShift) throws SQLException {
@@ -4446,7 +4446,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * may be more practical to send it via a java.io.InputStream. JDBC will
      * read the data from the stream as needed, until it reaches end-of-file.
      * The JDBC driver will do any necessary conversion from UNICODE to the
-     * database char format.
+     * dal.database char format.
      * 
      * <P>
      * <B>Note:</B> This stream object can either be a standard Java stream object or your own subclass that implements the standard interface.
@@ -4460,7 +4460,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the number of bytes to read from the stream
      * 
      * @throws SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      * 
      * @deprecated
      */
@@ -4724,7 +4724,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * Set a parameter to a Java String value. The driver converts this to a SQL
      * VARCHAR or LONGVARCHAR value with introducer _utf8 (depending on the
      * arguments size relative to the driver's limits on VARCHARs) when it sends
-     * it to the database. If charset is set as utf8, this method just call setString.
+     * it to the dal.database. If charset is set as utf8, this method just call setString.
      * 
      * @param parameterIndex
      *            the first parameter is 1...
@@ -4732,7 +4732,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the parameter value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setNString(int parameterIndex, String x) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -4837,7 +4837,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      * parameter, it may be more practical to send it via a java.io.Reader. JDBC
      * will read the data from the stream as needed, until it reaches
      * end-of-file. The JDBC driver will do any necessary conversion from
-     * UNICODE to the database char format.
+     * UNICODE to the dal.database char format.
      * 
      * <P>
      * <B>Note:</B> This stream object can either be a standard Java stream object or your own subclass that implements the standard interface.
@@ -4851,7 +4851,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the number of characters in the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public void setNCharacterStream(int parameterIndex, Reader reader, long length) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -4908,7 +4908,7 @@ public class PreparedStatement extends com.mysql.jdbc.StatementImpl implements j
      *            the number of characters in the stream
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      */
     public void setNClob(int parameterIndex, Reader reader, long length) throws SQLException {
         if (reader == null) {

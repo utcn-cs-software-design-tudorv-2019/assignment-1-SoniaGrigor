@@ -180,7 +180,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
     }
 
     /**
-     * Tests fix for BUG#3554 - Not specifying database in URL causes
+     * Tests fix for BUG#3554 - Not specifying dal.database in URL causes
      * MalformedURL exception.
      * 
      * @throws Exception
@@ -3535,7 +3535,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
                 Properties props = new NonRegisteringDriver().parseURL(dbUrl, null);
                 String dbname = props.getProperty(NonRegisteringDriver.DBNAME_PROPERTY_KEY);
                 if (dbname == null) {
-                    assertTrue("No database selected", false);
+                    assertTrue("No dal.database selected", false);
                 }
 
                 // create proxy users
@@ -3611,7 +3611,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
                 Properties props = new NonRegisteringDriver().parseURL(dbUrl, null);
                 String dbname = props.getProperty(NonRegisteringDriver.DBNAME_PROPERTY_KEY);
                 if (dbname == null) {
-                    assertTrue("No database selected", false);
+                    assertTrue("No dal.database selected", false);
                 }
 
                 createUser("'wl5851user2'@'%'", "identified WITH two_questions AS 'two_questions_password'");
@@ -3683,7 +3683,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
                 Properties props = new NonRegisteringDriver().parseURL(dbUrl, null);
                 String dbname = props.getProperty(NonRegisteringDriver.DBNAME_PROPERTY_KEY);
                 if (dbname == null) {
-                    assertTrue("No database selected", false);
+                    assertTrue("No dal.database selected", false);
                 }
 
                 createUser("'wl5851user3'@'%'", "identified WITH three_attempts AS 'three_attempts_password'");
@@ -3997,7 +3997,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
                 Properties props = new NonRegisteringDriver().parseURL(dbUrl, null);
                 String dbname = props.getProperty(NonRegisteringDriver.DBNAME_PROPERTY_KEY);
                 if (dbname == null) {
-                    assertTrue("No database selected", false);
+                    assertTrue("No dal.database selected", false);
                 }
 
                 // create proxy users
@@ -4638,7 +4638,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
             Properties props = new NonRegisteringDriver().parseURL(dbUrl, null);
             String dbname = props.getProperty(NonRegisteringDriver.DBNAME_PROPERTY_KEY);
             if (dbname == null) {
-                assertTrue("No database selected", false);
+                assertTrue("No dal.database selected", false);
             }
 
             props = new Properties();
@@ -7462,7 +7462,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
                 testPstmt.close();
 
                 Statement testStmt = testConn.createStatement();
-                // Get date value from database: Column `dt` - allowing time zone conversion by returning it as is; Column `dtStr` - preventing time zone
+                // Get date value from dal.database: Column `dt` - allowing time zone conversion by returning it as is; Column `dtStr` - preventing time zone
                 // conversion by returning it as String and invalidating the date format so that no automatic conversion can ever happen.
                 ResultSet restRs = testStmt.executeQuery("SELECT dt, CONCAT('$', dt) AS dtStr FROM testBug71084 WHERE id = " + id);
                 restRs.next();
@@ -7497,7 +7497,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
                 testPstmt.close();
 
                 testStmt = testConn.createStatement();
-                // Get date value from database: Column `dt` - allowing time zone conversion by returning it as is; Column `dtStr` - preventing time zone
+                // Get date value from dal.database: Column `dt` - allowing time zone conversion by returning it as is; Column `dtStr` - preventing time zone
                 // conversion by returning it as String and invalidating the date format so that no automatic conversion can ever happen.
                 restRs = testStmt.executeQuery("SELECT dt, CONCAT('$', dt) AS dtStr FROM testBug71084 WHERE id = " + id);
                 restRs.next();
@@ -10256,8 +10256,8 @@ public class ConnectionRegressionTest extends BaseTestCase {
      * Tests fix for Bug#79612 (22362474), CONNECTION ATTRIBUTES LOST WHEN CONNECTING WITHOUT DEFAULT DATABASE.
      */
     public void testBug79612() throws Exception {
-        // The case with database present in URL is covered by testConnectionAttributes() test case.
-        // Testing without database here.
+        // The case with dal.database present in URL is covered by testConnectionAttributes() test case.
+        // Testing without dal.database here.
         if (versionMeetsMinimum(5, 6)) {
             testConnectionAttributes(getNoDbUrl(dbUrl));
         }

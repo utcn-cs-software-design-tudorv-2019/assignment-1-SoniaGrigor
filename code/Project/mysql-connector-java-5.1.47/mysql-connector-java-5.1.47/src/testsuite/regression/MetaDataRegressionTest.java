@@ -907,7 +907,7 @@ public class MetaDataRegressionTest extends BaseTestCase {
 
     /**
      * Tests fix for BUG#9320 - PreparedStatement.getMetaData() inserts blank
-     * row in database under certain conditions when not using server-side
+     * row in dal.database under certain conditions when not using server-side
      * prepared statements.
      * 
      * @throws Exception
@@ -923,7 +923,7 @@ public class MetaDataRegressionTest extends BaseTestCase {
 
     /**
      * Tests fix for BUG#9778, DBMD.getTables() shouldn't return tables if views
-     * are asked for, even if the database version doesn't support views.
+     * are asked for, even if the dal.database version doesn't support views.
      * 
      * @throws Exception
      *             if the test fails.
@@ -1599,7 +1599,7 @@ public class MetaDataRegressionTest extends BaseTestCase {
     }
 
     /**
-     * Tests fix for BUG#18258 - Nonexistent catalog/database causes
+     * Tests fix for BUG#18258 - Nonexistent catalog/dal.database causes
      * SQLException to be raised, rather than returning empty result set.
      * 
      * @throws Exception
@@ -2425,7 +2425,7 @@ public class MetaDataRegressionTest extends BaseTestCase {
             }
         }
 
-        assertTrue("Didn't find any columns for table named 'testBug31187' in database " + this.conn.getCatalog(), found);
+        assertTrue("Didn't find any columns for table named 'testBug31187' in dal.database " + this.conn.getCatalog(), found);
     }
 
     public void testBug44508() throws Exception {
@@ -2572,7 +2572,7 @@ public class MetaDataRegressionTest extends BaseTestCase {
      * The workaround introduced in DatabaseMetaData.getCallStmtParameterTypes
      * to fix the bug in server where SHOW CREATE PROCEDURE was not respecting
      * lower-case table names is misbehaving when connection is not attached to
-     * database and on non-casesensitive OS.
+     * dal.database and on non-casesensitive OS.
      * 
      * @throws Exception
      *             if the test fails.
@@ -2712,7 +2712,7 @@ public class MetaDataRegressionTest extends BaseTestCase {
             Properties props = new NonRegisteringDriver().parseURL(dbUrl, null);
             String dbname = props.getProperty(NonRegisteringDriver.DBNAME_PROPERTY_KEY);
             if (dbname == null) {
-                assertTrue("No database selected", false);
+                assertTrue("No dal.database selected", false);
             }
 
             createUser("'bug61203user'@'%'", "identified by 'foo'");
@@ -2842,7 +2842,7 @@ public class MetaDataRegressionTest extends BaseTestCase {
             Properties props = new NonRegisteringDriver().parseURL(dbUrl, null);
             String dbname = props.getProperty(NonRegisteringDriver.DBNAME_PROPERTY_KEY);
             if (dbname == null) {
-                fail("No database selected");
+                fail("No dal.database selected");
             }
 
             for (String prop : new String[] { "dummyProp", "useInformationSchema" }) {
@@ -3708,7 +3708,7 @@ public class MetaDataRegressionTest extends BaseTestCase {
             }
         }
 
-        // create table and view in '(test)' schema
+        // create table and presentation.view in '(test)' schema
         createTable("testBug69290_table", "(c1 INT)");
         createView("testBug69290_view", "AS SELECT * FROM testBug69290_table WHERE c1 > 1");
 
@@ -3918,7 +3918,7 @@ public class MetaDataRegressionTest extends BaseTestCase {
                     }
                 } catch (SQLException e) {
                     if (e.getMessage().matches("FUNCTION `testBug20504139(:?`{2})?[fp]` does not exist")) {
-                        fail(testCase + "." + i + ". failed to retrieve function columns from database meta data.");
+                        fail(testCase + "." + i + ". failed to retrieve function columns from dal.database meta data.");
                     }
                     throw e;
                 }
@@ -3941,7 +3941,7 @@ public class MetaDataRegressionTest extends BaseTestCase {
                     }
                 } catch (SQLException e) {
                     if (e.getMessage().matches("PROCEDURE `testBug20504139(:?`{2})?[fp]` does not exist")) {
-                        fail(testCase + "." + i + ". failed to retrieve procedure columns from database meta data.");
+                        fail(testCase + "." + i + ". failed to retrieve procedure columns from dal.database meta data.");
                     }
                     throw e;
                 }

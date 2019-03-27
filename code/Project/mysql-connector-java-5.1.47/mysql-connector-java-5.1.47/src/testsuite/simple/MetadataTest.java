@@ -582,7 +582,7 @@ public class MetadataTest extends BaseTestCase {
 
                     } catch (SQLException sqlEx) {
                         fail("This testcase needs to be run with a URL that allows the user to issue GRANTs "
-                                + " in the current database. You can skip this test by setting the system property \"" + dontRunPropertyName + "\".");
+                                + " in the current dal.database. You can skip this test by setting the system property \"" + dontRunPropertyName + "\".");
                     }
 
                     if (!grantFailed) {

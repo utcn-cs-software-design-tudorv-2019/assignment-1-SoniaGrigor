@@ -308,7 +308,7 @@ public class StatementImpl implements Statement {
      * @param c
      *            the Connection instance that creates us
      * @param catalog
-     *            the database name in use when we were created
+     *            the dal.database name in use when we were created
      * 
      * @throws SQLException
      *             if an error occurs.
@@ -495,7 +495,7 @@ public class StatementImpl implements Statement {
      * is optional.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or the driver does not
+     *                if a dal.database-access error occurs, or the driver does not
      *                support batch statements
      */
     public void clearBatch() throws SQLException {
@@ -511,7 +511,7 @@ public class StatementImpl implements Statement {
      * for this Statement.
      * 
      * @exception SQLException
-     *                if a database access error occurs (why?)
+     *                if a dal.database access error occurs (why?)
      */
     public void clearWarnings() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -522,7 +522,7 @@ public class StatementImpl implements Statement {
 
     /**
      * In many cases, it is desirable to immediately release a Statement's
-     * database and JDBC resources instead of waiting for this to happen when it
+     * dal.database and JDBC resources instead of waiting for this to happen when it
      * is automatically closed. The close method provides this immediate
      * release.
      * 
@@ -532,7 +532,7 @@ public class StatementImpl implements Statement {
      * </p>
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void close() throws SQLException {
         realClose(true, true);
@@ -739,7 +739,7 @@ public class StatementImpl implements Statement {
      *         count or there are no more results
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public boolean execute(String sql) throws SQLException {
         return executeInternal(sql, false);
@@ -954,7 +954,7 @@ public class StatementImpl implements Statement {
     }
 
     /**
-     * JDBC 2.0 Submit a batch of commands to the database for execution. This
+     * JDBC 2.0 Submit a batch of commands to the dal.database for execution. This
      * method is optional.
      * 
      * @return an array of update counts containing one element for each command
@@ -962,7 +962,7 @@ public class StatementImpl implements Statement {
      *         which commands were inserted into the batch
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or the driver does not
+     *                if a dal.database-access error occurs, or the driver does not
      *                support batch statements
      * @throws java.sql.BatchUpdateException
      */
@@ -1299,7 +1299,7 @@ public class StatementImpl implements Statement {
      * @return a ResulSet that contains the data produced by the query
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public java.sql.ResultSet executeQuery(String sql) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -1474,7 +1474,7 @@ public class StatementImpl implements Statement {
      * @return either a row count, or 0 for SQL commands
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public int executeUpdate(String sql) throws SQLException {
         return Util.truncateAndConvertToInt(executeLargeUpdate(sql));
@@ -1664,7 +1664,7 @@ public class StatementImpl implements Statement {
      * @return the default fetch direction
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public int getFetchDirection() throws SQLException {
         return java.sql.ResultSet.FETCH_FORWARD;
@@ -1848,7 +1848,7 @@ public class StatementImpl implements Statement {
      * @return the current max column size limit; zero means unlimited
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public int getMaxFieldSize() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -1864,7 +1864,7 @@ public class StatementImpl implements Statement {
      * @return the current maximum row limit; zero means unlimited
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public int getMaxRows() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -1883,7 +1883,7 @@ public class StatementImpl implements Statement {
      * @return true if the next ResultSet is valid
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public boolean getMoreResults() throws SQLException {
         return getMoreResults(CLOSE_CURRENT_RESULT);
@@ -1979,7 +1979,7 @@ public class StatementImpl implements Statement {
      * @return the current query timeout limit in seconds; 0 = unlimited
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public int getQueryTimeout() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -2060,7 +2060,7 @@ public class StatementImpl implements Statement {
      * @return the current result set; null if there are no more
      * 
      * @exception SQLException
-     *                if a database access error occurs (why?)
+     *                if a dal.database access error occurs (why?)
      */
     public java.sql.ResultSet getResultSet() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -2121,7 +2121,7 @@ public class StatementImpl implements Statement {
      * @return the current result as an update count.
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public int getUpdateCount() throws SQLException {
         return Util.truncateAndConvertToInt(getLargeUpdateCount());
@@ -2144,7 +2144,7 @@ public class StatementImpl implements Statement {
      * @return the first java.sql.SQLWarning or null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public java.sql.SQLWarning getWarnings() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -2239,7 +2239,7 @@ public class StatementImpl implements Statement {
      * setCursorName defines the SQL cursor name that will be used by subsequent
      * execute methods. This name can then be used in SQL positioned
      * update/delete statements to identify the current row in the ResultSet
-     * generated by this statement. If a database doesn't support positioned
+     * generated by this statement. If a dal.database doesn't support positioned
      * update/delete, this method is a no-op.
      * 
      * <p>
@@ -2250,7 +2250,7 @@ public class StatementImpl implements Statement {
      *            the new cursor name
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setCursorName(String name) throws SQLException {
         // No-op
@@ -2258,13 +2258,13 @@ public class StatementImpl implements Statement {
 
     /**
      * If escape scanning is on (the default), the driver will do escape
-     * substitution before sending the SQL to the database.
+     * substitution before sending the SQL to the dal.database.
      * 
      * @param enable
      *            true to enable; false to disable
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setEscapeProcessing(boolean enable) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -2281,7 +2281,7 @@ public class StatementImpl implements Statement {
      *            the initial direction for processing rows
      * 
      * @exception SQLException
-     *                if a database-access error occurs or direction is not one
+     *                if a dal.database-access error occurs or direction is not one
      *                of ResultSet.FETCH_FORWARD, ResultSet.FETCH_REVERSE, or
      *                ResultSet.FETCH_UNKNOWN
      */
@@ -2299,7 +2299,7 @@ public class StatementImpl implements Statement {
 
     /**
      * JDBC 2.0 Give the JDBC driver a hint as to the number of rows that should
-     * be fetched from the database when more rows are needed. The number of
+     * be fetched from the dal.database when more rows are needed. The number of
      * rows specified only affects result sets created using this statement. If
      * the value specified is zero, then the hint is ignored. The default value
      * is zero.
@@ -2308,7 +2308,7 @@ public class StatementImpl implements Statement {
      *            the number of rows to fetch
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or the condition 0
+     *                if a dal.database-access error occurs, or the condition 0
      *                &lt;= rows &lt;= this.getMaxRows() is not satisfied.
      */
     public void setFetchSize(int rows) throws SQLException {
@@ -2364,7 +2364,7 @@ public class StatementImpl implements Statement {
      *            the new max rows limit; zero means unlimited
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * 
      * @see getMaxRows
      */
@@ -2380,7 +2380,7 @@ public class StatementImpl implements Statement {
      *            the new query timeout limit in seconds
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void setQueryTimeout(int seconds) throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {

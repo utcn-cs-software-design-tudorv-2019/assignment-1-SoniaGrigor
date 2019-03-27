@@ -1870,7 +1870,7 @@ public class ConnectionTest extends BaseTestCase {
                 /*
                  * Verify that retrieving values from the ResultSet is also affected by default time zone caching setting, allowing to "convert" them to the
                  * original date value when time zone caching is disabled.
-                 * When time zone caching is enabled then the values stored in the database were the same and changing the default time zone while retrieving
+                 * When time zone caching is enabled then the values stored in the dal.database were the same and changing the default time zone while retrieving
                  * them doesn't affect the result.
                  */
                 testRs = testStmt.executeQuery("SELECT * FROM testCacheDefTZ WHERE test = " + cacheDefTZ);

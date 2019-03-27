@@ -131,7 +131,7 @@ public class MysqlXAConnection extends MysqlPooledConnection implements XAConnec
      * 
      * @return the <code>XAResource</code> object
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public XAResource getXAResource() throws SQLException {
         return this;

@@ -44,22 +44,22 @@ public class HibernateFabric {
         String port = System.getProperty("com.mysql.fabric.testsuite.port");
         String user = System.getProperty("com.mysql.fabric.testsuite.username");
         String password = System.getProperty("com.mysql.fabric.testsuite.password");
-        String database = System.getProperty("com.mysql.fabric.testsuite.database");
+        String database = System.getProperty("com.mysql.fabric.testsuite.dal.database");
         String fabricUsername = System.getProperty("com.mysql.fabric.testsuite.fabricUsername");
         String fabricPassword = System.getProperty("com.mysql.fabric.testsuite.fabricPassword");
 
-        // Using JDBC Fabric connection to create database and table
+        // Using JDBC Fabric connection to create dal.database and table
         Class.forName("com.mysql.fabric.jdbc.FabricMySQLDriver");
         Connection con = DriverManager.getConnection("jdbc:mysql:fabric://" + hostname + ":" + Integer.valueOf(port)
                 + "/mysql?fabricServerGroup=fabric_test1_global&fabricUsername=" + fabricUsername + "&fabricPassword=" + fabricPassword, user, password);
         Statement stmt = con.createStatement();
-        stmt.executeUpdate("create database if not exists employees");
+        stmt.executeUpdate("create dal.database if not exists employees");
         con.close();
 
         con = DriverManager.getConnection("jdbc:mysql:fabric://" + hostname + ":" + Integer.valueOf(port) + "/" + database
                 + "?fabricServerGroup=fabric_test1_global&fabricUsername=" + fabricUsername + "&fabricPassword=" + fabricPassword, user, password);
         stmt = con.createStatement();
-        stmt.executeUpdate("create database if not exists employees");
+        stmt.executeUpdate("create dal.database if not exists employees");
         stmt.executeUpdate("drop table if exists employees.employees");
         stmt.executeUpdate("create table employees.employees (emp_no INT PRIMARY KEY, first_name CHAR(40), last_name CHAR(40))");
         stmt.close();

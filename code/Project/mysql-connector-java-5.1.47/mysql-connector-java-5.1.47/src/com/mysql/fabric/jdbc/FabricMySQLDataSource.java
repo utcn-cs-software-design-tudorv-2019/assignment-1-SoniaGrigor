@@ -58,7 +58,7 @@ public class FabricMySQLDataSource extends MysqlDataSource implements FabricMySQ
      * @param props
      *            the properties to connect with
      * 
-     * @return a connection to the database
+     * @return a connection to the dal.database
      * 
      * @throws SQLException
      *             if an error occurs

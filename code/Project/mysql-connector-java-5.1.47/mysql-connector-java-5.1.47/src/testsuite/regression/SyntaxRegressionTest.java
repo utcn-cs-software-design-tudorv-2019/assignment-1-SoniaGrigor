@@ -246,7 +246,7 @@ public class SyntaxRegressionTest extends BaseTestCase {
             Properties props = new NonRegisteringDriver().parseURL(dbUrl, null);
             String dbname = props.getProperty(NonRegisteringDriver.DBNAME_PROPERTY_KEY);
             if (dbname == null) {
-                assertTrue("No database selected", false);
+                assertTrue("No dal.database selected", false);
             }
 
             dropTable("testTransportableTablespaces1");
@@ -521,7 +521,7 @@ public class SyntaxRegressionTest extends BaseTestCase {
 
                 // Test LOAD
                 if (dbname == null) {
-                    fail("No database selected");
+                    fail("No dal.database selected");
                 } else {
                     File f = new File(datadir + File.separator + dbname + File.separator + "loadtestExplicitPartitions.txt");
                     if (f.exists()) {
@@ -775,15 +775,15 @@ public class SyntaxRegressionTest extends BaseTestCase {
 
         this.stmt.executeUpdate("INSERT INTO testFULLTEXTSearchInnoDB (title, body) VALUES ('MySQL Tutorial','DBMS stands for DataBase ...'), "
                 + "('How To Use MySQL Well','After you went through a ...'), ('Optimizing MySQL','In this tutorial we will show ...'), "
-                + "('1001 MySQL Tricks','1. Never run mysqld as root. 2. ...'), ('MySQL vs. YourSQL','In the following database comparison ...'), "
+                + "('1001 MySQL Tricks','1. Never run mysqld as root. 2. ...'), ('MySQL vs. YourSQL','In the following dal.database comparison ...'), "
                 + "('MySQL Security','When configured properly, MySQL ...')");
 
-        String[] querySamples = new String[] { "SELECT * FROM testFULLTEXTSearchInnoDB WHERE MATCH (title, body) AGAINST ('database' IN NATURAL LANGUAGE MODE)",
-                "SELECT * FROM testFULLTEXTSearchInnoDB WHERE MATCH (title, body) AGAINST ('database' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION)",
+        String[] querySamples = new String[] { "SELECT * FROM testFULLTEXTSearchInnoDB WHERE MATCH (title, body) AGAINST ('dal.database' IN NATURAL LANGUAGE MODE)",
+                "SELECT * FROM testFULLTEXTSearchInnoDB WHERE MATCH (title, body) AGAINST ('dal.database' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION)",
                 "SELECT * FROM testFULLTEXTSearchInnoDB WHERE MATCH (title, body) AGAINST ('<MySQL >YourSQL' IN BOOLEAN MODE)",
                 "SELECT * FROM testFULLTEXTSearchInnoDB WHERE MATCH (title, body) AGAINST ('+MySQL -YourSQL' IN BOOLEAN MODE)",
-                "SELECT MATCH (title, body) AGAINST ('database' IN NATURAL LANGUAGE MODE) FROM testFULLTEXTSearchInnoDB",
-                "SELECT MATCH (title, body) AGAINST ('database' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION) FROM testFULLTEXTSearchInnoDB",
+                "SELECT MATCH (title, body) AGAINST ('dal.database' IN NATURAL LANGUAGE MODE) FROM testFULLTEXTSearchInnoDB",
+                "SELECT MATCH (title, body) AGAINST ('dal.database' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION) FROM testFULLTEXTSearchInnoDB",
                 "SELECT MATCH (title, body) AGAINST ('<MySQL >YourSQL' IN BOOLEAN MODE) FROM testFULLTEXTSearchInnoDB",
                 "SELECT MATCH (title, body) AGAINST ('+MySQL -YourSQL' IN BOOLEAN MODE) FROM testFULLTEXTSearchInnoDB" };
 

@@ -35,11 +35,11 @@ public final class MysqlErrorNumbers {
     public final static int ER_YES = 1003; //SQLSTATE: HY000 Message: YES
     public final static int ER_CANT_CREATE_FILE = 1004; //SQLSTATE: HY000 Message: Can't create file '%s' (errno: %d - %s)
     public final static int ER_CANT_CREATE_TABLE = 1005; //SQLSTATE: HY000 Message: Can't create table '%s' (errno: %d)
-    public final static int ER_CANT_CREATE_DB = 1006; //SQLSTATE: HY000 Message: Can't create database '%s' (errno: %d)
-    public final static int ER_DB_CREATE_EXISTS = 1007; //SQLSTATE: HY000 Message: Can't create database '%s'; database exists...
-    public final static int ER_DB_DROP_EXISTS = 1008; //SQLSTATE: HY000 Message: Can't drop database '%s'; database doesn't exist
-    public final static int ER_DB_DROP_DELETE = 1009; //SQLSTATE: HY000 Message: Error dropping database (can't delete '%s', errno: %d)
-    public final static int ER_DB_DROP_RMDIR = 1010; //SQLSTATE: HY000 Message: Error dropping database (can't rmdir '%s', errno: %d)
+    public final static int ER_CANT_CREATE_DB = 1006; //SQLSTATE: HY000 Message: Can't create dal.database '%s' (errno: %d)
+    public final static int ER_DB_CREATE_EXISTS = 1007; //SQLSTATE: HY000 Message: Can't create dal.database '%s'; dal.database exists...
+    public final static int ER_DB_DROP_EXISTS = 1008; //SQLSTATE: HY000 Message: Can't drop dal.database '%s'; dal.database doesn't exist
+    public final static int ER_DB_DROP_DELETE = 1009; //SQLSTATE: HY000 Message: Error dropping dal.database (can't delete '%s', errno: %d)
+    public final static int ER_DB_DROP_RMDIR = 1010; //SQLSTATE: HY000 Message: Error dropping dal.database (can't rmdir '%s', errno: %d)
     public final static int ER_CANT_DELETE_FILE = 1011; //SQLSTATE: HY000 Message: Error on delete of '%s' (errno: %d - %s)
     public final static int ER_CANT_FIND_SYSTEM_REC = 1012; //SQLSTATE: HY000 Message: Can't read record in system table
     public final static int ER_CANT_GET_STAT = 1013; //SQLSTATE: HY000 Message: Can't get status of '%s' (errno: %d - %s)
@@ -73,12 +73,12 @@ public final class MysqlErrorNumbers {
     public final static int ER_OUT_OF_RESOURCES = 1041; //SQLSTATE: HY000 Message: Out of memory; check if mysqld or some other process uses all available memory; if not, you may have to use 'ulimit' to allow mysqld to use more memory or you can add more swap space
     public final static int ER_BAD_HOST_ERROR = 1042; //SQLSTATE: 08S01 Message: Can't get hostname for your address
     public final static int ER_HANDSHAKE_ERROR = 1043; //SQLSTATE: 08S01 Message: Bad handshake
-    public final static int ER_DBACCESS_DENIED_ERROR = 1044; //SQLSTATE: 42000 Message: Access denied for user '%s'@'%s' to database '%s'
+    public final static int ER_DBACCESS_DENIED_ERROR = 1044; //SQLSTATE: 42000 Message: Access denied for user '%s'@'%s' to dal.database '%s'
     public final static int ER_ACCESS_DENIED_ERROR = 1045; //SQLSTATE: 28000 Message: Access denied for user '%s'@'%s' (using password: %s)
-    public final static int ER_NO_DB_ERROR = 1046; //SQLSTATE: 3D000 Message: No database selected
+    public final static int ER_NO_DB_ERROR = 1046; //SQLSTATE: 3D000 Message: No dal.database selected
     public final static int ER_UNKNOWN_COM_ERROR = 1047; //SQLSTATE: 08S01 Message: Unknown command
     public final static int ER_BAD_NULL_ERROR = 1048; //SQLSTATE: 23000 Message: Column '%s' cannot be null
-    public final static int ER_BAD_DB_ERROR = 1049; //SQLSTATE: 42000 Message: Unknown database '%s'
+    public final static int ER_BAD_DB_ERROR = 1049; //SQLSTATE: 42000 Message: Unknown dal.database '%s'
     public final static int ER_TABLE_EXISTS_ERROR = 1050; //SQLSTATE: 42S01 Message: Table '%s' already exists
     public final static int ER_BAD_TABLE_ERROR = 1051; //SQLSTATE: 42S02 Message: Unknown table '%s'
     public final static int ER_NON_UNIQ_ERROR = 1052; //SQLSTATE: 23000 Message: Column '%s' in %s is ambiguous
@@ -114,7 +114,7 @@ public final class MysqlErrorNumbers {
     public final static int ER_NO_SUCH_INDEX = 1082; //SQLSTATE: 42S12 Message: Table '%s' has no index like the one used in CREATE INDEX; recreate the table
     public final static int ER_WRONG_FIELD_TERMINATORS = 1083; //SQLSTATE: 42000 Message: Field separator argument is not what is expected; check the manual
     public final static int ER_BLOBS_AND_NO_TERMINATED = 1084; //SQLSTATE: 42000 Message: You can't use fixed rowlength with BLOBs; please use 'fields terminated by'
-    public final static int ER_TEXTFILE_NOT_READABLE = 1085; //SQLSTATE: HY000 Message: The file '%s' must be in the database directory or be readable by all
+    public final static int ER_TEXTFILE_NOT_READABLE = 1085; //SQLSTATE: HY000 Message: The file '%s' must be in the dal.database directory or be readable by all
     public final static int ER_FILE_EXISTS_ERROR = 1086; //SQLSTATE: HY000 Message: File '%s' already exists
     public final static int ER_LOAD_INFO = 1087; //SQLSTATE: HY000 Message: Records: %ld Deleted: %ld Skipped: %ld Warnings: %ld
     public final static int ER_ALTER_INFO = 1088; //SQLSTATE: HY000 Message: Records: %ld Duplicates: %ld
@@ -131,7 +131,7 @@ public final class MysqlErrorNumbers {
     public final static int ER_TABLE_NOT_LOCKED_FOR_WRITE = 1099; //SQLSTATE: HY000 Message: Table '%s' was locked with a READ lock and can't be updated
     public final static int ER_TABLE_NOT_LOCKED = 1100; //SQLSTATE: HY000 Message: Table '%s' was not locked with LOCK TABLES
     public final static int ER_BLOB_CANT_HAVE_DEFAULT = 1101; //SQLSTATE: 42000 Message: BLOB/TEXT column '%s' can't have a default value
-    public final static int ER_WRONG_DB_NAME = 1102; //SQLSTATE: 42000 Message: Incorrect database name '%s'
+    public final static int ER_WRONG_DB_NAME = 1102; //SQLSTATE: 42000 Message: Incorrect dal.database name '%s'
     public final static int ER_WRONG_TABLE_NAME = 1103; //SQLSTATE: 42000 Message: Incorrect table name '%s'
     public final static int ER_TOO_BIG_SELECT = 1104; //SQLSTATE: 42000 Message: The SELECT would examine more than MAX_JOIN_SIZE rows; check your WHERE and use SET SQL_BIG_SELECTS=1 or SET MAX_JOIN_SIZE=# if the SELECT is okay
     public final static int ER_UNKNOWN_ERROR = 1105; //SQLSTATE: HY000 Message: Unknown error
@@ -161,7 +161,7 @@ public final class MysqlErrorNumbers {
     public final static int ER_HOST_IS_BLOCKED = 1129; //SQLSTATE: HY000 Message: Host '%s' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts'
     public final static int ER_HOST_NOT_PRIVILEGED = 1130; //SQLSTATE: HY000 Message: Host '%s' is not allowed to connect to this MySQL server
     public final static int ER_PASSWORD_ANONYMOUS_USER = 1131; //SQLSTATE: 42000 Message: You are using MySQL as an anonymous user and anonymous users are not allowed to change passwords
-    public final static int ER_PASSWORD_NOT_ALLOWED = 1132; //SQLSTATE: 42000 Message: You must have privileges to update tables in the mysql database to be able to change passwords for others
+    public final static int ER_PASSWORD_NOT_ALLOWED = 1132; //SQLSTATE: 42000 Message: You must have privileges to update tables in the mysql dal.database to be able to change passwords for others
     public final static int ER_PASSWORD_NO_MATCH = 1133; //SQLSTATE: 42000 Message: Can't find any matching row in the user table
     public final static int ER_UPDATE_INFO = 1134; //SQLSTATE: HY000 Message: Rows matched: %ld Changed: %ld Warnings: %ld
     public final static int ER_CANT_CREATE_THREAD = 1135; //SQLSTATE: HY000 Message: Can't create a new thread (errno %d); if you are not out of available memory, you can consult the manual for a possible OS-dependent bug
@@ -241,7 +241,7 @@ public final class MysqlErrorNumbers {
     public final static int ER_CREATE_DB_WITH_READ_LOCK = 1209; //SQLSTATE: HY000 Message: CREATE DATABASE not allowed while thread is holding global read lock
     public final static int ER_WRONG_ARGUMENTS = 1210; //SQLSTATE: HY000 Message: Incorrect arguments to %s
     public final static int ER_NO_PERMISSION_TO_CREATE_USER = 1211; //SQLSTATE: 42000 Message: '%s'@'%s' is not allowed to create new users
-    public final static int ER_UNION_TABLES_IN_DIFFERENT_DIR = 1212; //SQLSTATE: HY000 Message: Incorrect table definition; all MERGE tables must be in the same database
+    public final static int ER_UNION_TABLES_IN_DIFFERENT_DIR = 1212; //SQLSTATE: HY000 Message: Incorrect table definition; all MERGE tables must be in the same dal.database
     public final static int ER_LOCK_DEADLOCK = 1213; //SQLSTATE: 40001 Message: Deadlock found when trying to get lock; try restarting transaction
     public final static int ER_TABLE_CANT_HANDLE_FT = 1214; //SQLSTATE: HY000 Message: The used table type doesn't support FULLTEXT indexes
     public final static int ER_CANNOT_ADD_FOREIGN = 1215; //SQLSTATE: HY000 Message: Cannot add foreign key constraint
@@ -273,7 +273,7 @@ public final class MysqlErrorNumbers {
     public final static int ER_OPERAND_COLUMNS = 1241; //SQLSTATE: 21000 Message: Operand should contain %d column(s)
     public final static int ER_SUBQUERY_NO_1_ROW = 1242; //SQLSTATE: 21000 Message: Subquery returns more than 1 row
     public final static int ER_UNKNOWN_STMT_HANDLER = 1243; //SQLSTATE: HY000 Message: Unknown prepared statement handler (%.*s) given to %s
-    public final static int ER_CORRUPT_HELP_DB = 1244; //SQLSTATE: HY000 Message: Help database is corrupt or does not exist
+    public final static int ER_CORRUPT_HELP_DB = 1244; //SQLSTATE: HY000 Message: Help dal.database is corrupt or does not exist
     public final static int ER_CYCLIC_REFERENCE = 1245; //SQLSTATE: HY000 Message: Cyclic reference on subqueries
     public final static int ER_AUTO_CONVERT = 1246; //SQLSTATE: HY000 Message: Converting column '%s' from %s to %s
     public final static int ER_ILLEGAL_REFERENCE = 1247; //SQLSTATE: 42S22 Message: Reference '%s' not supported (%s)
@@ -382,22 +382,22 @@ public final class MysqlErrorNumbers {
     public final static int ER_VIEW_SELECT_CLAUSE = 1350; //SQLSTATE: HY000 Message: View's SELECT contains a '%s' clause
     public final static int ER_VIEW_SELECT_VARIABLE = 1351; //SQLSTATE: HY000 Message: View's SELECT contains a variable or parameter
     public final static int ER_VIEW_SELECT_TMPTABLE = 1352; //SQLSTATE: HY000 Message: View's SELECT refers to a temporary table '%s'
-    public final static int ER_VIEW_WRONG_LIST = 1353; //SQLSTATE: HY000 Message: View's SELECT and view's field list have different column counts
+    public final static int ER_VIEW_WRONG_LIST = 1353; //SQLSTATE: HY000 Message: View's SELECT and presentation.view's field list have different column counts
     public final static int ER_WARN_VIEW_MERGE = 1354; //SQLSTATE: HY000 Message: View merge algorithm can't be used here for now (assumed undefined algorithm)
     public final static int ER_WARN_VIEW_WITHOUT_KEY = 1355; //SQLSTATE: HY000 Message: View being updated does not have complete key of underlying table in it
-    public final static int ER_VIEW_INVALID = 1356; //SQLSTATE: HY000 Message: View '%s.%s' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them
+    public final static int ER_VIEW_INVALID = 1356; //SQLSTATE: HY000 Message: View '%s.%s' references invalid table(s) or column(s) or function(s) or definer/invoker of presentation.view lack rights to use them
     public final static int ER_SP_NO_DROP_SP = 1357; //SQLSTATE: HY000 Message: Can't drop or alter a %s from within another stored routine
     public final static int ER_SP_GOTO_IN_HNDLR = 1358; //SQLSTATE: HY000 Message: GOTO is not allowed in a stored procedure handler
     public final static int ER_TRG_ALREADY_EXISTS = 1359; //SQLSTATE: HY000 Message: Trigger already exists
     public final static int ER_TRG_DOES_NOT_EXIST = 1360; //SQLSTATE: HY000 Message: Trigger does not exist
-    public final static int ER_TRG_ON_VIEW_OR_TEMP_TABLE = 1361; //SQLSTATE: HY000 Message: Trigger's '%s' is view or temporary table
+    public final static int ER_TRG_ON_VIEW_OR_TEMP_TABLE = 1361; //SQLSTATE: HY000 Message: Trigger's '%s' is presentation.view or temporary table
     public final static int ER_TRG_CANT_CHANGE_ROW = 1362; //SQLSTATE: HY000 Message: Updating of %s row is not allowed in %strigger
     public final static int ER_TRG_NO_SUCH_ROW_IN_TRG = 1363; //SQLSTATE: HY000 Message: There is no %s row in %s trigger
     public final static int ER_NO_DEFAULT_FOR_FIELD = 1364; //SQLSTATE: HY000 Message: Field '%s' doesn't have a default value
     public final static int ER_DIVISION_BY_ZERO = 1365; //SQLSTATE: 22012 Message: Division by 0
     public final static int ER_TRUNCATED_WRONG_VALUE_FOR_FIELD = 1366; //SQLSTATE: HY000 Message: Incorrect %s value: '%s' for column '%s' at row %ld
     public final static int ER_ILLEGAL_VALUE_FOR_TYPE = 1367; //SQLSTATE: 22007 Message: Illegal %s '%s' value found during parsing
-    public final static int ER_VIEW_NONUPD_CHECK = 1368; //SQLSTATE: HY000 Message: CHECK OPTION on non-updatable view '%s.%s'
+    public final static int ER_VIEW_NONUPD_CHECK = 1368; //SQLSTATE: HY000 Message: CHECK OPTION on non-updatable presentation.view '%s.%s'
     public final static int ER_VIEW_CHECK_FAILED = 1369; //SQLSTATE: HY000 Message: CHECK OPTION failed '%s.%s'
     public final static int ER_PROCACCESS_DENIED_ERROR = 1370; //SQLSTATE: 42000 Message: %s command denied to user '%s'@'%s' for routine '%s'
     public final static int ER_RELAY_LOG_FAIL = 1371; //SQLSTATE: HY000 Message: Failed purging old relay logs: %s
@@ -422,9 +422,9 @@ public final class MysqlErrorNumbers {
     public final static int ER_PS_MANY_PARAM = 1390; //SQLSTATE: HY000 Message: Prepared statement contains too many placeholders
     public final static int ER_KEY_PART_0 = 1391; //SQLSTATE: HY000 Message: Key part '%s' length cannot be 0
     public final static int ER_VIEW_CHECKSUM = 1392; //SQLSTATE: HY000 Message: View text checksum failed
-    public final static int ER_VIEW_MULTIUPDATE = 1393; //SQLSTATE: HY000 Message: Can not modify more than one base table through a join view '%s.%s'
-    public final static int ER_VIEW_NO_INSERT_FIELD_LIST = 1394; //SQLSTATE: HY000 Message: Can not insert into join view '%s.%s' without fields list
-    public final static int ER_VIEW_DELETE_MERGE_VIEW = 1395; //SQLSTATE: HY000 Message: Can not delete from join view '%s.%s'
+    public final static int ER_VIEW_MULTIUPDATE = 1393; //SQLSTATE: HY000 Message: Can not modify more than one base table through a join presentation.view '%s.%s'
+    public final static int ER_VIEW_NO_INSERT_FIELD_LIST = 1394; //SQLSTATE: HY000 Message: Can not insert into join presentation.view '%s.%s' without fields list
+    public final static int ER_VIEW_DELETE_MERGE_VIEW = 1395; //SQLSTATE: HY000 Message: Can not delete from join presentation.view '%s.%s'
     public final static int ER_CANNOT_USER = 1396; //SQLSTATE: HY000 Message: Operation %s failed for %s
     public final static int ER_XAER_NOTA = 1397; //SQLSTATE: XAE04 Message: XAER_NOTA: Unknown XID
     public final static int ER_XAER_INVAL = 1398; //SQLSTATE: XAE05 Message: XAER_INVAL: Invalid arguments (or unsupported command)
@@ -452,7 +452,7 @@ public final class MysqlErrorNumbers {
     public final static int ER_EXEC_STMT_WITH_OPEN_CURSOR = 1420; //SQLSTATE: HY000 Message: You can't execute a prepared statement which has an open cursor associated with it. Reset the statement to re-execute it.
     public final static int ER_STMT_HAS_NO_OPEN_CURSOR = 1421; //SQLSTATE: HY000 Message: The statement (%lu) has no open cursor.
     public final static int ER_COMMIT_NOT_ALLOWED_IN_SF_OR_TRG = 1422; //SQLSTATE: HY000 Message: Explicit or implicit commit is not allowed in stored function or trigger.
-    public final static int ER_NO_DEFAULT_FOR_VIEW_FIELD = 1423; //SQLSTATE: HY000 Message: Field of view '%s.%s' underlying table doesn't have a default value
+    public final static int ER_NO_DEFAULT_FOR_VIEW_FIELD = 1423; //SQLSTATE: HY000 Message: Field of presentation.view '%s.%s' underlying table doesn't have a default value
     public final static int ER_SP_NO_RECURSION = 1424; //SQLSTATE: HY000 Message: Recursive stored functions and triggers are not allowed.
     public final static int ER_TOO_BIG_SCALE = 1425; //SQLSTATE: 42000 Message: Too big scale %d specified for column '%s'. Maximum is %lu.
     public final static int ER_TOO_BIG_PRECISION = 1426; //SQLSTATE: 42000 Message: Too big precision %d specified for column '%s'. Maximum is %lu.
@@ -476,8 +476,8 @@ public final class MysqlErrorNumbers {
     public final static int ER_PS_NO_RECURSION = 1444; //SQLSTATE: HY000 Message: The prepared statement contains a stored routine call that refers to that same statement. It's not allowed to execute a prepared statement in such a recursive manner
     public final static int ER_SP_CANT_SET_AUTOCOMMIT = 1445; //SQLSTATE: HY000 Message: Not allowed to set autocommit from a stored function or trigger
     public final static int ER_MALFORMED_DEFINER = 1446; //SQLSTATE: HY000 Message: Definer is not fully qualified
-    public final static int ER_VIEW_FRM_NO_USER = 1447; //SQLSTATE: HY000 Message: View '%s'.'%s' has no definer information (old table format). Current user is used as definer. Please recreate the view!
-    public final static int ER_VIEW_OTHER_USER = 1448; //SQLSTATE: HY000 Message: You need the SUPER privilege for creation view with '%s'@'%s' definer
+    public final static int ER_VIEW_FRM_NO_USER = 1447; //SQLSTATE: HY000 Message: View '%s'.'%s' has no definer information (old table format). Current user is used as definer. Please recreate the presentation.view!
+    public final static int ER_VIEW_OTHER_USER = 1448; //SQLSTATE: HY000 Message: You need the SUPER privilege for creation presentation.view with '%s'@'%s' definer
     public final static int ER_NO_SUCH_USER = 1449; //SQLSTATE: HY000 Message: The user specified as a definer ('%s'@'%s') does not exist
     public final static int ER_FORBID_SCHEMA_CHANGE = 1450; //SQLSTATE: HY000 Message: Changing schema from '%s' to '%s' is not allowed.
     public final static int ER_ROW_IS_REFERENCED_2 = 1451; //SQLSTATE: 23000 Message: Cannot delete or update a parent row: a foreign key constraint fails (%s)
@@ -491,7 +491,7 @@ public final class MysqlErrorNumbers {
     public final static int ER_TABLE_NEEDS_UPGRADE = 1459; //SQLSTATE: HY000 Message: Table upgrade required. Please do "REPAIR TABLE `%s`" or dump/reload to fix it!
     public final static int ER_SP_NO_AGGREGATE = 1460; //SQLSTATE: 42000 Message: AGGREGATE is not supported for stored functions
     public final static int ER_MAX_PREPARED_STMT_COUNT_REACHED = 1461; //SQLSTATE: 42000 Message: Can't create more than max_prepared_stmt_count statements (current value: %lu)
-    public final static int ER_VIEW_RECURSIVE = 1462; //SQLSTATE: HY000 Message: `%s`.`%s` contains view recursion
+    public final static int ER_VIEW_RECURSIVE = 1462; //SQLSTATE: HY000 Message: `%s`.`%s` contains presentation.view recursion
     public final static int ER_NON_GROUPING_FIELD_USED = 1463; //SQLSTATE: 42000 Message: non-grouping field '%s' is used in %s clause
     public final static int ER_TABLE_CANT_HANDLE_SPKEYS = 1464; //SQLSTATE: HY000 Message: The used table type doesn't support SPATIAL indexes
     public final static int ER_NO_TRIGGERS_ON_SYSTEM_SCHEMA = 1465; //SQLSTATE: HY000 Message: Triggers can not be created on system tables
@@ -629,7 +629,7 @@ public final class MysqlErrorNumbers {
     public final static int ER_SLAVE_MASTER_COM_FAILURE = 1597; //SQLSTATE: HY000 Message: Master command %s failed: %s
     public final static int ER_BINLOG_LOGGING_IMPOSSIBLE = 1598; //SQLSTATE: HY000 Message: Binary logging not possible. Message: %s
     public final static int ER_VIEW_NO_CREATION_CTX = 1599; //SQLSTATE: HY000 Message: View `%s`.`%s` has no creation context
-    public final static int ER_VIEW_INVALID_CREATION_CTX = 1600; //SQLSTATE: HY000 Message: Creation context of view `%s`.`%s' is invalid
+    public final static int ER_VIEW_INVALID_CREATION_CTX = 1600; //SQLSTATE: HY000 Message: Creation context of presentation.view `%s`.`%s' is invalid
     public final static int ER_SR_INVALID_CREATION_CTX = 1601; //SQLSTATE: HY000 Message: Creation context of stored routine `%s`.`%s` is invalid
     public final static int ER_TRG_CORRUPTED_FILE = 1602; //SQLSTATE: HY000 Message: Corrupted TRG file for table `%s`.`%s`
     public final static int ER_TRG_NO_CREATION_CTX = 1603; //SQLSTATE: HY000 Message: Triggers for table `%s`.`%s` have no creation context
@@ -780,17 +780,17 @@ public final class MysqlErrorNumbers {
     public final static int ER_PARTITION_CLAUSE_ON_NONPARTITIONED = 1747; //SQLSTATE: HY000 Message: PARTITION () clause on non partitioned table
     public final static int ER_ROW_DOES_NOT_MATCH_GIVEN_PARTITION_SET = 1748; //SQLSTATE: HY000 Message: Found a row not matching the given partition set
     public final static int ER_NO_SUCH_PARTITION__UNUSED = 1749; //SQLSTATE: HY000 Message: partition '%s' doesn't exist
-    public final static int ER_CHANGE_RPL_INFO_REPOSITORY_FAILURE = 1750; //SQLSTATE: HY000 Message: Failure while changing the type of replication repository: %s.
+    public final static int ER_CHANGE_RPL_INFO_REPOSITORY_FAILURE = 1750; //SQLSTATE: HY000 Message: Failure while changing the type of replication dal.repository: %s.
     public final static int ER_WARNING_NOT_COMPLETE_ROLLBACK_WITH_CREATED_TEMP_TABLE = 1751; //SQLSTATE: HY000 Message: The creation of some temporary tables could not be rolled back.
     public final static int ER_WARNING_NOT_COMPLETE_ROLLBACK_WITH_DROPPED_TEMP_TABLE = 1752; //SQLSTATE: HY000 Message: Some temporary tables were dropped, but these operations could not be rolled back.
     public final static int ER_MTS_FEATURE_IS_NOT_SUPPORTED = 1753; //SQLSTATE: HY000 Message: %s is not supported in multi-threaded slave mode. %s
-    public final static int ER_MTS_UPDATED_DBS_GREATER_MAX = 1754; //SQLSTATE: HY000 Message: The number of modified databases exceeds the maximum %d; the database names will not be included in the replication event metadata.
+    public final static int ER_MTS_UPDATED_DBS_GREATER_MAX = 1754; //SQLSTATE: HY000 Message: The number of modified databases exceeds the maximum %d; the dal.database names will not be included in the replication event metadata.
     public final static int ER_MTS_CANT_PARALLEL = 1755; //SQLSTATE: HY000 Message: Cannot execute the current event group in the parallel mode. Encountered event %s, relay-log name %s, position %s which prevents execution of this event group in parallel mode. Reason: %s.
     public final static int ER_MTS_INCONSISTENT_DATA = 1756; //SQLSTATE: HY000 Message: %s
     public final static int ER_FULLTEXT_NOT_SUPPORTED_WITH_PARTITIONING = 1757; //SQLSTATE: HY000 Message: FULLTEXT index is not supported for partitioned tables.
     public final static int ER_DA_INVALID_CONDITION_NUMBER = 1758; //SQLSTATE: 35000 Message: Invalid condition number
     public final static int ER_INSECURE_PLAIN_TEXT = 1759; //SQLSTATE: HY000 Message: Sending passwords in plain text without SSL/TLS is extremely insecure.
-    public final static int ER_INSECURE_CHANGE_MASTER = 1760; //SQLSTATE: HY000 Message: Storing MySQL user name or password information in the master.info repository is not secure and is therefore not recommended. Please see the MySQL Manual for more about this issue and possible alternatives.
+    public final static int ER_INSECURE_CHANGE_MASTER = 1760; //SQLSTATE: HY000 Message: Storing MySQL user name or password information in the master.info dal.repository is not secure and is therefore not recommended. Please see the MySQL Manual for more about this issue and possible alternatives.
     public final static int ER_FOREIGN_DUPLICATE_KEY_WITH_CHILD_INFO = 1761; //SQLSTATE: 23000 Message: Foreign key constraint for table '%s', record '%s' would lead to a duplicate entry in table '%s', key '%s'
     public final static int ER_FOREIGN_DUPLICATE_KEY_WITHOUT_CHILD_INFO = 1762; //SQLSTATE: 23000 Message: Foreign key constraint for table '%s', record '%s' would lead to a duplicate entry in a child table
     public final static int ER_SQLTHREAD_WITH_SECURE_SLAVE = 1763; //SQLSTATE: HY000 Message: Setting authentication options is not possible when only the Slave SQL Thread is being started.
@@ -890,7 +890,7 @@ public final class MysqlErrorNumbers {
     public final static int ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FTS = 1857; //SQLSTATE: HY000 Message: Fulltext index creation requires a lock
     public final static int ER_SQL_SLAVE_SKIP_COUNTER_NOT_SETTABLE_IN_GTID_MODE = 1858; //SQLSTATE: HY000 Message: sql_slave_skip_counter can not be set when the server is running with GTID_MODE = ON. Instead, for each transaction that you want to skip, generate an empty transaction with the same GTID as the transaction
     public final static int ER_DUP_UNKNOWN_IN_INDEX = 1859; //SQLSTATE: 23000 Message: Duplicate entry for key '%s'
-    public final static int ER_IDENT_CAUSES_TOO_LONG_PATH = 1860; //SQLSTATE: HY000 Message: Long database name and identifier for object resulted in path length exceeding %d characters. Path: '%s'.
+    public final static int ER_IDENT_CAUSES_TOO_LONG_PATH = 1860; //SQLSTATE: HY000 Message: Long dal.database name and identifier for object resulted in path length exceeding %d characters. Path: '%s'.
     public final static int ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_NOT_NULL = 1861; //SQLSTATE: HY000 Message: cannot silently convert NULL values, as required in this SQL_MODE; was introduced in 5.7.1.
     public final static int ER_MUST_CHANGE_PASSWORD_LOGIN = 1862; //SQLSTATE: HY000 Message: Your password has expired. To log in you must change it using a client that supports expired passwords. was introduced in 5.7.1.
     public final static int ER_ROW_IN_WRONG_PARTITION = 1863; //SQLSTATE: HY000 Message: Found a row in wrong partition %s; was introduced in 5.7.1.
@@ -902,8 +902,8 @@ public final class MysqlErrorNumbers {
     public final static int ER_WARN_PURGE_LOG_IS_ACTIVE = 1868; //SQLSTATE: HY000 Message: file %s was not purged because it is the active log file.; was introduced in 5.7.2.
     public final static int ER_AUTO_INCREMENT_CONFLICT = 1869; //SQLSTATE: HY000 Message: Auto-increment value in UPDATE conflicts with internally generated values; was introduced in 5.7.2.
     public final static int WARN_ON_BLOCKHOLE_IN_RBR = 1870; //SQLSTATE: HY000 Message: Row events are not logged for %s statements that modify BLACKHOLE tables in row format. Table(s): '%s'; was introduced in 5.7.2.
-    public final static int ER_SLAVE_MI_INIT_REPOSITORY = 1871; //SQLSTATE: HY000 Message: Slave failed to initialize master info structure from the repository; was introduced in 5.7.2.
-    public final static int ER_SLAVE_RLI_INIT_REPOSITORY = 1872; //SQLSTATE: HY000 Message: Slave failed to initialize relay log info structure from the repository; was introduced in 5.7.2.
+    public final static int ER_SLAVE_MI_INIT_REPOSITORY = 1871; //SQLSTATE: HY000 Message: Slave failed to initialize master info structure from the dal.repository; was introduced in 5.7.2.
+    public final static int ER_SLAVE_RLI_INIT_REPOSITORY = 1872; //SQLSTATE: HY000 Message: Slave failed to initialize relay log info structure from the dal.repository; was introduced in 5.7.2.
     public final static int ER_ACCESS_DENIED_CHANGE_USER_ERROR = 1873; //SQLSTATE: 28000 Message: Access denied trying to change to user '%s'@'%s' (using password: %s). Disconnecting. was introduced in 5.7.2.
     public final static int ER_INNODB_READ_ONLY = 1874; //SQLSTATE: HY000 Message: InnoDB is in read only mode.; was introduced in 5.7.2.
     public final static int ER_STOP_SLAVE_SQL_THREAD_TIMEOUT = 1875; //SQLSTATE: HY000 Message: STOP SLAVE command execution is incomplete: Slave SQL thread got the stop signal, thread is busy, SQL thread will stop once the current task is complete.; was introduced in 5.7.2.
@@ -916,7 +916,7 @@ public final class MysqlErrorNumbers {
     public final static int ER_AES_INVALID_IV = 1882; //SQLSTATE: HY000 Message: The initialization vector supplied to %s is too short. Must be at least %d bytes long; was introduced in 5.7.4.
     public final static int ER_FILE_CORRUPT = 1883; //SQLSTATE: HY000 Message: File %s is corrupted
     public final static int ER_ERROR_ON_MASTER = 1884; //SQLSTATE: HY000 Message: Query partially completed on the master (error on master: %d) and was aborted. There is a chance that your master is inconsistent at this point. If you are sure that your master is ok, run this query manually on the slave and then restart the slave with SET GLOBAL SQL_SLAVE_SKIP_COUNTER=1; START SLAVE;. Query:'%s'
-    public final static int ER_INCONSISTENT_ERROR = 1885; //SQLSTATE: HY000 Message: Query caused different errors on master and slave. Error on master: message (format)='%s' error code=%d; Error on slave:actual message='%s', error code=%d. Default database:'%s'. Query:'%s'
+    public final static int ER_INCONSISTENT_ERROR = 1885; //SQLSTATE: HY000 Message: Query caused different errors on master and slave. Error on master: message (format)='%s' error code=%d; Error on slave:actual message='%s', error code=%d. Default dal.database:'%s'. Query:'%s'
     public final static int ER_STORAGE_ENGINE_NOT_LOADED = 1886; //SQLSTATE: HY000 Message: Storage engine for table '%s'.'%s' is not loaded.
     public final static int ER_GET_STACKED_DA_WITHOUT_ACTIVE_HANDLER = 1887; //SQLSTATE: 0Z002 Message: GET STACKED DIAGNOSTICS when handler not active
     public final static int ER_WARN_LEGACY_SYNTAX_CONVERTED = 1888; //SQLSTATE: HY000 Message: %s is no longer supported. The statement was converted to %s.

@@ -385,7 +385,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * Creates a new ResultSet object.
      * 
      * @param catalog
-     *            the database in use when we were created
+     *            the dal.database in use when we were created
      * @param fields
      *            an array of Field objects (basically, the ResultSet MetaData)
      * @param tuples
@@ -541,7 +541,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if on the result set, false if off.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or row is 0, or result
+     *                if a dal.database-access error occurs, or row is 0, or result
      *                set type is TYPE_FORWARD_ONLY.
      */
     public boolean absolute(int row) throws SQLException {
@@ -608,7 +608,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * </p>
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or result set type is
+     *                if a dal.database-access error occurs, or result set type is
      *                TYPE_FORWARD_ONLY.
      */
     public void afterLast() throws SQLException {
@@ -643,7 +643,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * </p>
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or result set type is
+     *                if a dal.database-access error occurs, or result set type is
      *                TYPE_FORWARD_ONLY
      */
     public void beforeFirst() throws SQLException {
@@ -722,7 +722,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * already been called, then this method has no effect.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or if called when on
+     *                if a dal.database-access error occurs, or if called when on
      *                the insert row.
      * @throws NotUpdatable
      */
@@ -825,7 +825,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * for this ResultSet
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void clearWarnings() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -835,7 +835,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
 
     /**
      * In some cases, it is desirable to immediately release a ResultSet
-     * database and JDBC resources instead of waiting for this to happen when it
+     * dal.database and JDBC resources instead of waiting for this to happen when it
      * is automatically closed. The close method provides this immediate
      * release.
      * 
@@ -845,7 +845,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * </p>
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public void close() throws SQLException {
         realClose(true);
@@ -909,10 +909,10 @@ public class ResultSetImpl implements ResultSetInternalMethods {
 
     /**
      * JDBC 2.0 Delete the current row from the result set and the underlying
-     * database. Cannot be called when on the insert row.
+     * dal.database. Cannot be called when on the insert row.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or if called when on
+     *                if a dal.database-access error occurs, or if called when on
      *                the insert row.
      * @throws NotUpdatable
      */
@@ -1023,7 +1023,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column index
      * 
      * @exception SQLException
-     * if a database access error occurs
+     * if a dal.database access error occurs
      * 
      * [For JDBC-4.0 and newer - http://java.sun.com/javase/6/docs/api/java/sql/ResultSet.html#findColumn(java.lang.String)]
      * 
@@ -1090,7 +1090,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if on a valid row, false if no rows in the result set.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or result set type is
+     *                if a dal.database-access error occurs, or result set type is
      *                TYPE_FORWARD_ONLY.
      */
     public boolean first() throws SQLException {
@@ -1129,7 +1129,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return an object representing an SQL array
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      * @throws NotImplemented
      */
     public java.sql.Array getArray(int i) throws SQLException {
@@ -1147,7 +1147,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return an object representing an SQL array
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      * @throws NotImplemented
      */
     public java.sql.Array getArray(String colName) throws SQLException {
@@ -1158,7 +1158,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * A column value can be retrieved as a stream of ASCII characters and then
      * read in chunks from the stream. This method is particulary suitable for
      * retrieving large LONGVARCHAR values. The JDBC driver will do any
-     * necessary conversion from the database format into ASCII.
+     * necessary conversion from the dal.database format into ASCII.
      * 
      * <p>
      * <B>Note:</B> All the data in the returned stream must be read prior to getting the value of any other column. The next call to a get method implicitly
@@ -1168,12 +1168,12 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
      * 
-     * @return a Java InputStream that delivers the database column value as a
+     * @return a Java InputStream that delivers the dal.database column value as a
      *         stream of one byte ASCII characters. If the value is SQL NULL
      *         then the result is null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * 
      * @see getBinaryStream
      */
@@ -1207,7 +1207,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *         result is null
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public BigDecimal getBigDecimal(int columnIndex) throws SQLException {
         if (!this.isBinaryEncoded) {
@@ -1251,7 +1251,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * 
      * @deprecated
      */
@@ -1409,12 +1409,12 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @param columnIndex
      *            the first column is 1, the second is 2...
      * 
-     * @return a Java InputStream that delivers the database column value as a
+     * @return a Java InputStream that delivers the dal.database column value as a
      *         stream of bytes. If the value is SQL NULL, then the result is
      *         null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * 
      * @see getAsciiStream
      * @see getUnicodeStream
@@ -1513,7 +1513,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value, false for SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public boolean getBoolean(int columnIndex) throws SQLException {
 
@@ -1651,7 +1651,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public byte getByte(int columnIndex) throws SQLException {
         if (!this.isBinaryEncoded) {
@@ -1739,7 +1739,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, the result is null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public byte[] getBytes(int columnIndex) throws SQLException {
         return getBytes(columnIndex, false);
@@ -1935,7 +1935,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the concurrency type, CONCUR_READ_ONLY, etc.
      * 
      * @throws SQLException
-     *             if a database-access error occurs
+     *             if a dal.database-access error occurs
      */
     public int getConcurrency() throws SQLException {
         return (CONCUR_READ_ONLY);
@@ -1961,7 +1961,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the ResultSet's SQL cursor name.
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public String getCursorName() throws SQLException {
         throw SQLError.createSQLException(Messages.getString("ResultSet.Positioned_Update_not_supported"), SQLError.SQL_STATE_DRIVER_NOT_CAPABLE,
@@ -1977,7 +1977,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; null if SQL NULL
      * 
      * @exception java.sql.SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public java.sql.Date getDate(int columnIndex) throws java.sql.SQLException {
         return getDate(columnIndex, null);
@@ -1986,7 +1986,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Get the value of a column in the current row as a java.sql.Date
      * object. Use the calendar to construct an appropriate millisecond value
-     * for the Date, if the underlying database doesn't store timezone
+     * for the Date, if the underlying dal.database doesn't store timezone
      * information.
      * 
      * @param columnIndex
@@ -1997,7 +1997,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, the result is null
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public java.sql.Date getDate(int columnIndex, Calendar cal) throws SQLException {
         if (this.isBinaryEncoded) {
@@ -2042,7 +2042,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * Get the value of a column in the current row as a java.sql.Date object.
      * Use the calendar to construct an appropriate millisecond value for the
-     * Date, if the underlying database doesn't store timezone information.
+     * Date, if the underlying dal.database doesn't store timezone information.
      * 
      * @param columnName
      *            is the SQL name of the column
@@ -2052,7 +2052,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, the result is null
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public java.sql.Date getDate(String columnName, Calendar cal) throws SQLException {
         return getDate(findColumn(columnName), cal);
@@ -2234,7 +2234,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public double getDouble(int columnIndex) throws SQLException {
         if (!this.isBinaryEncoded) {
@@ -2341,7 +2341,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the fetch direction for this result set.
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public int getFetchDirection() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -2355,7 +2355,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the fetch size for this result set.
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public int getFetchSize() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -2388,7 +2388,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public float getFloat(int columnIndex) throws SQLException {
         if (!this.isBinaryEncoded) {
@@ -2467,7 +2467,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public int getInt(int columnIndex) throws SQLException {
         checkRowPos();
@@ -2645,7 +2645,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public long getLong(int columnIndex) throws SQLException {
         return getLong(columnIndex, true);
@@ -2774,7 +2774,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return a description of the ResultSet's columns
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public java.sql.ResultSetMetaData getMetaData() throws SQLException {
         checkClosed();
@@ -2792,7 +2792,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return an object representing an SQL array
      * 
      * @throws SQLException
-     *             if a database error occurs
+     *             if a dal.database error occurs
      * @throws NotImplemented
      */
     protected java.sql.Array getNativeArray(int i) throws SQLException {
@@ -2803,7 +2803,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * A column value can be retrieved as a stream of ASCII characters and then
      * read in chunks from the stream. This method is particulary suitable for
      * retrieving large LONGVARCHAR values. The JDBC driver will do any
-     * necessary conversion from the database format into ASCII.
+     * necessary conversion from the dal.database format into ASCII.
      * 
      * <p>
      * <B>Note:</B> All the data in the returned stream must be read prior to getting the value of any other column. The next call to a get method implicitly
@@ -2813,12 +2813,12 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
      * 
-     * @return a Java InputStream that delivers the database column value as a
+     * @return a Java InputStream that delivers the dal.database column value as a
      *         stream of one byte ASCII characters. If the value is SQL NULL
      *         then the result is null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * 
      * @see getBinaryStream
      */
@@ -2839,7 +2839,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *         result is null
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     protected BigDecimal getNativeBigDecimal(int columnIndex) throws SQLException {
 
@@ -2862,7 +2862,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     protected BigDecimal getNativeBigDecimal(int columnIndex, int scale) throws SQLException {
         checkColumnBounds(columnIndex);
@@ -2900,12 +2900,12 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @param columnIndex
      *            the first column is 1, the second is 2...
      * 
-     * @return a Java InputStream that delivers the database column value as a
+     * @return a Java InputStream that delivers the dal.database column value as a
      *         stream of bytes. If the value is SQL NULL, then the result is
      *         null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * 
      * @see getAsciiStream
      * @see getUnicodeStream
@@ -3019,7 +3019,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     protected byte getNativeByte(int columnIndex) throws SQLException {
         return getNativeByte(columnIndex, true);
@@ -3151,7 +3151,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, the result is null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     protected byte[] getNativeBytes(int columnIndex, boolean noConversion) throws SQLException {
         checkRowPos();
@@ -3569,7 +3569,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; null if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     protected java.sql.Date getNativeDate(int columnIndex) throws SQLException {
         return getNativeDate(columnIndex, null);
@@ -3578,7 +3578,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Get the value of a column in the current row as a java.sql.Date
      * object. Use the calendar to construct an appropriate millisecond value
-     * for the Date, if the underlying database doesn't store timezone
+     * for the Date, if the underlying dal.database doesn't store timezone
      * information.
      * 
      * @param columnIndex
@@ -3589,7 +3589,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, the result is null
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     protected java.sql.Date getNativeDate(int columnIndex, Calendar cal) throws SQLException {
         checkRowPos();
@@ -3649,7 +3649,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     protected double getNativeDouble(int columnIndex) throws SQLException {
         checkRowPos();
@@ -3728,7 +3728,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     protected float getNativeFloat(int columnIndex) throws SQLException {
         checkRowPos();
@@ -3822,7 +3822,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     protected int getNativeInt(int columnIndex) throws SQLException {
         return getNativeInt(columnIndex, true);
@@ -3939,7 +3939,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     protected long getNativeLong(int columnIndex) throws SQLException {
         return getNativeLong(columnIndex, true, true);
@@ -4062,7 +4062,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     protected short getNativeShort(int columnIndex) throws SQLException {
         return getNativeShort(columnIndex, true);
@@ -4202,7 +4202,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value, null for SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     protected String getNativeString(int columnIndex) throws SQLException {
         checkRowPos();
@@ -4354,12 +4354,12 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @param columnIndex
      *            the first column is 1, the second is 2...
      * 
-     * @return a Java InputStream that delivers the database column value as a
+     * @return a Java InputStream that delivers the dal.database column value as a
      *         stream of two byte Unicode characters. If the value is SQL NULL,
      *         then the result is null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * 
      * @see getAsciiStream
      * @see getBinaryStream
@@ -4404,7 +4404,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * </p>
      * 
      * <p>
-     * This method may also be used to read database specific abstract data types.
+     * This method may also be used to read dal.database specific abstract data types.
      * </p>
      * 
      * @param columnIndex
@@ -4413,7 +4413,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return a Object holding the column value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public Object getObject(int columnIndex) throws SQLException {
         checkRowPos();
@@ -4681,7 +4681,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * </p>
      * 
      * <p>
-     * This method may also be used to read database specific abstract data types.
+     * This method may also be used to read dal.database specific abstract data types.
      * </p>
      * 
      * @param columnName
@@ -4690,7 +4690,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return a Object holding the column value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public Object getObject(String columnName) throws SQLException {
         return getObject(findColumn(columnName));
@@ -4883,7 +4883,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the current row number, else return 0 if there is no current row
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public int getRow() throws SQLException {
         checkClosed();
@@ -4958,7 +4958,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; 0 if SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public short getShort(int columnIndex) throws SQLException {
         checkRowPos();
@@ -5093,7 +5093,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *         was produced some other way.
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public java.sql.Statement getStatement() throws SQLException {
         try {
@@ -5130,7 +5130,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value, null for SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public String getString(int columnIndex) throws SQLException {
         String stringVal = getStringInternal(columnIndex, true);
@@ -5169,7 +5169,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public String getString(String columnName) throws SQLException {
         return getString(findColumn(columnName));
@@ -5335,7 +5335,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; null if SQL NULL
      * 
      * @throws java.sql.SQLException
-     *             if a database access error occurs
+     *             if a dal.database access error occurs
      */
     public Time getTime(int columnIndex) throws java.sql.SQLException {
         return getTimeInternal(columnIndex, null, this.getDefaultTimeZone(), false);
@@ -5344,7 +5344,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * Get the value of a column in the current row as a java.sql.Time object.
      * Use the calendar to construct an appropriate millisecond value for the
-     * Time, if the underlying database doesn't store timezone information.
+     * Time, if the underlying dal.database doesn't store timezone information.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -5354,7 +5354,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, the result is null
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public java.sql.Time getTime(int columnIndex, Calendar cal) throws SQLException {
         return getTimeInternal(columnIndex, cal, cal != null ? cal.getTimeZone() : this.getDefaultTimeZone(), true);
@@ -5369,7 +5369,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, the result is null
      * 
      * @throws java.sql.SQLException
-     *             if a database-access error occurs.
+     *             if a dal.database-access error occurs.
      */
     public Time getTime(String columnName) throws java.sql.SQLException {
         return getTime(findColumn(columnName));
@@ -5378,7 +5378,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * Get the value of a column in the current row as a java.sql.Time object.
      * Use the calendar to construct an appropriate millisecond value for the
-     * Time, if the underlying database doesn't store timezone information.
+     * Time, if the underlying dal.database doesn't store timezone information.
      * 
      * @param columnName
      *            is the SQL name of the column
@@ -5388,7 +5388,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, the result is null
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public java.sql.Time getTime(String columnName, Calendar cal) throws SQLException {
         return getTime(findColumn(columnName), cal);
@@ -5543,7 +5543,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; null if SQL NULL
      * 
      * @exception java.sql.SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     private Time getTimeInternal(int columnIndex, Calendar targetCalendar, TimeZone tz, boolean rollForward) throws java.sql.SQLException {
         checkRowPos();
@@ -5583,7 +5583,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; null if SQL NULL
      * 
      * @exception java.sql.SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public Timestamp getTimestamp(int columnIndex) throws java.sql.SQLException {
         return getTimestampInternal(columnIndex, null, this.getDefaultTimeZone(), false);
@@ -5592,7 +5592,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * Get the value of a column in the current row as a java.sql.Timestamp
      * object. Use the calendar to construct an appropriate millisecond value
-     * for the Timestamp, if the underlying database doesn't store timezone
+     * for the Timestamp, if the underlying dal.database doesn't store timezone
      * information.
      * 
      * @param columnIndex
@@ -5603,7 +5603,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, the result is null
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public java.sql.Timestamp getTimestamp(int columnIndex, Calendar cal) throws SQLException {
         return getTimestampInternal(columnIndex, cal, cal != null ? cal.getTimeZone() : this.getDefaultTimeZone(), true);
@@ -5621,7 +5621,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * Get the value of a column in the current row as a java.sql.Timestamp
      * object. Use the calendar to construct an appropriate millisecond value
-     * for the Timestamp, if the underlying database doesn't store timezone
+     * for the Timestamp, if the underlying dal.database doesn't store timezone
      * information.
      * 
      * @param columnName
@@ -5632,7 +5632,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; if the value is SQL NULL, the result is null
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public java.sql.Timestamp getTimestamp(String columnName, Calendar cal) throws SQLException {
         return getTimestamp(findColumn(columnName), cal);
@@ -5900,7 +5900,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the column value; null if SQL NULL
      * 
      * @exception java.sql.SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     private Timestamp getTimestampInternal(int columnIndex, Calendar targetCalendar, TimeZone tz, boolean rollForward) throws java.sql.SQLException {
         if (this.isBinaryEncoded) {
@@ -5939,7 +5939,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *         TYPE_SCROLL_SENSITIVE
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public int getType() throws SQLException {
         return this.resultSetType;
@@ -5952,12 +5952,12 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @param columnIndex
      *            the first column is 1, the second is 2...
      * 
-     * @return a Java InputStream that delivers the database column value as a
+     * @return a Java InputStream that delivers the dal.database column value as a
      *         stream of two byte Unicode characters. If the value is SQL NULL,
      *         then the result is null
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      * 
      * @see getAsciiStream
      * @see getBinaryStream
@@ -6047,7 +6047,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return the first java.sql.SQLWarning or null;
      * 
      * @exception SQLException
-     *                if a database access error occurs.
+     *                if a dal.database access error occurs.
      */
     public java.sql.SQLWarning getWarnings() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -6057,10 +6057,10 @@ public class ResultSetImpl implements ResultSetInternalMethods {
 
     /**
      * JDBC 2.0 Insert the contents of the insert row into the result set and
-     * the database. Must be on the insert row when this method is called.
+     * the dal.database. Must be on the insert row when this method is called.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, if called when not on
+     *                if a dal.database-access error occurs, if called when not on
      *                the insert row, or if all non-nullable columns in the
      *                insert row have not been given a value
      * @throws NotUpdatable
@@ -6080,7 +6080,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *         the result set contains no rows.
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public boolean isAfterLast() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -6101,7 +6101,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *         the result set contains no rows.
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public boolean isBeforeFirst() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -6119,7 +6119,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if on the first row, false otherwise.
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public boolean isFirst() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -6138,7 +6138,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if on the last row, false otherwise.
      * 
      * @exception SQLException
-     *                if a database-access error occurs.
+     *                if a dal.database-access error occurs.
      */
     public boolean isLast() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -6196,7 +6196,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if on a valid row, false if no rows in the result set.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or result set type is
+     *                if a dal.database-access error occurs, or result set type is
      *                TYPE_FORWARD_ONLY.
      */
     public boolean last() throws SQLException {
@@ -6243,7 +6243,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * current row. Has no effect unless the cursor is on the insert row.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or the result set is
+     *                if a dal.database-access error occurs, or the result set is
      *                not updatable
      * @throws NotUpdatable
      */
@@ -6263,7 +6263,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * UpdateXXX()must be called before getXXX() on a column.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or the result set is
+     *                if a dal.database-access error occurs, or the result set is
      *                not updatable
      * @throws NotUpdatable
      */
@@ -6283,7 +6283,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if the new current is valid; false if there are no more rows
      * 
      * @exception SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public boolean next() throws SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -6512,7 +6512,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if the new current is valid; false if there are no more rows
      * 
      * @exception java.sql.SQLException
-     *                if a database access error occurs
+     *                if a dal.database access error occurs
      */
     public boolean prev() throws java.sql.SQLException {
         synchronized (checkClosed().getConnectionMutex()) {
@@ -6561,7 +6561,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if on a valid row, false if off the result set.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or result set type is
+     *                if a dal.database-access error occurs, or result set type is
      *                TYPE_FORWAR_DONLY.
      */
     public boolean previous() throws SQLException {
@@ -6740,11 +6740,11 @@ public class ResultSetImpl implements ResultSetInternalMethods {
 
     /**
      * JDBC 2.0 Refresh the value of the current row with its current value in
-     * the database. Cannot be called when on the insert row. The refreshRow()
+     * the dal.database. Cannot be called when on the insert row. The refreshRow()
      * method provides a way for an application to explicitly tell the JDBC
-     * driver to refetch a row(s) from the database. An application may want to
+     * driver to refetch a row(s) from the dal.database. An application may want to
      * call refreshRow() when caching or prefetching is being done by the JDBC
-     * driver to fetch the latest value of a row from the database. The JDBC
+     * driver to fetch the latest value of a row from the dal.database. The JDBC
      * driver may actually refresh multiple rows at once if the fetch size is
      * greater than one. All values are refetched subject to the transaction
      * isolation level and cursor sensitivity. If refreshRow() is called after
@@ -6753,7 +6753,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * performance.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or if called when on
+     *                if a dal.database-access error occurs, or if called when on
      *                the insert row.
      * @throws NotUpdatable
      */
@@ -6780,7 +6780,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if on a row, false otherwise.
      * 
      * @throws SQLException
-     *             if a database-access error occurs, or there is no current
+     *             if a dal.database-access error occurs, or there is no current
      *             row, or result set type is TYPE_FORWARD_ONLY.
      */
     public boolean relative(int rows) throws SQLException {
@@ -6814,7 +6814,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if deleted and deletes are detected
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotImplemented
      * 
      * @see DatabaseMetaData#deletesAreDetected
@@ -6831,7 +6831,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if inserted and inserts are detected
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotImplemented
      * 
      * @see DatabaseMetaData#insertsAreDetected
@@ -6848,7 +6848,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *         and updates are detected
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotImplemented
      * 
      * @see DatabaseMetaData#updatesAreDetected
@@ -6875,7 +6875,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the direction to fetch rows in.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or the result set type
+     *                if a dal.database-access error occurs, or the result set type
      *                is TYPE_FORWARD_ONLY and direction is not FETCH_FORWARD.
      *                MM.MySQL actually ignores this, because it has the whole
      *                result set anyway, so the direction is immaterial.
@@ -6893,7 +6893,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
 
     /**
      * JDBC 2.0 Give the JDBC driver a hint as to the number of rows that should
-     * be fetched from the database when more rows are needed for this result
+     * be fetched from the dal.database when more rows are needed for this result
      * set. If the fetch size specified is zero, then the JDBC driver ignores
      * the value, and is free to make its own best guess as to what the fetch
      * size should be. The default value is set by the statement that creates
@@ -6903,7 +6903,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the number of rows to fetch
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or the condition 0 lteq
+     *                if a dal.database-access error occurs, or the condition 0 lteq
      *                rows lteq this.getMaxRows() is not satisfied. Currently
      *                ignored by this driver.
      */
@@ -7090,8 +7090,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * JDBC 2.0 Update a column with an ascii stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7101,7 +7101,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the length of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateAsciiStream(int columnIndex, java.io.InputStream x, int length) throws SQLException {
@@ -7112,8 +7112,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * JDBC 2.0 Update a column with an ascii stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7123,7 +7123,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateAsciiStream(String columnName, java.io.InputStream x, int length) throws SQLException {
         updateAsciiStream(findColumn(columnName), x, length);
@@ -7132,8 +7132,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a BigDecimal value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7141,7 +7141,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateBigDecimal(int columnIndex, BigDecimal x) throws SQLException {
@@ -7151,8 +7151,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a BigDecimal value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7160,7 +7160,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateBigDecimal(String columnName, BigDecimal x) throws SQLException {
         updateBigDecimal(findColumn(columnName), x);
@@ -7170,8 +7170,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * JDBC 2.0 Update a column with a binary stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7181,7 +7181,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the length of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateBinaryStream(int columnIndex, java.io.InputStream x, int length) throws SQLException {
@@ -7192,8 +7192,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * JDBC 2.0 Update a column with a binary stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7203,7 +7203,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateBinaryStream(String columnName, java.io.InputStream x, int length) throws SQLException {
         updateBinaryStream(findColumn(columnName), x, length);
@@ -7226,8 +7226,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a boolean value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7235,7 +7235,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateBoolean(int columnIndex, boolean x) throws SQLException {
@@ -7245,8 +7245,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a boolean value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7254,7 +7254,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateBoolean(String columnName, boolean x) throws SQLException {
         updateBoolean(findColumn(columnName), x);
@@ -7263,8 +7263,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a byte value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7272,7 +7272,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateByte(int columnIndex, byte x) throws SQLException {
@@ -7282,8 +7282,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a byte value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7291,7 +7291,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateByte(String columnName, byte x) throws SQLException {
         updateByte(findColumn(columnName), x);
@@ -7300,8 +7300,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a byte array value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7309,7 +7309,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateBytes(int columnIndex, byte[] x) throws SQLException {
@@ -7319,8 +7319,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a byte array value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7328,7 +7328,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateBytes(String columnName, byte[] x) throws SQLException {
         updateBytes(findColumn(columnName), x);
@@ -7338,8 +7338,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * JDBC 2.0 Update a column with a character stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7349,7 +7349,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the length of the stream
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateCharacterStream(int columnIndex, java.io.Reader x, int length) throws SQLException {
@@ -7360,8 +7360,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * JDBC 2.0 Update a column with a character stream value. The updateXXX()
      * methods are used to update column values in the current row, or the
      * insert row. The updateXXX() methods do not update the underlying
-     * database, instead the updateRow() or insertRow() methods are called to
-     * update the database.
+     * dal.database, instead the updateRow() or insertRow() methods are called to
+     * update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7371,7 +7371,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            of the stream
      * 
      * @throws SQLException
-     *             if a database-access error occurs
+     *             if a dal.database-access error occurs
      */
     public void updateCharacterStream(String columnName, java.io.Reader reader, int length) throws SQLException {
         updateCharacterStream(findColumn(columnName), reader, length);
@@ -7394,8 +7394,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a Date value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7403,7 +7403,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateDate(int columnIndex, java.sql.Date x) throws SQLException {
@@ -7413,8 +7413,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a Date value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7422,7 +7422,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateDate(String columnName, java.sql.Date x) throws SQLException {
         updateDate(findColumn(columnName), x);
@@ -7431,8 +7431,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a Double value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7440,7 +7440,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateDouble(int columnIndex, double x) throws SQLException {
@@ -7450,8 +7450,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a double value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7459,7 +7459,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateDouble(String columnName, double x) throws SQLException {
         updateDouble(findColumn(columnName), x);
@@ -7468,8 +7468,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a float value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7477,7 +7477,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateFloat(int columnIndex, float x) throws SQLException {
@@ -7487,8 +7487,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a float value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7496,7 +7496,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateFloat(String columnName, float x) throws SQLException {
         updateFloat(findColumn(columnName), x);
@@ -7505,8 +7505,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with an integer value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7514,7 +7514,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateInt(int columnIndex, int x) throws SQLException {
@@ -7524,8 +7524,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with an integer value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7533,7 +7533,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateInt(String columnName, int x) throws SQLException {
         updateInt(findColumn(columnName), x);
@@ -7542,8 +7542,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a long value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7551,7 +7551,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateLong(int columnIndex, long x) throws SQLException {
@@ -7561,8 +7561,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a long value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7570,7 +7570,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateLong(String columnName, long x) throws SQLException {
         updateLong(findColumn(columnName), x);
@@ -7579,14 +7579,14 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Give a nullable column a null value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateNull(int columnIndex) throws SQLException {
@@ -7596,14 +7596,14 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a null value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateNull(String columnName) throws SQLException {
         updateNull(findColumn(columnName));
@@ -7612,8 +7612,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with an Object value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7621,7 +7621,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateObject(int columnIndex, Object x) throws SQLException {
@@ -7631,8 +7631,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with an Object value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7644,7 +7644,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            types this value will be ignored.
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateObject(int columnIndex, Object x, int scale) throws SQLException {
@@ -7654,8 +7654,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with an Object value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7663,7 +7663,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateObject(String columnName, Object x) throws SQLException {
         updateObject(findColumn(columnName), x);
@@ -7672,8 +7672,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with an Object value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7685,7 +7685,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            types this value will be ignored.
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateObject(String columnName, Object x, int scale) throws SQLException {
         updateObject(findColumn(columnName), x);
@@ -7706,11 +7706,11 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     }
 
     /**
-     * JDBC 2.0 Update the underlying database with the new contents of the
+     * JDBC 2.0 Update the underlying dal.database with the new contents of the
      * current row. Cannot be called when on the insert row.
      * 
      * @exception SQLException
-     *                if a database-access error occurs, or if called when on
+     *                if a dal.database-access error occurs, or if called when on
      *                the insert row
      * @throws NotUpdatable
      */
@@ -7721,8 +7721,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a short value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7730,7 +7730,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateShort(int columnIndex, short x) throws SQLException {
@@ -7740,8 +7740,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a short value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7749,7 +7749,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateShort(String columnName, short x) throws SQLException {
         updateShort(findColumn(columnName), x);
@@ -7758,8 +7758,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a String value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7767,7 +7767,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateString(int columnIndex, String x) throws SQLException {
@@ -7777,8 +7777,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a String value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7786,7 +7786,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateString(String columnName, String x) throws SQLException {
         updateString(findColumn(columnName), x);
@@ -7795,8 +7795,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a Time value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7804,7 +7804,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateTime(int columnIndex, java.sql.Time x) throws SQLException {
@@ -7814,8 +7814,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a Time value. The updateXXX() methods are
      * used to update column values in the current row, or the insert row. The
-     * updateXXX() methods do not update the underlying database, instead the
-     * updateRow() or insertRow() methods are called to update the database.
+     * updateXXX() methods do not update the underlying dal.database, instead the
+     * updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7823,7 +7823,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateTime(String columnName, java.sql.Time x) throws SQLException {
         updateTime(findColumn(columnName), x);
@@ -7832,8 +7832,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a Timestamp value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnIndex
      *            the first column is 1, the second is 2, ...
@@ -7841,7 +7841,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      * @throws NotUpdatable
      */
     public void updateTimestamp(int columnIndex, java.sql.Timestamp x) throws SQLException {
@@ -7851,8 +7851,8 @@ public class ResultSetImpl implements ResultSetInternalMethods {
     /**
      * JDBC 2.0 Update a column with a Timestamp value. The updateXXX() methods
      * are used to update column values in the current row, or the insert row.
-     * The updateXXX() methods do not update the underlying database, instead
-     * the updateRow() or insertRow() methods are called to update the database.
+     * The updateXXX() methods do not update the underlying dal.database, instead
+     * the updateRow() or insertRow() methods are called to update the dal.database.
      * 
      * @param columnName
      *            the name of the column
@@ -7860,7 +7860,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      *            the new column value
      * 
      * @exception SQLException
-     *                if a database-access error occurs
+     *                if a dal.database-access error occurs
      */
     public void updateTimestamp(String columnName, java.sql.Timestamp x) throws SQLException {
         updateTimestamp(findColumn(columnName), x);
@@ -7875,7 +7875,7 @@ public class ResultSetImpl implements ResultSetInternalMethods {
      * @return true if the last column read was SQL NULL
      * 
      * @exception SQLException
-     *                if a database access error occurred
+     *                if a dal.database access error occurred
      */
     public boolean wasNull() throws SQLException {
         return this.wasNullFlag;
