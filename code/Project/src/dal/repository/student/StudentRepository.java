@@ -1,17 +1,22 @@
 package dal.repository.student;
 
 import dal.model.Student;
+import dal.model.StudentPersonalInfo;
 
 import java.util.List;
 
 public interface StudentRepository {
 
     int findIdByUsernameAndPassword(String username, String password);
-    List<Student> findAll();
+    List<StudentPersonalInfo> findAll();
     boolean update (Student student);
     boolean save(Student user);
     boolean removeAll();
     boolean removeById(int id);
     boolean enrollCourse( int idUser, int idCourse);
     Student findById(int idUser);
+
+    void updateGrade(int idStudent, int idCourse, int grade);
+
+    boolean updateGroup(int idStudent, String group);
 }

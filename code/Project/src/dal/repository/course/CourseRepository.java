@@ -11,5 +11,5 @@ public interface CourseRepository {
     boolean save(Course course);
     void removeAll();
     List<Enrollment> getMyCourses(int id);
-    int getIdByName(int id);
+    int getIdByName(String name);
 }

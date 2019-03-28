@@ -9,7 +9,6 @@ public class Course {
     private int credit;
     private Date exam;
     private String room;
-    private int grade;
 
     public int getId() {
         return id;
@@ -49,5 +48,16 @@ public class Course {
 
     public void setRoom(String room) {
         this.room = room;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", credit=" + credit +
+                ", exam=" + exam +
+                ", room='" + room + '\'' +
+                '}';
     }
 }

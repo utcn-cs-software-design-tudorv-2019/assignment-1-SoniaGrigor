@@ -22,5 +22,13 @@ public final class ProjectConstants {
 
     public static String LOGGED_USER_FILE= "loggedUser.txt";
 
+    public static String PASSWORD_TITLE= "Password";
+    public static String PASWORD_MESSAGE= "Please insert a password";
+
+    public static String OPERATION_FAILED="Operation failed";
+    public static String OPERATION_FAILED_MESSAGE="An error occurred during the last operation";
+
+
+
 
 }

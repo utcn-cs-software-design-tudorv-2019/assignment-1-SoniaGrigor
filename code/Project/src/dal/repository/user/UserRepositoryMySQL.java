@@ -190,13 +190,19 @@ public class UserRepositoryMySQL implements UserRepository {
     @Override
     public int getLastIndex() {
         try {
-            PreparedStatement lastIndexStatement= connection.prepareStatement("SELECT MAX(id) FROM user;",Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement lastIndexStatement= connection.prepareStatement("SELECT LAST_INSERT_ID();",Statement.RETURN_GENERATED_KEYS);
 
-            lastIndexStatement.executeUpdate();
+            lastIndexStatement.executeQuery();
 
             ResultSet rs = lastIndexStatement.getGeneratedKeys();
-            rs.next();
-            return rs.getInt(1);
+            System.out.println("UserRepositoryMySQL.getLastIndex" + rs.getInt(1));
+
+            if(rs.next()) {
+                System.out.println("UserRepositoryMySQL.getLastIndex" + rs.getInt(1));
+                System.out.println("asfdghg" + rs.getInt("LAST_INSERT_ID()"));
+                return rs.getInt("SELECT LAST_INSERT_ID();)");
+            }
+            return -1;
         } catch (SQLException e){
             e.printStackTrace();;
             return -1;

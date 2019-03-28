@@ -48,9 +48,12 @@ public class UserRepositoryMySQLTest {
     @Test
     public void save() {
         User user = new UserBuilder()
-                .setUsername("sonia.grigor@yahoo.com")
+                .setName("Sonia Grigor")
+                .setUsername("sonia.grigor")
                 .setPassword("Aziiau10l_ais!")
-                .setRoles(Collections.singletonList(rightsRolesRepository.findRoleByTitle("customer")))
+                .setEmail("sonia.grigor@gmail.com")
+                .setCNP("2972729245055")
+                .setRoles(Collections.singletonList(rightsRolesRepository.findRoleByTitle("basic")))
                 .build();
         assertTrue(userRepositoryMySQL.save(user));
         System.out.println("save");

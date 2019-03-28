@@ -51,7 +51,7 @@ public class ComponentFactory {
         userRepository= new UserRepositoryMySQL(connection,rightsRolesRepository);
 
         rightsRolesService = new RightsRolesServiceMySQL(connection);
-        userService = new UserServiceMySQL(connection, rightsRolesService);
+        userService = new UserServiceMySQL(connection, rightsRolesService,userRepository);
         courseService= new CourseServiceMySQL(connection,courseRepository);
         studentService= new StudentServiceMySQL(connection,rightsRolesRepository, courseRepository, studentRepository);
         authenticationService = new AuthenticationServiceMySQL(userRepository, rightsRolesRepository);

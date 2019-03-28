@@ -31,12 +31,12 @@ public class CourseRepositoryMySQL implements CourseRepository {
             if (true) {
                 while(userResultSet.next()) {
                     Course course = new CourseBuilder()
+                            .setId(userResultSet.getInt("id"))
                             .setName(userResultSet.getString("name"))
                             .setCredit(userResultSet.getInt("credit"))
                             .setExam(userResultSet.getDate("exam"))
                             .setRoom(userResultSet.getString("room"))
                             .build();
-
                     courseList.add(course);
                     findAllNotification.setResult(course);
                 }
@@ -109,6 +109,7 @@ public class CourseRepositoryMySQL implements CourseRepository {
             if (true) {
                 while(userResultSet.next()) {
                     Course course = new CourseBuilder()
+                            .setId(userResultSet.getInt("id"))
                             .setName(userResultSet.getString("name"))
                             .setCredit(userResultSet.getInt("credit"))
                             .setExam(userResultSet.getDate("exam"))
@@ -132,7 +133,21 @@ public class CourseRepositoryMySQL implements CourseRepository {
     }
 
     @Override
-    public int getIdByName(int id) {
-        return 0;
+    public int getIdByName(String courseName) {
+        try{
+            PreparedStatement fetchCourseSql= connection
+                    .prepareStatement("select course.id from course where course.name=?;");
+            fetchCourseSql.setString(1,courseName);
+            fetchCourseSql.executeQuery();
+
+            ResultSet courseSqlResultSet = fetchCourseSql.getResultSet();
+            if(courseSqlResultSet.next()){
+                return courseSqlResultSet.getInt("id");
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+            return  -1;
+        }
+        return -1;
     }
 }
