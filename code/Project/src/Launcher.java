@@ -10,6 +10,6 @@ public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         ComponentFactory componentFactory = ComponentFactory.getInstance(false);
-        new LoginController(componentFactory.getAuthenticationService(), componentFactory.getCourseService(), componentFactory.getStudentService());
+        new LoginController(componentFactory.getAuthenticationService(), componentFactory.getCourseService(), componentFactory.getStudentService(), componentFactory.getUserService());
     }
 }

@@ -3,6 +3,7 @@ package presentation.controller;
 import bll.course.CourseService;
 import bll.student.StudentService;
 import bll.user.AuthenticationService;
+import bll.user.UserService;
 import dal.model.Course;
 import dal.model.validation.Notification;
 import javafx.collections.FXCollections;
@@ -30,6 +31,7 @@ public class RegisterController {
     private final AuthenticationService authenticationService;
     private final CourseService courseService;
     private final StudentService studentService;
+    private final UserService userService;
 
     private TextField nameField;
     private TextField usernameField;
@@ -41,7 +43,7 @@ public class RegisterController {
     private List<Course> courseList;
     private CheckComboBox<String> courseListView;
 
-    public RegisterController(AuthenticationService authenticationService, CourseService courseService, StudentService studentService) throws FileNotFoundException {
+    public RegisterController(AuthenticationService authenticationService, CourseService courseService, StudentService studentService, UserService userService) throws FileNotFoundException {
 
         window = new Stage();
         window.setTitle(REGISTER_TITLE);
@@ -49,6 +51,7 @@ public class RegisterController {
         this.authenticationService= authenticationService;
         this.courseService=courseService;
         this.studentService= studentService;
+        this.userService=userService;
 
         BorderPane layout = new BorderPane();
         layout.setId("root");
@@ -66,7 +69,9 @@ public class RegisterController {
         Label labelCNP = new Label("CNP");
         Label labelCourse = new Label("Courses");
         Label labelRole = new Label("Roles");
-        leftPane.getChildren().addAll(labelName,labelUsername, labelPassword, labelEmail, labelCNP, labelRole, labelCourse);
+        //leftPane.getChildren().addAll(labelName,labelUsername, labelPassword, labelEmail, labelCNP, labelRole, labelCourse);
+        leftPane.getChildren().addAll(labelName,labelUsername, labelPassword, labelEmail, labelCNP, labelRole);
+
 
         VBox rightPane = new VBox(30);
         rightPane.setAlignment(Pos.CENTER);
@@ -102,7 +107,8 @@ public class RegisterController {
                         .collect(Collectors.toList()));
         courseListView.getItems().setAll(courseItems);
 
-        rightPane.getChildren().addAll(nameField, usernameField, passwordField, emailField, cnpField, roleListView, courseListView);
+        //rightPane.getChildren().addAll(nameField, usernameField, passwordField, emailField, cnpField, roleListView, courseListView);
+        rightPane.getChildren().addAll(nameField, usernameField, passwordField, emailField, cnpField, roleListView);
 
         VBox bottomPane = new VBox( 30);
         bottomPane.setAlignment(Pos.CENTER);
@@ -127,14 +133,14 @@ public class RegisterController {
         String password= passwordField.getText();
         String email=emailField.getText();
         String cnp = cnpField.getText();
+        String role= roleListView.getSelectionModel().getSelectedItem().toString();
+        Notification<Boolean> registerNotification = authenticationService.register(name, username, password, email, cnp );
 
-        Notification<Boolean> registerNotification = authenticationService.register(name, username, password, email, cnp);
-        ArrayList<String> selectedCourses = getSelectedCourses();
-        ArrayList<Integer> idCourses = courseService.getIdByName(selectedCourses);
-        int idUser = authenticationService.getLastIndex();
-        System.out.println("idUSer"+idUser);
-
-        studentService.enrollCourses(idUser, idCourses);
+        //Notification<Boolean> registerNotification = authenticationService.register(name, username, password, email, cnp, role, getSelectedCourses() );
+        //ArrayList<String> selectedCourses = getSelectedCourses();
+        //ArrayList<Integer> idCourses = courseService.getIdByName(selectedCourses);
+        //int idUser = authenticationService.getLastIndex();
+        //studentService.enrollCourses(idUser, idCourses);
 
         if (registerNotification != null) {
             if (registerNotification.hasErrors()) {
@@ -143,6 +149,7 @@ public class RegisterController {
                 alert.setHeaderText(REGISTER_FAIL_MESSAGE);
                 alert.setContentText(registerNotification.getFormattedErrors());
                 alert.showAndWait();
+
             }else {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle(REGISTER_SUCCES);
@@ -150,14 +157,15 @@ public class RegisterController {
                 alert.setContentText(registerNotification.getFormattedErrors());
                 alert.showAndWait();
                 window.close();
+                try {
+                    new LoginController(authenticationService,courseService,studentService,userService ).usernameField.setText(username);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
 
         }
-        try {
-            new LoginController(authenticationService,courseService,studentService ).usernameField.setText(username);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+
 
     }
 

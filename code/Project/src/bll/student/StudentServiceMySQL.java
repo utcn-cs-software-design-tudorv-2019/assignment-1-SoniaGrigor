@@ -1,6 +1,7 @@
 package bll.student;
 
 import dal.model.Student;
+import dal.model.StudentPersonalInfo;
 import dal.repository.course.CourseRepository;
 import dal.repository.security.RightsRolesRepository;
 import dal.repository.student.StudentRepository;
@@ -26,7 +27,7 @@ public class StudentServiceMySQL implements StudentService {
     }
 
     @Override
-    public List<Student> findAll() {
+    public List<StudentPersonalInfo> findAll() {
         return studentRepository.findAll();
     }
 
@@ -65,6 +66,16 @@ public class StudentServiceMySQL implements StudentService {
     @Override
     public Student findById(int idUser) {
         return studentRepository.findById(idUser);
+    }
+
+    @Override
+    public void updateGrade(int idStudent, int idCourse,int grade) {
+        studentRepository.updateGrade(idStudent,idCourse, grade);
+    }
+
+    @Override
+    public boolean updateGroup(int idStudent, String group) {
+        return studentRepository.updateGroup(idStudent,group);
     }
 
 }

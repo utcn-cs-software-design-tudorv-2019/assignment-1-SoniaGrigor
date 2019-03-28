@@ -14,9 +14,10 @@ public class UserServiceMySQL implements UserService {
     private final RightsRolesService rightsRolesService;
     private UserRepository userRepository;
 
-    public UserServiceMySQL(Connection connection, RightsRolesService rightsRolesService) {
+    public UserServiceMySQL(Connection connection, RightsRolesService rightsRolesService, UserRepository userRepository) {
         this.connection=connection;
         this.rightsRolesService = rightsRolesService;
+        this.userRepository=userRepository;
     }
 
     @Override

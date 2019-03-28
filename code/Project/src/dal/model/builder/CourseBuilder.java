@@ -11,6 +11,10 @@ public class CourseBuilder {
         course=new Course();
     }
 
+    public CourseBuilder setId(int id){
+        course.setId(id);
+        return this;
+    }
     public CourseBuilder setName(String name) {
         course.setName(name);
         return this;

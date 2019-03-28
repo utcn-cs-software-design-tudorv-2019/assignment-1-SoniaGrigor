@@ -2,7 +2,6 @@ package dal.model.builder;
 
 import dal.model.Role;
 import dal.model.User;
-import dal.model.Course;
 
 import java.util.List;
 
@@ -41,11 +40,6 @@ public class UserBuilder {
 
     public UserBuilder setCNP(String cnp) {
         user.setCNP(cnp);
-        return this;
-    }
-
-    public UserBuilder setCourses(List<Course> courses) {
-        user.setCourses(courses);
         return this;
     }
 

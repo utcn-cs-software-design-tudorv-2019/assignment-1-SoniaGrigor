@@ -2,11 +2,11 @@ package dal.repository.student;
 
 import bll.user.AuthenticationServiceMySQL;
 import dal.model.Student;
+import dal.model.StudentPersonalInfo;
 import dal.model.builder.StudentBuilder;
-import dal.model.validation.Notification;
 import dal.repository.course.CourseRepository;
 import dal.repository.security.RightsRolesRepository;
-import dal.repository.user.AuthenticationException;
+import utility.Utility;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -18,9 +18,9 @@ public class StudentRepositoryMySQL implements StudentRepository {
     private final CourseRepository courseRepository;
 
     public StudentRepositoryMySQL(Connection connection, RightsRolesRepository rightsRolesRepository, CourseRepository courseRepository) {
-        this.connection=connection;
-        this.rightsRolesRepository=rightsRolesRepository;
-        this.courseRepository=courseRepository;
+        this.connection = connection;
+        this.rightsRolesRepository = rightsRolesRepository;
+        this.courseRepository = courseRepository;
     }
 
 
@@ -36,48 +36,37 @@ public class StudentRepositoryMySQL implements StudentRepository {
             ResultSet userResultSet = fetchUserSql.getResultSet();
             return userResultSet.getInt("id");
 
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
             return -1;
         }
     }
 
     @Override
-    public List<Student> findAll() {
-        List<Student> studentList=new ArrayList<Student>();
-        Notification<Student> findAllNotification = new Notification<>();
+    public List<StudentPersonalInfo> findAll() {
+        List<StudentPersonalInfo> studentList = new ArrayList<StudentPersonalInfo>();
         try {
-            PreparedStatement fetchUserSql=connection
-                    .prepareStatement("Select * from user;");
+            PreparedStatement fetchUserSql = connection
+                    .prepareStatement("SELECT  user.id, user.name,student.cardNo, student.group_id from student join user on user.id= student.id;");
             fetchUserSql.executeQuery();
 
             ResultSet studentResultSet = fetchUserSql.getResultSet();
 
             if (studentResultSet.next()) {
-                Student student =(Student) new StudentBuilder()
-                        .setGroup(studentResultSet.getString("group_id"))
-                        .setCardNo(Integer.parseInt(studentResultSet.getString("cardNo")))
-                        .setName(studentResultSet.getString("name"))
-                        .setUsername(studentResultSet.getString("username"))
-                        .setPassword(studentResultSet.getString("password"))
-                        .setEmail(studentResultSet.getString("email"))
-                        .setCNP(studentResultSet.getString("cnp"))
-                        .setRoles(rightsRolesRepository.findRolesForUser(studentResultSet.getInt("id")))
-                        .build();
-                studentList.add(student);
-                findAllNotification.setResult(student);
-                return studentList ;
+                while (studentResultSet.next()) {
+                    int id = Integer.parseInt(studentResultSet.getString("id"));
+                    int cardNo = Integer.parseInt(studentResultSet.getString("cardNo"));
+                    String group = studentResultSet.getString("group_id");
+                    String name = studentResultSet.getString("name");
+                    StudentPersonalInfo student = new StudentPersonalInfo(id, name, cardNo, group);
+                    studentList.add(student);
+                }
+                return studentList;
             } else {
                 return studentList;
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            try{
-                throw new AuthenticationException();
-            }
-            catch (AuthenticationException f){
-                findAllNotification.addError("Couldn't find all students!");
-            }
         }
         return null;
     }
@@ -86,18 +75,23 @@ public class StudentRepositoryMySQL implements StudentRepository {
     public boolean update(Student student) {
         try {
             PreparedStatement updateStudentStatement = connection
-                    .prepareStatement("UPDATE user set name=?, username=?, password=?, email=?, cnp=? where user.id =?; " +
-                                            "UPDATE student set cardNo = ?, group=? WHERE student.id=?;", Statement.RETURN_GENERATED_KEYS);
+                    .prepareStatement("UPDATE user set name=?, username=?, password=?, email=?, cnp=? where user.id =?; ", Statement.RETURN_GENERATED_KEYS);
 
             updateStudentStatement.setString(1, student.getName());
             updateStudentStatement.setString(2, student.getUsername());
             updateStudentStatement.setString(3, AuthenticationServiceMySQL.encodePassword(student.getPassword()));
             updateStudentStatement.setString(4, student.getEmail());
             updateStudentStatement.setString(5, student.getCNP());
-            updateStudentStatement.setInt(6, findIdByUsernameAndPassword(student.getUsername(),student.getPassword()));
-            updateStudentStatement.setInt(7, student.getCardNo());
-            updateStudentStatement.setString(8, student.getGroup());
+            updateStudentStatement.setInt(6, Utility.getLoggedUser());
 
+            updateStudentStatement.executeUpdate();
+
+            updateStudentStatement = connection
+                    .prepareStatement(" UPDATE student set cardNo = ?, group_id=? WHERE student.id=?;", Statement.RETURN_GENERATED_KEYS);
+
+            updateStudentStatement.setInt(1, student.getCardNo());
+            updateStudentStatement.setInt(2, Integer.parseInt(student.getGroup()));
+            updateStudentStatement.setInt(3, Utility.getLoggedUser());
 
             updateStudentStatement.executeUpdate();
 
@@ -113,13 +107,13 @@ public class StudentRepositoryMySQL implements StudentRepository {
     public boolean save(Student student) {
         try {
             PreparedStatement insertUserStatement = connection
-                    .prepareStatement("INSERT INTO user values (null, ?, ?, ?, ?, ?); INSERT INTO student values(?,?);", Statement.RETURN_GENERATED_KEYS);
+                    .prepareStatement("INSERT INTO user values (null, ?, ?, ?, ?, ?); INSERT INTO student values(null,?,?);", Statement.RETURN_GENERATED_KEYS);
             insertUserStatement.setString(1, student.getName());
             insertUserStatement.setString(2, student.getUsername());
             insertUserStatement.setString(3, student.getPassword());
             insertUserStatement.setString(4, student.getEmail());
             insertUserStatement.setString(5, student.getCNP());
-            insertUserStatement.setInt(6,student.getCardNo());
+            insertUserStatement.setInt(6, student.getCardNo());
             insertUserStatement.setString(7, student.getGroup());
 
 
@@ -145,7 +139,10 @@ public class StudentRepositoryMySQL implements StudentRepository {
     public boolean removeAll() {
         try {
             PreparedStatement deleteUserStatement = connection
-                    .prepareStatement("DELETE from student where id>0 ; DELETE from user where id>0;", Statement.RETURN_GENERATED_KEYS);
+                    .prepareStatement("DELETE from student where id>0 ; ", Statement.RETURN_GENERATED_KEYS);
+            deleteUserStatement.execute();
+            deleteUserStatement = connection
+                    .prepareStatement(" DELETE from user where id>0;", Statement.RETURN_GENERATED_KEYS);
             deleteUserStatement.execute();
             return true;
         } catch (SQLException e) {
@@ -158,9 +155,13 @@ public class StudentRepositoryMySQL implements StudentRepository {
     public boolean removeById(int id) {
         try {
             PreparedStatement deleteUserStatement = connection
-                    .prepareStatement("DELETE from student where id= ? ; DELETE from user where id= ?;", Statement.RETURN_GENERATED_KEYS);
+                    .prepareStatement("DELETE from student where id= ? ; ", Statement.RETURN_GENERATED_KEYS);
             deleteUserStatement.setInt(1, id);
-            deleteUserStatement.setInt(2, id);
+            deleteUserStatement.execute();
+
+            deleteUserStatement = connection
+                    .prepareStatement(" DELETE from user where id= ?;", Statement.RETURN_GENERATED_KEYS);
+            deleteUserStatement.setInt(1, id);
             deleteUserStatement.execute();
             return true;
         } catch (SQLException e) {
@@ -171,16 +172,16 @@ public class StudentRepositoryMySQL implements StudentRepository {
 
     @Override
     public boolean enrollCourse(int idUser, int idCourse) {
-        try{
+        try {
             PreparedStatement enrollUserStatement = connection
                     .prepareStatement("INSERT INTO user_course values (null,?,?,?);", Statement.RETURN_GENERATED_KEYS);
             enrollUserStatement.setInt(1, idUser);
             enrollUserStatement.setInt(2, idCourse);
-            enrollUserStatement.setInt(3,0);
-
+            enrollUserStatement.setInt(3, 0);
+            System.out.println("StudentRepositoryMySQL.enrollCourse" + " " + enrollUserStatement);
             enrollUserStatement.execute();
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
@@ -189,17 +190,17 @@ public class StudentRepositoryMySQL implements StudentRepository {
     @Override
     public Student findById(int idUser) {
         try {
-            PreparedStatement fetchUserSql=connection
-                    .prepareStatement("Select user.id, user.name, user.email, user.cnp, student.cardNo, student.group_id " +
+            PreparedStatement fetchUserSql = connection
+                    .prepareStatement("Select user.id, user.name, user.username, user.password, user.email, user.cnp, student.cardNo, student.group_id " +
                             "from student, user " +
                             "where user.id =?;");
-            fetchUserSql.setInt(1,idUser);
+            fetchUserSql.setInt(1, idUser);
             fetchUserSql.executeQuery();
 
             ResultSet studentResultSet = fetchUserSql.getResultSet();
 
             if (studentResultSet.next()) {
-                Student student =(Student) new StudentBuilder()
+                Student student = (Student) new StudentBuilder()
                         .setGroup(studentResultSet.getString("group_id"))
                         .setCardNo(Integer.parseInt(studentResultSet.getString("cardNo")))
                         .setId(studentResultSet.getInt("id"))
@@ -219,5 +220,39 @@ public class StudentRepositoryMySQL implements StudentRepository {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public void updateGrade(int idStudent, int idCourse, int grade) {
+        try {
+            PreparedStatement fetchUserSql = connection
+                    .prepareStatement("update user_course set grade= ? where user_id=? and course_id=?;");
+            fetchUserSql.setInt(1, grade);
+            fetchUserSql.setInt(2, idStudent);
+            fetchUserSql.setInt(3, idCourse);
+            fetchUserSql.executeQuery();
+
+            ResultSet studentResultSet = fetchUserSql.getResultSet();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public boolean updateGroup(int idStudent, String group) {
+        try {
+            PreparedStatement fetchUserSql = connection
+                    .prepareStatement("update student set group_id =? where id=?;");
+            fetchUserSql.setString(1, group);
+            fetchUserSql.setInt(2, idStudent);
+            fetchUserSql.executeUpdate();
+
+            ResultSet studentResultSet = fetchUserSql.getResultSet();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

@@ -41,10 +41,15 @@ public class CourseServiceMySQL implements CourseService {
     public ArrayList<Integer> getIdByName(ArrayList<String> selectedCourses) {
         ArrayList<Integer> idCourses = new ArrayList<>();
         for(int id=0;id<selectedCourses.size();id++) {
-            int idCourse = courseRepository.getIdByName(id);
+            int idCourse = courseRepository.getIdByName(selectedCourses.get(id));
             idCourses.add(idCourse);
         }
 
          return idCourses;
+    }
+
+    @Override
+    public int getIdByName(String courseName) {
+        return courseRepository.getIdByName(courseName);
     }
 }

@@ -12,4 +12,5 @@ public interface CourseService {
     void removeAll();
     List<Enrollment> getMyCourses(int id);
     ArrayList<Integer> getIdByName(ArrayList<String> selectedCourses);
+    int getIdByName(String course);
 }

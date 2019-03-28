@@ -28,4 +28,14 @@ public class Student extends User{
     public void setGroup(String group) {
         this.group = group;
     }
+
+    @Override
+    public String toString() {
+
+        return super.toString()+
+                "Student{" +
+                "cardNo=" + cardNo +
+                ", group='" + group + '\'' +
+                '}';
+    }
 }

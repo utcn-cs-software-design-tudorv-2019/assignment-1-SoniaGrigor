@@ -19,4 +19,13 @@ public class Utility {
             return -1;
         }
     }
+
+    public static int getUserRole(String username) {
+        if(username.contains("admin")|| username.contains("teacher")){
+            return 1;
+        }
+        else {
+            return 2;
+        }
+    }
 }
