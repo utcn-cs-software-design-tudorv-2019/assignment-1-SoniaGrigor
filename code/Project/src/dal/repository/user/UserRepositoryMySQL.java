@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static utility.ProjectConstants.LOGGED_USER_FILE;
+import static utility.ProjectConstants.REPORT_FILE;
 
 public class UserRepositoryMySQL implements UserRepository {
 
@@ -234,6 +235,17 @@ public class UserRepositoryMySQL implements UserRepository {
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    @Override
+    public void generateRaport() {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(REPORT_FILE, false));
+            writer.write("This is a fake raport!");
+            writer.close();
+        }catch (IOException e){
+            e.printStackTrace();
         }
     }
 

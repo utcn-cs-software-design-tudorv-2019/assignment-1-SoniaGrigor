@@ -15,4 +15,5 @@ public interface UserService {
     boolean removeById(int id);
     User findById(int idUser);
 
+    void generateRaport();
 }
