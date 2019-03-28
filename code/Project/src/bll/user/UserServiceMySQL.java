@@ -54,4 +54,9 @@ public class UserServiceMySQL implements UserService {
     public User findById(int idUser) {
         return userRepository.findById(idUser);
     }
+
+    @Override
+    public void generateRaport() {
+        userRepository.generateRaport();
+    }
 }

@@ -7,22 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d576adf5-a0b5-42e5-b445-d0510673a00d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loggedUser.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loggedUser.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/Launcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/presentation/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/presentation/controller/RegisterController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/presentation/controller/SpecificOperationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/presentation/controller/StudentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/presentation/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/controller/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/controller/RegisterView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/controller/SpecificOperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/controller/SpecificOperationView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/controller/StudentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/controller/UserView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../doc/Assignment1_Analysis_and_Design_Document_Grigor_Sonia.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/Assignment1_Analysis_and_Design_Document_Grigor_Sonia.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../doc/Assignment1_Analysis_and_Design_Document_Grigor_Sonia.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/Assignment1_Analysis_and_Design_Document_Grigor_Sonia.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/user/UserServiceMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/user/UserServiceMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/repository/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/repository/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/repository/user/UserRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/repository/user/UserRepositoryMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/controller/SpecificOperationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/controller/SpecificOperationView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/ProjectConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/ProjectConstants.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,18 +31,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/presentation/controller/UserView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-216">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Launcher.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -63,11 +42,129 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/presentation/controller/LoginView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="116" column="36" lean-forward="true" selection-start-line="112" selection-start-column="16" selection-end-line="116" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/presentation/controller/SpecificOperationView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
+            <state relative-caret-position="101">
+              <caret line="123" column="41" lean-forward="true" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
+              <folding>
+                <element signature="method#handleGroupStudentButtonEvent#0;class#SpecificOperationView#0" />
+                <element signature="e#4869#5078#1" />
+                <element signature="method#handleViewAllCoursesButtonEvent#0;class#SpecificOperationView#0" />
+                <element signature="method#handleViewEnrollCoursesButtonEvent#0;class#SpecificOperationView#0" />
+                <element signature="method#handleGradeStudentButtonEvent#0;class#SpecificOperationView#0" />
+                <element signature="method#handleViewStudentsButtonEvent#0;class#SpecificOperationView#0" />
+                <element signature="method#handleEnrollStudentButtonEvent#0;class#SpecificOperationView#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bll/user/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bll/user/UserServiceMySQL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="59" column="33" lean-forward="true" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1450#1451#0" expanded="true" />
+                <element signature="e#1479#1480#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dal/repository/user/UserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dal/repository/user/UserRepositoryMySQL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="240" column="13" lean-forward="true" selection-start-line="240" selection-start-column="13" selection-end-line="240" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#UserRepositoryMySQL#0;class#UserRepositoryMySQL#0" />
+                <element signature="method#findAll#0;class#UserRepositoryMySQL#0" />
+                <element signature="e#1002#2074#0" />
+                <element signature="e#1268#1934#1" />
+                <element signature="e#1940#2064#1" />
+                <element signature="e#2098#2361#0" />
+                <element signature="e#2148#2216#0" />
+                <element signature="e#2262#2351#0" />
+                <element signature="e#3907#4078#1" />
+                <element signature="e#4112#4205#0" />
+                <element signature="e#4227#4329#0" />
+                <element signature="method#update#0;class#UserRepositoryMySQL#0" />
+                <element signature="e#4402#5316#0" />
+                <element signature="e#4995#5143#0" />
+                <element signature="e#5178#5230#0" />
+                <element signature="e#5340#5467#0" />
+                <element signature="method#save#0;class#UserRepositoryMySQL#0" />
+                <element signature="e#5538#6363#0" />
+                <element signature="e#6387#6514#0" />
+                <element signature="method#removeAll#0;class#UserRepositoryMySQL#0" />
+                <element signature="e#6582#6783#0" />
+                <element signature="e#6807#6877#0" />
+                <element signature="method#removeById#0;class#UserRepositoryMySQL#0" />
+                <element signature="e#6951#7246#0" />
+                <element signature="e#7270#7340#0" />
+                <element signature="e#7406#8049#0" />
+                <element signature="e#7772#8016#1" />
+                <element signature="e#8072#8140#0" />
+                <element signature="method#findById#0;class#UserRepositoryMySQL#0" />
+                <element signature="e#8213#9141#0" />
+                <element signature="e#8534#9106#1" />
+                <element signature="e#9165#9234#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utility/ProjectConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utility/Utility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,17 +172,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/presentation/controller/StudentView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1751">
-              <caret line="131" column="50" selection-start-line="131" selection-start-column="50" selection-end-line="131" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/presentation/controller/LoginView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-420">
-              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="561">
+              <caret line="61" column="153" selection-start-line="61" selection-start-column="153" selection-end-line="61" selection-end-column="153" />
+              <folding>
+                <element signature="method#StudentView#0;class#StudentView#0" />
+                <element signature="method#handleViewCoursesButtonEvent#0;class#StudentView#0" />
+                <element signature="e#5843#7773#0" />
+                <element signature="e#7794#8030#0" />
+                <element signature="method#handleBackButton#0;class#StudentView#0" />
+                <element signature="e#8525#8723#1" />
+                <element signature="method#handleDeleteButtonEvent#0;class#StudentView#0" />
+                <element signature="e#9227#9332#0" />
+                <element signature="e#9365#9409#0" />
+                <element signature="method#handleEnrollButtonEnvent#0;class#StudentView#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,9 +205,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>authenticationService.get</find>
-      <find>idUser</find>
-      <find>1);</find>
       <find>new StudentSer</find>
       <find>Student</find>
       <find>StudentBui</find>
@@ -135,6 +232,9 @@
       <find>bac</find>
       <find>back</find>
       <find>information</find>
+      <find>write</find>
+      <find>Alert</find>
+      <find>RAPORT</find>
     </findStrings>
     <replaceStrings>
       <replace>getInt</replace>
@@ -174,16 +274,12 @@
         <option value="$PROJECT_DIR$/src/dal/database/SQLTableCreationFactory.java" />
         <option value="$PROJECT_DIR$/src/bll/user/AuthenticationServiceMySQL.java" />
         <option value="$PROJECT_DIR$/src/bll/user/AuthenticationService.java" />
-        <option value="$PROJECT_DIR$/src/bll/user/UserService.java" />
-        <option value="$PROJECT_DIR$/src/dal/repository/user/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/utility/Utility.java" />
         <option value="$PROJECT_DIR$/src/dal/model/User.java" />
         <option value="$PROJECT_DIR$/src/dal/model/Student.java" />
         <option value="$PROJECT_DIR$/src/dal/model/builder/StudentBuilder.java" />
         <option value="$PROJECT_DIR$/src/Launcher.java" />
         <option value="$PROJECT_DIR$/src/presentation/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/dal/repository/user/UserRepositoryMySQL.java" />
-        <option value="$PROJECT_DIR$/src/bll/user/UserServiceMySQL.java" />
         <option value="$PROJECT_DIR$/src/ComponentFactory.java" />
         <option value="$PROJECT_DIR$/src/presentation/controller/BasicOperationController.java" />
         <option value="$PROJECT_DIR$/src/presentation/controller/UserController.java" />
@@ -198,7 +294,6 @@
         <option value="$PROJECT_DIR$/src/presentation/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/presentation/controller/StudentController.java" />
         <option value="$PROJECT_DIR$/src/bll/student/StudentService.java" />
-        <option value="$PROJECT_DIR$/src/utility/ProjectConstants.java" />
         <option value="$PROJECT_DIR$/src/bll/student/StudentServiceMySQL.java" />
         <option value="$PROJECT_DIR$/src/dal/repository/student/StudentRepository.java" />
         <option value="$PROJECT_DIR$/src/dal/repository/student/StudentRepositoryMySQL.java" />
@@ -207,10 +302,15 @@
         <option value="$PROJECT_DIR$/src/test/UserRepositoryMySQLTest.java" />
         <option value="$PROJECT_DIR$/src/dal/repository/course/CourseRepositoryMySQL.java" />
         <option value="$PROJECT_DIR$/src/test/CourseRepositoryMySQLTest.java" />
-        <option value="$PROJECT_DIR$/src/presentation/controller/SpecificOperationView.java" />
         <option value="$PROJECT_DIR$/src/presentation/controller/UserView.java" />
         <option value="$PROJECT_DIR$/src/presentation/controller/StudentView.java" />
         <option value="$PROJECT_DIR$/src/presentation/controller/LoginView.java" />
+        <option value="$PROJECT_DIR$/src/bll/user/UserService.java" />
+        <option value="$PROJECT_DIR$/src/bll/user/UserServiceMySQL.java" />
+        <option value="$PROJECT_DIR$/src/dal/repository/user/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/utility/ProjectConstants.java" />
+        <option value="$PROJECT_DIR$/src/presentation/controller/SpecificOperationView.java" />
+        <option value="$PROJECT_DIR$/src/dal/repository/user/UserRepositoryMySQL.java" />
       </list>
     </option>
   </component>
@@ -241,6 +341,12 @@
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bll" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -249,30 +355,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dal" type="462c0819:PsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dal" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dal" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dal" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-              <item name="student" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
@@ -292,14 +374,13 @@
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="presentation" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="utility" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -324,7 +405,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553754910018" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553758100259" />
     <property name="last_opened_file_path" value="E:/AN2/SEM2/TP/2018/PT2018/PT2018_30223_Grigor_Sonia_Assignment_3/src" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
@@ -333,16 +414,16 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="presentation.controller" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="test" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\AN3\SEM2\PS\Assignments\assignment1\code\Project\src\presentation\controller" />
       <recent name="E:\AN3\SEM2\PS\Assignments\assignment1\code\Project\src\view" />
       <recent name="E:\AN3\IS\Laborator\Project\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="test" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="presentation.controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -490,7 +571,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15724947" />
@@ -553,31 +634,19 @@
       <window_info anchor="right" id="PlantUML" order="8" weight="0.4760128" />
     </layout-to-restore>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/presentation/controller/StudentView.java</url>
+          <line>206</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dal/model/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dal/database/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dal/model/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dal/database/DBConnectionFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -594,26 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="110" column="38" lean-forward="true" selection-start-line="110" selection-end-line="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bll/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utility/Utility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,25 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dal/repository/user/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bll/user/UserServiceMySQL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="119" selection-start-line="16" selection-start-column="119" selection-end-line="16" selection-end-column="119" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1271#1272#0" expanded="true" />
-            <element signature="e#1325#1326#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1385,13 +1415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utility/ProjectConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="76" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bll/student/StudentService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1455,45 +1478,6 @@
           <folding>
             <element signature="e#201#202#0" expanded="true" />
             <element signature="e#234#235#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dal/repository/user/UserRepositoryMySQL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
-          <folding>
-            <element signature="method#UserRepositoryMySQL#0;class#UserRepositoryMySQL#0" />
-            <element signature="method#findAll#0;class#UserRepositoryMySQL#0" />
-            <element signature="e#1002#2074#0" />
-            <element signature="e#1268#1934#1" />
-            <element signature="e#1940#2064#1" />
-            <element signature="e#2098#2361#0" />
-            <element signature="e#2148#2216#0" />
-            <element signature="e#2262#2351#0" />
-            <element signature="method#findByUsernameAndPassword#0;class#UserRepositoryMySQL#0" />
-            <element signature="e#2628#4088#0" />
-            <element signature="e#3030#3901#1" />
-            <element signature="e#3907#4078#1" />
-            <element signature="e#4112#4205#0" />
-            <element signature="e#4227#4329#0" />
-            <element signature="method#update#0;class#UserRepositoryMySQL#0" />
-            <element signature="e#4402#5316#0" />
-            <element signature="e#4995#5143#0" />
-            <element signature="e#5178#5230#0" />
-            <element signature="e#5340#5467#0" />
-            <element signature="e#6387#6514#0" />
-            <element signature="method#removeAll#0;class#UserRepositoryMySQL#0" />
-            <element signature="e#6582#6783#0" />
-            <element signature="e#6807#6877#0" />
-            <element signature="method#removeById#0;class#UserRepositoryMySQL#0" />
-            <element signature="e#6951#7246#0" />
-            <element signature="e#7270#7340#0" />
-            <element signature="method#getLastIndex#0;class#UserRepositoryMySQL#0" />
-            <element signature="e#7406#8049#0" />
-            <element signature="e#7772#8016#1" />
-            <element signature="e#8072#8140#0" />
           </folding>
         </state>
       </provider>
@@ -1567,20 +1551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/presentation/controller/StudentView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="131" column="50" selection-start-line="131" selection-start-column="50" selection-end-line="131" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/presentation/controller/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/presentation/controller/UserView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-216">
@@ -1601,10 +1571,165 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/stage/Stage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="1233" selection-start-line="1233" selection-end-line="1233" />
+          <folding>
+            <element signature="e#41642#41643#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/stage/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="939" selection-start-line="939" selection-end-line="939" />
+          <folding>
+            <element signature="e#34834#34835#0" expanded="true" />
+            <element signature="e#34867#34868#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/beans/property/BooleanPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+          <folding>
+            <element signature="e#3921#3922#0" expanded="true" />
+            <element signature="e#3962#3963#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bll/user/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bll/user/UserServiceMySQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="59" column="33" lean-forward="true" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+            <element signature="e#1479#1480#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dal/repository/user/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/presentation/controller/StudentView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="61" column="153" selection-start-line="61" selection-start-column="153" selection-end-line="61" selection-end-column="153" />
+          <folding>
+            <element signature="method#StudentView#0;class#StudentView#0" />
+            <element signature="method#handleViewCoursesButtonEvent#0;class#StudentView#0" />
+            <element signature="e#5843#7773#0" />
+            <element signature="e#7794#8030#0" />
+            <element signature="method#handleBackButton#0;class#StudentView#0" />
+            <element signature="e#8525#8723#1" />
+            <element signature="method#handleDeleteButtonEvent#0;class#StudentView#0" />
+            <element signature="e#9227#9332#0" />
+            <element signature="e#9365#9409#0" />
+            <element signature="method#handleEnrollButtonEnvent#0;class#StudentView#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/presentation/controller/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="116" column="36" lean-forward="true" selection-start-line="112" selection-start-column="16" selection-end-line="116" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/Utility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/presentation/controller/SpecificOperationView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
+        <state relative-caret-position="101">
+          <caret line="123" column="41" lean-forward="true" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
+          <folding>
+            <element signature="method#handleGroupStudentButtonEvent#0;class#SpecificOperationView#0" />
+            <element signature="e#4869#5078#1" />
+            <element signature="method#handleViewAllCoursesButtonEvent#0;class#SpecificOperationView#0" />
+            <element signature="method#handleViewEnrollCoursesButtonEvent#0;class#SpecificOperationView#0" />
+            <element signature="method#handleGradeStudentButtonEvent#0;class#SpecificOperationView#0" />
+            <element signature="method#handleViewStudentsButtonEvent#0;class#SpecificOperationView#0" />
+            <element signature="method#handleEnrollStudentButtonEvent#0;class#SpecificOperationView#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/ProjectConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dal/repository/user/UserRepositoryMySQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="240" column="13" lean-forward="true" selection-start-line="240" selection-start-column="13" selection-end-line="240" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#UserRepositoryMySQL#0;class#UserRepositoryMySQL#0" />
+            <element signature="method#findAll#0;class#UserRepositoryMySQL#0" />
+            <element signature="e#1002#2074#0" />
+            <element signature="e#1268#1934#1" />
+            <element signature="e#1940#2064#1" />
+            <element signature="e#2098#2361#0" />
+            <element signature="e#2148#2216#0" />
+            <element signature="e#2262#2351#0" />
+            <element signature="e#3907#4078#1" />
+            <element signature="e#4112#4205#0" />
+            <element signature="e#4227#4329#0" />
+            <element signature="method#update#0;class#UserRepositoryMySQL#0" />
+            <element signature="e#4402#5316#0" />
+            <element signature="e#4995#5143#0" />
+            <element signature="e#5178#5230#0" />
+            <element signature="e#5340#5467#0" />
+            <element signature="method#save#0;class#UserRepositoryMySQL#0" />
+            <element signature="e#5538#6363#0" />
+            <element signature="e#6387#6514#0" />
+            <element signature="method#removeAll#0;class#UserRepositoryMySQL#0" />
+            <element signature="e#6582#6783#0" />
+            <element signature="e#6807#6877#0" />
+            <element signature="method#removeById#0;class#UserRepositoryMySQL#0" />
+            <element signature="e#6951#7246#0" />
+            <element signature="e#7270#7340#0" />
+            <element signature="e#7406#8049#0" />
+            <element signature="e#7772#8016#1" />
+            <element signature="e#8072#8140#0" />
+            <element signature="method#findById#0;class#UserRepositoryMySQL#0" />
+            <element signature="e#8213#9141#0" />
+            <element signature="e#8534#9106#1" />
+            <element signature="e#9165#9234#0" />
+          </folding>
         </state>
       </provider>
     </entry>
