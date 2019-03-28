@@ -15,4 +15,6 @@ public interface UserRepository {
     boolean removeById(int id);
     int getLastIndex();
     User findById(int idUser);
+
+    void generateRaport();
 }

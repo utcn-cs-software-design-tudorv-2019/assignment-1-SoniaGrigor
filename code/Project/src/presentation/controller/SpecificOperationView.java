@@ -43,13 +43,13 @@ public class SpecificOperationView {
     private Button viewAllCoursesButton;
     private Button groupStudentButton;
     private Button back;
+    private Button generateRaport;
 
     private TextField gradeField;
     private Label gradeLabel;
     private TextField groupField;
     private Label groupLabel;
     private Label instructions;
-
 
     private TableView<StudentPersonalInfo> studentTable= new TableView<StudentPersonalInfo>();
     private TableView<Enrollment> courseTable=new TableView<Enrollment>();
@@ -105,7 +105,9 @@ public class SpecificOperationView {
         bottomPane.setPadding(new Insets(0, 10, 10, 10));
         back= new Button("Back");
         back.setOnAction(e->handleBackButton());
-        bottomPane.getChildren().addAll(back);
+        generateRaport=new Button("Generate raport");
+        generateRaport.setOnAction(e->handleGenerateRaportButtonEvent());
+        bottomPane.getChildren().addAll(back, generateRaport);
 
         layout.setTop(topPane);
         layout.setLeft(leftPane);
@@ -115,6 +117,14 @@ public class SpecificOperationView {
         sceneMain = new Scene(layout, 1200, 800);
         window.setScene(sceneMain);
         window.show();
+    }
+
+    private void handleGenerateRaportButtonEvent() {
+        userService.generateRaport();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(REPORT_TITLE);
+        alert.setHeaderText(REPORT_MESSAGE);
+        alert.showAndWait();
     }
 
     private void handleGroupStudentButtonEvent() {

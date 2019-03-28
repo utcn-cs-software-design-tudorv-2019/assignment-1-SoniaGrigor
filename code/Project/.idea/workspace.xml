@@ -7,9 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d576adf5-a0b5-42e5-b445-d0510673a00d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loggedUser.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loggedUser.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dal/repository/student/StudentRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/repository/student/StudentRepositoryMySQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raport.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/bll/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/bll/user/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/bll/user/UserServiceMySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/bll/user/UserServiceMySQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/dal/repository/user/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/dal/repository/user/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/dal/repository/user/UserRepositoryMySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/dal/repository/user/UserRepositoryMySQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/presentation/controller/SpecificOperationView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/presentation/controller/SpecificOperationView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/utility/ProjectConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/utility/ProjectConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/user/UserServiceMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/user/UserServiceMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/repository/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/repository/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/repository/user/UserRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/repository/user/UserRepositoryMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presentation/controller/SpecificOperationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/controller/SpecificOperationView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/ProjectConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/ProjectConstants.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +35,7 @@
     <SUITE FILE_PATH="coverage/Project$Launcher.ic" NAME="Launcher Coverage Results" MODIFIED="1553726512900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -160,6 +170,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Project" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,22 +193,17 @@
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="Project" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Project" type="616d4139:PackageViewModuleNode" />
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -195,7 +211,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553759202909" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553759810782" />
     <property name="last_opened_file_path" value="E:/AN2/SEM2/TP/2018/PT2018/PT2018_30223_Grigor_Sonia_Assignment_3/src" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
@@ -228,7 +244,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="JUnit.UserRepositoryMySQLTest">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Launcher" />
       <module name="Project" />
@@ -298,11 +314,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Launcher" />
+        <item itemvalue="JUnit.UserRepositoryMySQLTest" />
         <item itemvalue="JUnit.CourseRepositoryMySQLTest" />
+        <item itemvalue="Application.Launcher" />
         <item itemvalue="JUnit.CourseRepositoryMySQLTest.findAll" />
         <item itemvalue="JUnit.CourseRepositoryMySQLTest.save" />
-        <item itemvalue="JUnit.UserRepositoryMySQLTest" />
       </list>
     </recent_temporary>
   </component>
@@ -320,12 +336,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserRepositoryMySQLTest - 2019.03.28 at 04h 36m 05s.xml">
-      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserRepositoryMySQLTest - 2019.03.28 at 04h 40m 22s.xml">
-      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CourseRepositoryMySQLTest_save - 2019.03.28 at 04h 50m 32s.xml">
       <configuration name="CourseRepositoryMySQLTest.save" configurationId="JUnit" />
     </history-entry>
@@ -350,6 +360,12 @@
     <history-entry file="CourseRepositoryMySQLTest - 2019.03.28 at 04h 55m 17s.xml">
       <configuration name="CourseRepositoryMySQLTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CourseRepositoryMySQLTest - 2019.03.28 at 09h 56m 46s.xml">
+      <configuration name="CourseRepositoryMySQLTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserRepositoryMySQLTest - 2019.03.28 at 09h 56m 52s.xml">
+      <configuration name="UserRepositoryMySQLTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -363,7 +379,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15724947" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15884861" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
