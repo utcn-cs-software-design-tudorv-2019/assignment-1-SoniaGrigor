@@ -16,7 +16,7 @@ import utility.Utility;
 
 import static utility.ProjectConstants.TEACHER_TITLE;
 
-public class UserController {
+public class UserView {
 
     Stage window;
     Scene sceneMain;
@@ -31,10 +31,8 @@ public class UserController {
 
     private Button basicOperationButton;
     private Button specificOperationButton;
-    private Button back;
 
-
-    public UserController(AuthenticationService authenticationService, CourseService courseService, StudentService studentService, UserService userService) {
+    public UserView(AuthenticationService authenticationService, CourseService courseService, StudentService studentService, UserService userService) {
         window = new Stage();
         window.setTitle(TEACHER_TITLE);
 
@@ -83,15 +81,11 @@ public class UserController {
     }
 
     private void handleBasicOperationButtonEvent() {
-        new StudentController(authenticationService,courseService,studentService, userService);
+        new StudentView(authenticationService,courseService,studentService, userService);
     }
 
     private void handleSpecificOperationButtonEvent() {
-        new SpecificOperationController( authenticationService, courseService, studentService, userService);
+        new SpecificOperationView( authenticationService, courseService, studentService, userService);
     }
 
-    private void handleBackButton() {
-        window.setScene(sceneMain);
-        window.show();
-    }
 }

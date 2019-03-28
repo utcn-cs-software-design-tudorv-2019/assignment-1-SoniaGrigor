@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 import static dal.database.Constants.Roles.ROLES;
 import static utility.ProjectConstants.*;
 
-public class RegisterController {
+public class RegisterView {
 
     Stage window;
     private final AuthenticationService authenticationService;
@@ -43,7 +43,7 @@ public class RegisterController {
     private List<Course> courseList;
     private CheckComboBox<String> courseListView;
 
-    public RegisterController(AuthenticationService authenticationService, CourseService courseService, StudentService studentService, UserService userService) throws FileNotFoundException {
+    public RegisterView(AuthenticationService authenticationService, CourseService courseService, StudentService studentService, UserService userService) throws FileNotFoundException {
 
         window = new Stage();
         window.setTitle(REGISTER_TITLE);
@@ -158,7 +158,7 @@ public class RegisterController {
                 alert.showAndWait();
                 window.close();
                 try {
-                    new LoginController(authenticationService,courseService,studentService,userService ).usernameField.setText(username);
+                    new LoginView(authenticationService,courseService,studentService,userService ).usernameField.setText(username);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }

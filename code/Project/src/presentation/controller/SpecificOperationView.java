@@ -23,7 +23,7 @@ import java.util.List;
 
 import static utility.ProjectConstants.*;
 
-public class SpecificOperationController {
+public class SpecificOperationView {
 
     Stage window;
     Scene sceneMain;
@@ -42,6 +42,7 @@ public class SpecificOperationController {
     private Button viewEnrollCoursesButton;
     private Button viewAllCoursesButton;
     private Button groupStudentButton;
+    private Button back;
 
     private TextField gradeField;
     private Label gradeLabel;
@@ -55,7 +56,7 @@ public class SpecificOperationController {
     private TableView<Course> allCourseTable = new TableView<Course>();
 
 
-    public SpecificOperationController(AuthenticationService authenticationService, CourseService courseService, StudentService studentService, UserService userService) {
+    public SpecificOperationView(AuthenticationService authenticationService, CourseService courseService, StudentService studentService, UserService userService) {
         window = new Stage();
         window.setTitle(TEACHER_TITLE);
 
@@ -102,6 +103,9 @@ public class SpecificOperationController {
         VBox bottomPane = new VBox(10);
         bottomPane.setAlignment(Pos.CENTER);
         bottomPane.setPadding(new Insets(0, 10, 10, 10));
+        back= new Button("Back");
+        back.setOnAction(e->handleBackButton());
+        bottomPane.getChildren().addAll(back);
 
         layout.setTop(topPane);
         layout.setLeft(leftPane);
@@ -224,4 +228,7 @@ public class SpecificOperationController {
         studentService.enrollCourse(idStudent, idCourse);
     }
 
+    private void handleBackButton() {
+        window.close();
+    }
 }

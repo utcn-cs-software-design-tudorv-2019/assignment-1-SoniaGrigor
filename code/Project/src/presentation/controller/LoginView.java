@@ -22,7 +22,7 @@ import java.io.FileNotFoundException;
 
 import static utility.ProjectConstants.*;
 
-public class LoginController {
+public class LoginView {
     Stage window;
     private final AuthenticationService authenticationService;
     private final CourseService courseService;
@@ -37,7 +37,7 @@ public class LoginController {
     private Button loveButton;
 
 
-    public LoginController(AuthenticationService authenticationService, CourseService courseService, StudentService studentService, UserService userService) throws FileNotFoundException {
+    public LoginView(AuthenticationService authenticationService, CourseService courseService, StudentService studentService, UserService userService) throws FileNotFoundException {
 
         window = new Stage();
         window.setTitle(LOGIN_TITLE);
@@ -98,8 +98,8 @@ public class LoginController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        UserController userController;
-        StudentController studentController;
+        UserView userView;
+        StudentView studentView;
 
         Notification<User> loginNotification = null;
         try {
@@ -117,9 +117,9 @@ public class LoginController {
                 alert.showAndWait();
             } else {
                 if (Utility.getUserRole(usernameField.getText().toLowerCase()) == 2)
-                    studentController = new StudentController(authenticationService, courseService, studentService, userService);
+                    studentView = new StudentView(authenticationService, courseService, studentService, userService);
                 else {
-                    userController = new UserController(authenticationService, courseService, studentService, userService);
+                    userView = new UserView(authenticationService, courseService, studentService, userService);
                 }
                 window.close();
             }
@@ -130,7 +130,7 @@ public class LoginController {
     private void handleRegisterButtonEvent() {
 
         try {
-            new RegisterController(authenticationService, courseService, studentService, userService);
+            new RegisterView(authenticationService, courseService, studentService, userService);
             window.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();

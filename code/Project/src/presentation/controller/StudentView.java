@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 
 import static utility.ProjectConstants.*;
 
-public class StudentController {
+public class StudentView {
 
     Stage window;
     Scene sceneMain;
@@ -59,7 +59,7 @@ public class StudentController {
     private Button back;
 
 
-    public StudentController(AuthenticationService authenticationService, CourseService courseService, StudentService studentService, UserService userService) {
+    public StudentView(AuthenticationService authenticationService, CourseService courseService, StudentService studentService, UserService userService) {
         window = new Stage();
         window.setTitle(STUDENT_TITLE);
 
@@ -128,7 +128,10 @@ public class StudentController {
         enrollButton.setOnAction(e -> handleEnrollButtonEnvent(e));
         viewCoursesButton = new Button("View Courses");
         viewCoursesButton.setOnAction(e -> handleViewCoursesButtonEvent());
-        bottomPane.getChildren().addAll(updateButton, deleteButton, enrollButton, viewCoursesButton);
+        back = new Button("Back");
+        back.setOnAction(e -> handleBackButton());
+        //bottomPane.getChildren().addAll(updateButton, deleteButton, enrollButton, viewCoursesButton);
+        bottomPane.getChildren().addAll(updateButton, deleteButton, viewCoursesButton,back);
 
         layout.setTop(topPane);
         layout.setLeft(leftPane);
@@ -174,9 +177,9 @@ public class StudentController {
             hbox.setSpacing(5);
             hbox.setPadding(new Insets(10, 0, 0, 10));
             hbox.getChildren().addAll(table);
-
             back = new Button("Back");
             back.setOnAction(e -> handleBackButton());
+
             VBox vBox = new VBox();
             vBox.setSpacing(5);
             vBox.setPadding(new Insets(10, 0, 0, 10));
@@ -197,9 +200,7 @@ public class StudentController {
     }
 
     private void handleBackButton() {
-        window.setScene(sceneMain);
-        window.show();
-    }
+        window.close();    }
 
     private void handleUpdateButtonEvent() {
 
@@ -234,7 +235,7 @@ public class StudentController {
         studentService.removeById(Utility.getLoggedUser());
         window.close();
         try {
-            new LoginController(authenticationService, courseService, studentService, userService);
+            new LoginView(authenticationService, courseService, studentService, userService);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
