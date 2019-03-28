@@ -28,6 +28,10 @@ public final class ProjectConstants {
     public static String OPERATION_FAILED="Operation failed";
     public static String OPERATION_FAILED_MESSAGE="An error occurred during the last operation";
 
+    public static String REPORT_FILE="report.txt";
+    public static String REPORT_TITLE="Report generated";
+    public static String REPORT_MESSAGE="A new report was generated. Please check the generated file.";
+
 
 
 
