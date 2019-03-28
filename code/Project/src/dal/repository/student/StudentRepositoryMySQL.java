@@ -230,7 +230,7 @@ public class StudentRepositoryMySQL implements StudentRepository {
             fetchUserSql.setInt(1, grade);
             fetchUserSql.setInt(2, idStudent);
             fetchUserSql.setInt(3, idCourse);
-            fetchUserSql.executeQuery();
+            fetchUserSql.executeUpdate();
 
             ResultSet studentResultSet = fetchUserSql.getResultSet();
 
